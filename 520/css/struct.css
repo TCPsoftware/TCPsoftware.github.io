@@ -1,0 +1,64 @@
+body,#header,#nav,#nav-left,#section,#aside,#footer {
+	margin: 0%;
+}
+#header {
+	color: white;
+	width: 100%;
+	background-color: #AEDFCB;
+	text-align: center;
+	padding: 5px;
+	padding-bottom: 1px;
+	height: 10%;
+}
+#header h1 { 
+	font-size: 35px;
+	border-bottom: 1px solid black;
+}
+#nav-top{
+	line-height: 10%;
+	background-color: #eeeeee;
+	width: 100%;
+	padding: 1px;
+	text-align: center;
+}
+#nav-left{
+	background-color: #cccccc;
+	width: 19.5%;
+	padding: 1px;
+	margin–left: 0%;
+	float: left;
+}
+#section {
+	font-family: sans-serif;
+	background-color: gray;
+	background-image: url(../img/body-background.gif);
+	margin–left: 20%;
+	padding: 1px;
+	border: 2px solid #439900;
+	width: 59.5%;
+	display: block;
+	float: left;
+}
+#select_music_div,#aside {
+	font-family: sans-serif;
+	text-align: center;
+	background-color: #ABCDEF;
+	width: 19.5%;
+	margin-left: 80%;
+	margin-right: 0%;
+	padding: 1px;
+	border: 1px solid #439900;
+	display: block;
+	position: relative;
+}
+#footer {
+	font-size: small;
+	clear: both;
+	margin: 20px auto 0 auto;
+	text-align: center;
+	color: #999;
+	line-height: 22px;
+	padding: 10px 0 10px 0;
+	background: #DDDDDD;
+	border-top: 1px solid #E6E6E6;
+}
