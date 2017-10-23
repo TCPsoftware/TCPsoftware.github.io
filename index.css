@@ -5,16 +5,16 @@ body{
 	//text_align: center;
 }
 #main_div{
-	width: 60%;
-	height: 60%;
+	width: 80%;
+	height: 80%;
 /*	margin-top: auto;
 	margin-bottom: auto;
 	margin-left: auto;
 	margin-right: auto;*/
 
 	position:absolute;
-	left:20%;
-	top:20%;
+	left:10%;
+	top:10%;
 	//text-align: center;
 	background-color: skyblue;
 }
