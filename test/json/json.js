@@ -49,7 +49,7 @@ function init()
 	//		updatetimus(JSON.parse(request.responseText));
 	//	}
 	//}
-	//request.send(null);
+	////request.send(null);
 	updatetimus(JSON.parse(str));
 }
 window.onload=init;
