@@ -40,16 +40,16 @@ function init()
 	//new_script.setAttribute("src","http://tcpsoftware.github.io/test/json/ti.json?callback=updatetimus");
 	//head.appendChild(new_script);
 	var url = "./ti.json";
-	var request = new XMLHttpRequest();
-	request.open("GET",url);
-	request.onload = function()
-	{
-		if(request.status == 200)
-		{
-			updatetimus(JSON.parse(request.responseText));
-		}
-	}
-	request.send(null);
-	//updatetimus(JSON.parse(str));
+	//var request = new XMLHttpRequest();
+	//request.open("GET",url);
+	//request.onload = function()
+	//{
+	//	if(request.status == 200)
+	//	{
+	//		updatetimus(JSON.parse(request.responseText));
+	//	}
+	//}
+	//request.send(null);
+	updatetimus(JSON.parse(str));
 }
 window.onload=init;
