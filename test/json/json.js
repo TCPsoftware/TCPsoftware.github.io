@@ -42,7 +42,7 @@ function init()
 	var url = "./ti.json";
 	var request = new XMLHttpRequest();
 	request.open("GET",url);
-	request.omload = function()
+	request.onload = function()
 	{
 		if(request.status == 200)
 		{
