@@ -5,8 +5,9 @@
 		<title>TCP_Website</title>
 		<script>
 			if(location.protocol == "http:"){
-				location.protocol = "https:";
-				location.reload();}
+				var s = location.href;
+				s = s.replace("http:","https:");
+				window.location = s;}
 		</script>
 		<script src="./index.js"></script>
 		<link type="text/css" rel="stylesheet" href="./index.css">
