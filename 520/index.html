@@ -2,7 +2,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<script src="../cdn/https.js"></script>
+		<script >if(location.protocol == "http:"){var s = location.href;
+		s = s.replace("http:","https:");window.location = s;}</script>
 		<title>这是网页标题。</title>
 		<link href="css/struct.css" rel="stylesheet" type="text/css">
 		<link href="css/index.css" rel="stylesheet" type="text/css">
