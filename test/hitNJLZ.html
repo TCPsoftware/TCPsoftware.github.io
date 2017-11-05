@@ -44,9 +44,9 @@
         var t1;
         
         $("#start").click(function(){
-		alert($("#numinput").val());
-		alert(parseInt($("#numinput").val()));
-		t1 = window.setInterval("loadf()",100);//parseInt($("#num").value,10)
+		//alert($("#numinput").val());
+		//alert(parseInt($("#numinput").val()));
+		t1 = window.setInterval("loadf()",parseInt($("#numinput").val()));//parseInt($("#num").value,10)
           //$("#njlzframe").attr('src', $("#njlzframe").attr('src'));
         });
         $("#end").click(function(){
