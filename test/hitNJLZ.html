@@ -9,12 +9,12 @@
           $("#njlzframe").attr('src', $("#njlzframe").attr('src'));
         }
         $("#start").click(function(){
-          //t1 = setInterval(loadf(),10);
-          $("#njlzframe").attr('src', $("#njlzframe").attr('src'));
+          t1 = window.setInterval(loadf(),10);
+          //$("#njlzframe").attr('src', $("#njlzframe").attr('src'));
         });
         $("#end").click(function(){
-          //t1 = clearInterval(t1);
-          $("#njlzframe").attr('src', $("#njlzframe").attr('src'));
+          t1 = window.clearInterval(t1);
+          //$("#njlzframe").attr('src', $("#njlzframe").attr('src'));
         });
         
       });
