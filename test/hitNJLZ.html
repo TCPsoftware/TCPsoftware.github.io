@@ -12,7 +12,7 @@
           t1 = setInterval(loadf(),10);
         });
         $("#end").click(function(){
-          clearInterval(t1);
+          t1 = clearInterval(t1);
         });
         
       });
@@ -27,8 +27,7 @@
             frameborder="1"
             scrolling="auto"
             width="90%" height="90%"
-            style="position:absolute;margin:10% 10%;"
-            seamless
+            style="position:absolute;margin:5% 5%;"
     ></iframe>
   </body>
 </html>
