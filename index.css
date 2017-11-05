@@ -24,7 +24,7 @@ body{
 	width: 100px;
 	height: 100px;
 	float: left;
-	background-image: url(./head.jpg);
+	/*background-image: url(./head.jpg);*/
 	background-repeat: no-repeat;
 }
 h1{
