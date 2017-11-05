@@ -9,10 +9,10 @@
           $("#njlzframe").attr('src', $('#iframe').attr('src'));
         }
         $("#start").click(function(){
-          t1 = $("#njlzframe").setInterval(loadf(),10);
+          t1 = setInterval(loadf(),10);
         });
         $("#end").click(function(){
-          $("#njlzframe").removeInterval(t1);
+          clearInterval(t1);
         });
         
       });
