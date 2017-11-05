@@ -9,7 +9,7 @@
           $("#njlzframe").attr('src', $('#iframe').attr('src'));
         }
         $("#start").click(function(){
-          t1 = $("#njlzframe").setInterval(10,loadf());
+          t1 = $("#njlzframe").setInterval(loadf(),10);
         });
         $("#end").click(function(){
           $("#njlzframe").removeInterval(t1);
@@ -19,8 +19,8 @@
     </script>
   </head>
   <body>
-    <button id="start" value="开始"><button>
-    <button id="end" value="停止"><button>
+    <button id="start" value="开始"></button>
+    <button id="end" value="停止"></button>
     <iframe id="njlzframe"
             src ="http://www.njlz.net/X_Views_Article.asp?articleid=3786&sortid=36" 
             align="middle"
