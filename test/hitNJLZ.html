@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <script src="../cdn/jquery.js"></script>
     <script>
+      function loadf(){
+        $("#njlzframe").attr('src', $("#njlzframe").attr('src'));
+      }
       $(document).ready(function(){
         var t1;
-        function loadf(){
-          $("#njlzframe").attr('src', $("#njlzframe").attr('src'));
-        }
+        
         $("#start").click(function(){
           t1 = window.setInterval("loadf()",100);
           //$("#njlzframe").attr('src', $("#njlzframe").attr('src'));
