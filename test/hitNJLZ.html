@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <script src="../cdn/jquery.js"></script>
-    <script>
+    <!--script>
       function loadf(){
         $("#njlzframe").attr('src', $("#njlzframe").attr('src'));
       }
@@ -20,7 +20,7 @@
         });
         
       });
-    </script>
+    </script-->
   </head>
   <body>
     <input id="num" width="100px" value="100"></input><br />
@@ -36,4 +36,23 @@
             style="position:absolute;margin:5% 5%;"
     ></iframe>
   </body>
+    <script>
+      function loadf(){
+        $("#njlzframe").attr('src', $("#njlzframe").attr('src'));
+      }
+      $(document).ready(function(){
+        var t1;
+        
+        $("#start").click(function(){
+			alert($("#num").value);
+			t1 = window.setInterval("loadf()",10);//parseInt($("#num").value,10)
+          //$("#njlzframe").attr('src', $("#njlzframe").attr('src'));
+        });
+        $("#end").click(function(){
+          t1 = window.clearInterval(t1);
+          //$("#njlzframe").attr('src', $("#njlzframe").attr('src'));
+        });
+        
+      });
+    </script>
 </html>
