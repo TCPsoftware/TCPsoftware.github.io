@@ -32,27 +32,31 @@
 				<p>&nbsp●站内链接：<a href="./game/index.html" target="_blank">games - HTML5游戏</a></p>
 				<br />
 			</div>
-			<span style="display:inline-block;float:bottom;" class="uptime"></span>
+			
 		</div>
-		<script>
-			function startUptimeUpdate()//code powerd by Elepover & Kruin Tian
-			{
-			    var start_time = '2017-10-04 00:00:00';
-			    var times = new Date().getTime() - new Date(start_time).getTime();
-			    times = Math.floor(times/1000);
-			    var years = Math.floor( times/(3600*24*365) );
-			    times %= 3600*24*365;
-			    var days = Math.floor( times/(3600*24) );
-			    times %= 3600*24;
-			    var hours = Math.floor( times/3600 );
-			    times %= 3600;
-			    var minutes = Math.floor( times/60 );
-			    times %= 60;
-			    var seconds = Math.floor( times/1 );
-			    $(".uptime").html("本站已运行" + years +"年" + days + "天" + hours + "小时" + minutes + "分" + seconds + "秒");
-			    setTimeout(startUptimeUpdate, 1000);
-			}
-			startUptimeUpdate();
-		</script>
+		<footer style="position:absolute;bottom:0px;">
+			<span style="display:inline-block;position:absolute;left:100px;bottom:0px;" class="uptime"></span>
+			<script>
+				function startUptimeUpdate()//code powerd by Elepover & Kruin Tian
+				{
+				    var start_time = '2017-10-04 00:00:00';
+				    var times = new Date().getTime() - new Date(start_time).getTime();
+				    times = Math.floor(times/1000);
+				    var years = Math.floor( times/(3600*24*365) );
+				    times %= 3600*24*365;
+				    var days = Math.floor( times/(3600*24) );
+				    times %= 3600*24;
+				    var hours = Math.floor( times/3600 );
+				    times %= 3600;
+				    var minutes = Math.floor( times/60 );
+				    times %= 60;
+				    var seconds = Math.floor( times/1 );
+				    $(".uptime").html("本站已运行" + years +"年" + days + "天" + hours + "小时" + minutes + "分" + seconds + "秒");
+				    setTimeout(startUptimeUpdate, 1000);
+				}
+				startUptimeUpdate();
+			</script>
+		</footer>
+		
 	</body>
 </html>
