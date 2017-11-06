@@ -23,13 +23,13 @@
     </script-->
   </head>
   <body>
-    <select id="link_select">
+    <select id="link_select" onchange="change_link">
 	    <option>http://www.njlz.net/X_USER/X_GetLzm.asp?t=2333333333333</option>
-    </select><br />
-    <input type="text" id="numinput" width="100px" value="100"></input><br />
+    </select>选择列表<br />
+    <input type="text" id="link_input" style="width:50%;">向此链接请求</input><br />
+    <input type="text" id="numinput" style="width:100px;" value="100">毫秒刷新</input><br />
     <input type="button" id="start" value="开始"></input>
-    <input type="button" id="end" value="停止"></input>
-    <br />
+    <input type="button" id="end" value="停止"></input><br />
     <iframe id="njlzframe"
             src ="http://www.njlz.net/X_Views_Article.asp?articleid=3786&sortid=36" 
             align="middle"
