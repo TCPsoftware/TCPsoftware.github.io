@@ -1,0 +1,74 @@
+<!dectype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style id="main_css">
+			html,body,#desktop{
+				border: 0%;
+				margin: 0%;
+				padding: 0%;
+				height: 100%;
+			}
+		</style>
+		<link rel="stylesheet" href="css/loading_css.css" />
+		<script src="js/jquery.js"></script>
+		<script id="boot_script">
+			var end_load_login = false;
+			var end_load_desktop = false;
+			setTimeout("goto_login()" , 5000);
+			var start_time = new Date();
+			$(document).ready(function load_desktop(){
+				$("#login").hide();
+				$("#desktop").hide();
+				
+				$("#desktop").css("background-image","url(img/windows_10_wallpaper.jpg)");
+				$("#desktop").css("background-size","100% 100%");
+				$("#desktop").css("background-repeat","no-repeat");
+				
+				$("#login").load("login.html",function (){
+					end_load_login = true;
+				});
+				$("#desktop").load("desktop.html",function (){
+					end_load_desktop = true;
+				});
+				$(".circle").click(function(){
+					goto_login();
+					$(".circle").unbind('click');
+				});
+			});
+			function goto_login (){
+				if(end_load_login == true && end_load_desktop == true){
+					var end_time = new Date();
+					var used_time = (end_time - start_time);
+//					console.log("加载完成，用时 " + used_time/1000 + "秒");
+					$("#boot").fadeOut(250 , function () {$('#boot').remove();} );
+					$("#login").delay(200).fadeIn(800  , function(){
+						$("#window1").remove();
+					});
+					$("#boot_script").remove();
+				}
+				else{
+					var end_time = new Date();
+					var used_time = (end_time - start_time);
+//					console.log("请等待加载，已用时 " + used_time/1000 + "秒");
+					setTimeout("goto_login()",500);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="boot" style="width: 100%;height: 100%;text-align: center;background-color: black ;position: absolute;z-index: 100;">
+			<img id="windows_logo" src="./img/Windows_logo.svg" style="width: 12%; margin-top: 20%;"/>
+			<div class='loader' style="width: 5%; margin-top: 10%;text-align: center;">
+				<div class='circle'></div>
+				<div class='circle'></div>
+				<div class='circle'></div>
+				<div class='circle'></div>
+				<div class='circle'></div>
+			</div>
+		</div>
+		<div id="login" style="width: 100%;height: 100%; position: absolute;z-index: 99;"></div>
+		<div id="window1" class="window" style="background-color: black;width: 100%;height: 100%;position: absolute;z-index: 1;"></div>
+		<div id="desktop"></div>
+	</body>
+</html>
