@@ -4,28 +4,28 @@
 		}
 </style>
 	<div id ="login_cover" style="background-color: rgba(0,0,0,0.4); opacity: 0.5; width: 100%;height: 100%;position: absolute;z-index: inherit;"></div>
-	<div id="login_1" style="font-family: 'microsoft yahei'; color: white;height: 250px;position: absolute;z-index: inherit;left: 20px;bottom: 0px;white-space: nowrap;">
-		<br />
-		<span id="now_time" style="font-size: 88px;font-weight: 300;height: 90px;padding: 0px;border: 0px;"></span>
-		<br />
-		<span id="now_date" style="font-size: 44px;font-weight: 400;height: 45px;padding: 0px;border: 0px;"></span>
+	<div id="login_1" style="font-family: 'microsoft yahei'; color: white;height: 30%;width: 100%; position: absolute;z-index: inherit;bottom: 0%;white-space: nowrap;">
+		<div id="now_time" style="font-size: 88px;font-weight: 300;position: absolute; z-index:inherit;
+									width: 50%;
+									height: 100px;
+									left: 2.5%;
+									bottom: 55%;"></div>
+		<div id="now_date" style="font-size: 44px;font-weight: 400;position: absolute;z-index:inherit;
+									width: 50%;
+									height: 50px;
+									left: 2.5%;
+									bottom: 30%;"></div>
 	</div>
-	<div id="login_2" style="color: white;
-							text-align: center;
-							width: 40%;
-							height: 80%;
-							position: absolute;
-							z-index: inherit;
-							top: 15%;
-							left: 30%;
-							border: 3px red dotted ;
-							bottom: 0px;">
-		<span style="font-size: 50px; position: absolute;z-index: inherit;">
-			登陆菜单加载失败.
+	<div id="login_2" style="color: white;text-align: center;width: 50%;height: 100%;position: absolute;z-index: inherit;top: 0%;left: 25%;border: 0.1px red dotted ;">
+		<img src="img/user_head.svg" style="position: absolute;z-index: inherit;top: 20%;left: 31%;width: 38%;"/>
+		<span style="position: absolute;
+					z-index: inherit;
+					top: 47%;
+					left: 0%;
+					width: 100%;
+					font-size: 50px;">
+			Local User
 		</span>
-		<img src="img/user_head.png" style="width: 40%;
-											opacity: 0.8;
-											"/>
 	</div>
 <script id="login_script">
 	$("#main_css").append( $("#main_login_css").html() );
@@ -68,7 +68,7 @@
 	}
 	function login1_out(){
 		$("#login_1").animate({"bottom": "+=100%" , "opacity": "0.3"} , 300 , function (){
-//			console.log("你单击了#login.");
+//			console.log("你单击了#login,或者键盘事件.");
 			$("#login_1").remove();
 			$("#login_cover").fadeTo(1000,1);
 			$("#login").animate({"background-size": "137%"} , 500);

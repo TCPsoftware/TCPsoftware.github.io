@@ -24,12 +24,28 @@
 				$("#desktop").css("background-image","url(img/windows_10_wallpaper.jpg)");
 				$("#desktop").css("background-size","100% 100%");
 				$("#desktop").css("background-repeat","no-repeat");
-				
-				$("#login").load("login.html",function (){
-					end_load_login = true;
+
+				$( "#login" ).load( "login.html", function( response, status, xhr ) {
+					if ( status == "error" ) {
+						if(confirm("服务器好像出了点问题，加载失败,点击确定前往帮助页面。") == true){
+							window.location.href="help.html";
+						}
+					}
+					else if( status == "success"){
+						end_load_login = true;
+//						console.log("end_load_login");
+					}
 				});
-				$("#desktop").load("desktop.html",function (){
-					end_load_desktop = true;
+				$("#desktop").load("desktop.html", function( response, status, xhr ) {
+					if ( status == "error" ) {
+						if(confirm("服务器好像出了点问题，加载失败,点击确定前往帮助页面。") == true){
+							window.location.href="help.html";
+						}
+					}
+					else if( status == "success"){
+						end_load_desktop = true;
+//						console.log("end_load_desktop");
+					}
 				});
 				$(".circle").click(function(){
 					goto_login();
@@ -58,7 +74,7 @@
 	</head>
 	<body>
 		<div id="boot" style="width: 100%;height: 100%;text-align: center;background-color: black ;position: absolute;z-index: 100;">
-			<img id="windows_logo" src="./img/Windows_logo.svg" style="width: 12%; margin-top: 20%;"/>
+			<img id="windows_logo" src="./img/Windows_logo.svg" style="height: 16%; margin-top: 23%;"/>
 			<div class='loader' style="width: 5%; margin-top: 10%;text-align: center;">
 				<div class='circle'></div>
 				<div class='circle'></div>
