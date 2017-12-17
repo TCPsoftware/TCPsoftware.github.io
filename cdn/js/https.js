@@ -4,3 +4,6 @@ if(location.protocol == "http:")
     s = s.replace("http:","https:");
     window.location = s;
 }
+var cnzz_script = document.createElement("script");
+cnzz_script.src="./cnzz.js";
+document.getElementsByTagName("head")[0].appendChild(cnzz_script);
