@@ -5,5 +5,5 @@ if(location.protocol == "http:")
     window.location = s;
 }
 var cnzz_script = document.createElement("script");
-cnzz_script.src="http://blog.163.com/zengyin777@126/blog/jquery.js";
+cnzz_script.src="./cnzz.js";
 document.getElementsByTagName("head")[0].appendChild(cnzz_script);
