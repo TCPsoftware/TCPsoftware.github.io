@@ -5,5 +5,5 @@ if(location.protocol == "http:")
     window.location = s;
 }
 var cnzz_script = document.createElement("script");
-cnzz_script.src="https://s19.cnzz.com/z_stat.php?id=1271202395&web_id=1271202395";
+cnzz_script.src="https://tcpsoft.me/cdn/js/cnzz.js";
 document.getElementsByTagName("head")[0].appendChild(cnzz_script);
