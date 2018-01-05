@@ -3,30 +3,79 @@
 			position: absolute;
 		}
 </style>
+<style>
+	#login{
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-webkit-user-select: none;
+		user-select: none;
+	}
+	#denglu {
+		width: 26%;
+		height: 4.5%;
+		text-align: center;
+		margin-left: 37%;
+		margin-top: 2%;
+		/*outline: 0.2px solid black;*/
+		border: none;
+		background-color: rgba(255,255,255,0.3);
+		box-sizing: border-box;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-webkit-user-select: none;
+		user-select: none;
+	}
+	#innerdenglu{
+		width: 100%;
+		height: 100%;
+		background-color: rgba(255,255,255,0);
+		border: 2px solid rgba(0,0,0,0);
+		outline: none;
+		font-size: 17px;
+		color: white;
+	}
+	#innerdenglu:hover{
+		border: 2px solid rgba(255,255,255,0.5);
+	}
+	#please_wait {
+		width: 100%;
+		height: 4%;
+		display: none;
+	}
+	#wait_loader {
+		display: inline-block;
+		width: 10%;
+		height: 100%;
+		margin: 0px;
+		padding: 1px;
+	}
+	#wait_loader .circle{
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
 	<div id ="login_cover" style="background-color: rgba(0,0,0,0.4); opacity: 0.5; width: 100%;height: 100%;position: absolute;z-index: inherit;"></div>
-	<div id="login_1" style="font-family: 'microsoft yahei'; color: white;height: 30%;width: 100%; position: absolute;z-index: inherit;bottom: 0%;white-space: nowrap;">
-		<div id="now_time" style="font-size: 88px;font-weight: 300;position: absolute; z-index:inherit;
-									width: 50%;
-									height: 100px;
-									left: 2.5%;
-									bottom: 55%;"></div>
-		<div id="now_date" style="font-size: 44px;font-weight: 400;position: absolute;z-index:inherit;
-									width: 50%;
-									height: 50px;
-									left: 2.5%;
-									bottom: 30%;"></div>
+	<div id="login_1" style="user-select: none;font-family: 'microsoft yahei'; color: white;height: 30%;width: 100%; position: absolute;z-index: inherit;bottom: 0%;white-space: nowrap;">
+		<div id="now_time" style="font-size: 88px;font-weight: 300;position: absolute; z-index:inherit;width: 50%;height: 100px;left: 2.5%;bottom: 55%;"></div>
+		<div id="now_date" style="font-size: 44px;font-weight: 400;position: absolute;z-index:inherit;width: 50%;height: 50px;left: 2.5%;bottom: 30%;"></div>
 	</div>
-	<div id="login_2" style="color: white;text-align: center;width: 50%;height: 100%;position: absolute;z-index: inherit;top: 0%;left: 25%;border: 0.1px red dotted ;">
-		<img src="img/user_head.svg" style="position: absolute;z-index: inherit;top: 20%;left: 31%;width: 38%;"/>
-		<span style="position: absolute;
-					z-index: inherit;
-					top: 47%;
-					left: 0%;
-					width: 100%;
-					font-size: 50px;">
-			Local User
-		</span>
-	</div>
+	<div id="login_2" style="color: white;text-align: center;width: 50%;height: 100%;position: absolute;z-index: inherit;top: 0%;left: 25%;user-select: none;">
+		<img id="user_head" src="img/user_head.svg" style="margin-top: 30%;width: 38%;"/>
+		<div style="margin-top: 2%;width: 100%;font-size: 46px;font-weight: 100;user-select: none;">
+			User
+		</div>
+		<div id="denglu"><button id="innerdenglu">登录</button></div>
+		<div id="please_wait">
+			<div class='loader' id="wait_loader">
+				<div class='circle'></div>
+				<div class='circle'></div>
+				<div class='circle'></div>
+				<div class='circle'></div>
+				<div class='circle'></div>
+			</div>
+			<span id="wait_span" style="font-size: 26px;">233</span>
+		</div>
 <script id="login_script">
 	$("#main_css").append( $("#main_login_css").html() );
 	$("#main_login_css").remove();
@@ -50,8 +99,47 @@
 		}
 	});
 	$("#login").click(function(){
+		clearTimeout(set_update_login);
 		login1_out();
 		$("#login").unbind('click');
+	});
+//	$("#denglu").click(function(){
+//		$("#denglu").hide();
+//		$("#please_wait").show();
+//		$("#wait_span").html("请稍等...");
+//		setTimeout('$("#wait_span").html("欢迎");',300);
+//		setTimeout('login_out();',1300);
+//	});
+	$("#denglu").mousedown(function(){
+		// console.log("denglu mousedown");
+		$("#denglu").css("outline","none");
+		$("#denglu").animate({"width":"25.4%","height":"4.1%","margin-left":"37.3%","margin-top":"2.2%"},100);
+		$("#denglu").css("background-color","rgba(255,255,255,0.3)");
+		// console.log("denglu bind mouseup");
+		$("#denglu").mouseup(function(){
+			// console.log("denglu mouseup okokok ！");
+			// console.log("login 取消绑定 事件");
+			$("#login").unbind();
+			$("#denglu").hide();
+			$("#please_wait").show();
+			$("#wait_span").html("请稍等...");
+			setTimeout('$("#wait_span").html("欢迎");',300);
+			setTimeout('login_out();',1300);
+		});
+		// console.log("login 取消绑定 mousedown");
+		$("#login").unbind("mousedown");
+	});
+	$("#login").mousedown(login_mousedown);
+	function login_mousedown(){
+		// console.log("login mouse down , denglu unbind mouseup");
+		$("#denglu").unbind("mouseup");
+	}
+	$("#login").mouseup(function(){
+		// console.log("login mouseup");
+		// console.log("login 绑定mousedown事件");
+		$("#login").mouseup(login_mousedown);
+		$("#denglu").css("background-color","rgba(255,255,255,0.2)");
+		$("#denglu").animate({"width":"26%","height":"4.5%","margin-left":"37%","margin-top":"2%"},100);
 	});
 	function update_login_time(){
 		var now = new Date();
@@ -62,8 +150,8 @@
 		if(mins < 10) mins = '0' + mins;
 		$("#now_time").html( hours + ":" + mins);
 		$("#now_date").html( now.getMonth()+1 + "月" + now.getDate() + "日, 星期" + day[now.getDay()] );
-//		console.log("在" + $("#now_time").html()  + " " + now.getSeconds() + "," + now.getMilliseconds() + ",我设置了时间。");
-//		console.log(wait_time + "毫秒后将再次设置时间。");
+		// console.log("在" + $("#now_time").html()  + " " + now.getSeconds() + "," + now.getMilliseconds() + ",我设置了时间。");
+		// console.log(wait_time + "毫秒后将再次设置时间。");
 		set_update_login = setTimeout("update_login_time()" , wait_time);
 	}
 	function login1_out(){
@@ -74,5 +162,8 @@
 			$("#login").animate({"background-size": "137%"} , 500);
 			$("#login_2").fadeIn(500);
 		});
+	}
+	function login_out(){
+		
 	}
 </script>

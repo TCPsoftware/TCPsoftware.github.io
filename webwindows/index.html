@@ -18,6 +18,7 @@
 			setTimeout("goto_login()" , 5000);
 			var start_time = new Date();
 			$(document).ready(function load_desktop(){
+				$("body").contextmenu(function(){return false;});
 				$("#login").hide();
 				$("#desktop").hide();
 				
