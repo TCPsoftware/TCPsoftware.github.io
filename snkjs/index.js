@@ -14,7 +14,7 @@ function add (str)
 function turn()
 {
 	//add(" 0 ");
-	window.location.href="http://a1286116211.pc.goabc.cn/vip_a1286116211.html";
+	window.location.href="https://snkjs.github.io";
 	//alert("已跳转");
 }
 function loading()
