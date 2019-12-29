@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="http:&#x2F;&#x2F;www.njlz.net&#x2F;X_USER&#x2F;X_GetLzm.asp?t&#x3D;2333333333333     选择列表     向此链接请求     毫秒刷新                              function loadf(){         &#x2F;&#x2F;$(&quot;#njlzframe&quot;).attr(&amp;apos;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;old&#x2F;test&#x2F;hitNJLZ.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="http:&#x2F;&#x2F;www.njlz.net&#x2F;X_USER&#x2F;X_GetLzm.asp?t&#x3D;2333333333333     选择列表     向此链接请求     毫秒刷新                              function loadf(){         &#x2F;&#x2F;$(&quot;#njlzframe&quot;).attr(&amp;apos;">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-12-29T03:13:02.823Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/old/test/hitNJLZ.html" class="article-date">
+  <time datetime="2019-12-29T03:13:02.823Z" itemprop="datePublished">2019-12-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!doctype>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="../cdn/jquery.js"></script>
+    <!--script>
+      function loadf(){
+        $("#njlzframe").attr('src', $("#njlzframe").attr('src'));
+      }
+      $(document).ready(function(){
+        var t1;
+        
+        $("#start").click(function(){
+          t1 = window.setInterval("loadf()",parseInt($("#num".value)));
+          //$("#njlzframe").attr('src', $("#njlzframe").attr('src'));
+        });
+        $("#end").click(function(){
+          t1 = window.clearInterval(t1);
+          //$("#njlzframe").attr('src', $("#njlzframe").attr('src'));
+        });
+        
+      });
+    </script-->
+  </head>
+  <body>
+    <select id="link_select" style="width:60%;">
+	    <option>http://www.njlz.net/X_USER/X_GetLzm.asp?t=2333333333333</option>
+    </select>选择列表<br />
+    <input type="text" id="link_input" style="width:60%;" 
+	   value="http://www.njlz.net/X_Views_Article.asp?articleid=3786&sortid=36">向此链接请求</input><br />
+    <input type="text" id="numinput" style="width:60%;" value="100">毫秒刷新</input><br />
+    <input type="button" id="start" value="开始"></input>
+    <input type="button" id="end" value="停止"></input><br />
+    <iframe id="njlzframe"
+            src ="http://www.njlz.net/X_Views_Article.asp?articleid=3786&sortid=36" 
+            align="middle"
+            frameborder="1"
+            scrolling="auto"
+            width="90%" height="80%"
+            style="position:absolute;margin-left:5%;margin-top:0%;"
+    ></iframe>
+  </body>
+    <script>
+      function loadf(){
+        //$("#njlzframe").attr('src', $("#njlzframe").attr('src'));
+	$("#njlzframe").attr('src', $("#link_input").val());
+      }
+      $(document).ready(function(){
+        var t1;
+        
+        $("#start").click(function(){
+		//alert($("#numinput").val());
+		//alert(parseInt($("#numinput").val()));
+		t1 = window.setInterval("loadf()",parseInt($("#numinput").val()));//parseInt($("#num").value,10)
+          //$("#njlzframe").attr('src', $("#njlzframe").attr('src'));
+        });
+        $("#end").click(function(){
+          t1 = window.clearInterval(t1);
+          //$("#njlzframe").attr('src', $("#njlzframe").attr('src'));
+        });
+         $("#link_select").change(function()
+	 {
+		 //$("#link_input").val($("#link_select option:selected").text());
+		 $("#link_input").val($("#link_select").val());
+	 });
+      });
+    </script>
+</html>
+<!--备选链接
+http://www.njlz.net/X_USER/X_GetLzm.asp?t=1509959970204//六中登入验证码图片
+-->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/old/test/hitNJLZ.html" data-id="ck4qhdhea000rf8bj4rtu4dc9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/12/29/hello-world-1/">hello-world</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/29/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 tcpsoft<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

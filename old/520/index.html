@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这是网页标题。 		 		 		 		 		 		 		 	  	 		 			 &amp;nbsp; 2017-5-20 				 					 					 				 			 		  		 			 			 			 			 			 			 			 			 		  		 			 				当前正在播放的音乐是： 				12345 6 				78910">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;old&#x2F;520&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="这是网页标题。 		 		 		 		 		 		 		 	  	 		 			 &amp;nbsp; 2017-5-20 				 					 					 				 			 		  		 			 			 			 			 			 			 			 			 		  		 			 				当前正在播放的音乐是： 				12345 6 				78910">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;old&#x2F;520&#x2F;img&#x2F;02.png">
+<meta property="og:updated_time" content="2019-12-29T03:13:02.658Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;old&#x2F;520&#x2F;img&#x2F;02.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/old/520/index.html" class="article-date">
+  <time datetime="2019-12-29T03:13:02.658Z" itemprop="datePublished">2019-12-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<script src="../cdn/https.js"></script>
+		<title>这是网页标题。</title>
+		<link href="css/struct.css" rel="stylesheet" type="text/css">
+		<link href="css/index.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="js/define.js"></script>
+		<script type="text/javascript" src="music/song_name.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/music.js"></script>
+		<script type="text/javascript" src="js/canvas.js"></script>
+	</head>
+
+	<body onload="init(0.5)">
+		<div id="header">
+			<h1><img src="img/02.png"/> &nbsp; 2017-5-20
+				<div id="search–div">
+					<input id="search-button" type="button" onclick = "add_song()/*search()*/"/>
+					<input id="search-input" type="text" placeholder="请输入您想搜索的内容。"/>
+				</div>
+			</h1>
+		</div>
+
+		<div id="nav-top">
+			<span></span>
+			<input class="nav-button" type="button" value="C" onclick="nav()" />
+			<input class="nav-button" type="button" value="C++" onclick="nav()" />
+			<input class="nav-button" type="button" value="VC++" onclick="nav()" />
+			<input class="nav-button" type="button" value="C#" onclick="nav()" />
+			<input class="nav-button" type="button" value="VB" onclick="nav()" />
+			<input class="nav-button" type="button" value="PHP" onclick="nav()" />
+			<input class="nav-button" type="button" value="Java" onclick="nav()" />
+		</div>
+
+		<div id="main">
+			<div id="nav-left">
+				<p>当前正在播放的音乐是：</p>
+				1<br />2<br />3<br />4<br />5<br /> 6
+				<br />7<br />8<br />9<br />10<br />
+			</div>
+
+			<div>
+				<div id="section">
+					<p>。。。</p>
+					<canvas id="paper" onmousemove="mouse_move()" onmouseout="mouse_out()"  width="100" height="80">"你的浏览器不支持HTML5的画布。"</canvas>
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+				</div>
+
+				<div id="select_music_div">
+					<label>选择要<br />播放的音乐：</label><br />
+					<ul id="select_music_ul">
+						<!--input value="yesterday once more" class="select_music_button" type="button" onclick="set_playing_music_mp3('yesterday once more')" /><br />
+						<input value="浙江杭州网易互联网招聘啦" class="select_music_button" type="button" onclick="set_playing_music_mp3('浙江杭州网易互联网招聘啦')" /><br /-->
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="music-value-buttons" draggable="true"><!--width="250" height="400" -->
+			<span>把音量</span><br /><span>设置为</span><br />
+			<input value="0%" class="music-value-button" type="button" onclick="set_music_valume(0.0)" /><br />
+			<input value="10%" class="music-value-button" type="button" onclick="set_music_valume(0.1)" /><br />
+			<input value="20%" class="music-value-button" type="button" onclick="set_music_valume(0.2)" /><br />
+			<input value="30%" class="music-value-button" type="button" onclick="set_music_valume(0.3)" /><br />
+			<input value="40%" class="music-value-button" type="button" onclick="set_music_valume(0.4)" /><br />
+			<input value="50%" class="music-value-button" type="button" onclick="set_music_valume(0.5)" /><br />
+			<input value="60%" class="music-value-button" type="button" onclick="set_music_valume(0.6)" /><br />
+			<input value="70%" class="music-value-button" type="button" onclick="set_music_valume(0.7)" /><br />
+			<input value="80%" class="music-value-button" type="button" onclick="set_music_valume(0.8)" /><br />
+			<input value="90%" class="music-value-button" type="button" onclick="set_music_valume(0.9)" /><br />
+			<input value="100%" class="music-value-button" type="button" onclick="set_music_valume(1.0)" /><br />
+		</div>
+		<audio id="music" controls="controls" loop="loop" autoplay="autoplay" src="">
+			<!--source id="music_sourse_mp3" src="music/ogg/鱼.ogg" type="audio/mp3" /-->
+			<!--未开启ogg格式-->
+			<!--source id="music_sourse_ogg" type="audio/ogg" /-->
+			您的浏览器不支持HTML5。
+		</audio>
+		<div id="footer">
+			&copy 2017 TCPSoft. All rights reserved.<br /> TCPSoft&copy 版权所有，侵权必究。
+			</footer>
+		</div>
+	</body>
+</html>
+<!--
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/old/520/index.html" data-id="ck4qhdhdr0006f8bj5tdp5pkx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/12/29/hello-world-1/">hello-world</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/29/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 tcpsoft<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

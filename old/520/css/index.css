@@ -1,0 +1,84 @@
+#search–div{
+	float: right;
+	width: 340px;
+	margin: 0px;
+	border: 2px solid #000000;
+	margin-right: 20px;
+	padding: 0px;
+	text–align: center;
+}
+#search-input{
+	float: right;
+	width: 300px;
+	height: 40px;
+	font-size: 20px;
+	margin: auto 0px;
+	border: none;
+	padding:0px;
+	text-align: center;
+}
+#nav-top span{
+	font-size: 25px;
+}
+#search-button{
+	float: right;
+	width: 40px;
+	height: 40px;
+	margin: auto 0px;
+	border: none;
+	padding: 0px;
+	background-image: url(../img/search-white.png);
+	background-color: #0c8484;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.nav-button{
+	width: 80px;
+	height: 40px;
+	font-size: 25px;
+	margin: auto 0px;
+	margin: 0%;
+	padding: 0px;
+}
+div.music-value-buttons{
+	/*固定定位 如下：*/
+	position: fixed;
+	bottom: 6.5%;
+	right: -0.5%;
+	
+	/*背景 如下：*/
+	background-color: #ABCDEF;
+	
+	/*边框 距离*/
+	border: #000000 2px solid;	/*边框*/
+	padding: 10px;				/*内边距*/
+	width: 50px;				/*宽度*/
+}
+#select_music_ul{
+	padding: 0px;
+}
+.select_music_button{
+	
+	/*背景 如下：*/
+	background-color: #DDDDDD;
+	
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 96%;
+	height: 25px;
+	border: 0px;
+}
+#music{
+	position: fixed;
+	bottom: 0%;
+	right: 0%;
+}
+label#select_music_div{
+	font-size: 9px;
+}
+input.music-value-button{
+	height: 20px;
+	width: 40px;
+	border: 0px;
+}
