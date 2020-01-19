@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="TCPSoft"/>
+		<meta name="keywords" content="tcp,TCPSoft,TCPSoftware,司南科技社,tcpsoft.me">
+		<meta name="description" content="TCPSoft's personal website , copyright 2017 - 2018">
+		<meta name="generator" content="Notepad++"/>
+		<meta name="revised" content="TCPSoft,16/12/2017"/>
+		<meta name="robots" content="follow"/>
+		<meta name="copyright" content="Copyright (C) 2017 - 2018 TCPSoft. All Rights Reserved." />
+		<!--title>Welcome!</title-->
+		<title>TCP_Website</title>
+		<script src="./cdn/js/https.js"></script>
+		<script src="./cdn/js/jquery.js"></script>
+		<script src="./index.js"></script>
+		<link type="text/css" rel="stylesheet" href="./index.css">
+	</head>
+	<body>
+		<div id="main_div">
+			<img src="./cdn/img/head.jpg" id="img_a" />
+			<h1 style="margin:0px;">Hello!</h1>
+			<p>Here is the website of TCPSoft</p>
+			<div>
+				<p>&nbsp●友情链接：<a href="./520" target="_blank">一个制作比较精良的网页：tcpsoft.me/520</a></p>
+				<p>&nbsp●友情链接：<a href="https://github.com/tcpsoftware" target="_blank">访问我的github</a></p>
+				<p>&nbsp●友情链接：<a href="./snkjs/" target="_blank">内江六中司南科技社官网跳转链接</a></p>
+				<p>&nbsp●友情链接：<a href="http://a1286116211.pc.goabc.cn/vip_a1286116211.html" target="_blank">内江六中司南科技社官网</a></p>
+				<p>&nbsp●友情链接：<a href="http://www.njlz.net/X_Views_Article.asp?articleid=3786&sortid=36" target="_blank">内江六中司南科技社介绍</a></p>
+				<p>&nbsp●友情链接：<a href="http://www.njlz.net/" target="_blank">内江六中官网</a></p>
+				<p>&nbsp●站内链接：<a href="./cdn/index.html" target="_blank">cdn - 内容分发中心</a></p>
+				<p>&nbsp●站内链接：<a href="./game/index.html" target="_blank">games - HTML5游戏</a></p>
+				<p>&nbsp●站内链接：<a href="./d/index.html" target="_blank">司南科技社 网页活动制作页面</a></p>
+				<br />
+			</div>
+		</div>
+		<div id="footer" align="center" style="width:80%;height:8%;background-color: #E0E0E0;position:absolute;margin-left:10%;bottom:1%;">
+			<a href="https://github.com/tcpsoftware" title="My GitHub" target="_blank" style="width:25px;height:25px;float:left;margin-left:25px;margin-top:25px;" align="center"><img style="width:25px;height:25px;" src="./cdn/img/github.png"/></a>
+			<span id="copyright">Copyright © 2016 - 2017 TCPSoftware.github.io </span><br />
+			<span style="bottom:0px;" class="uptime"></span>
+			<script>
+				function startUptimeUpdate()//code powered by Elepover & Kruin Tian
+				{
+				    var start_time = '2017-10-04 00:00:00';
+				    var times = new Date().getTime() - new Date(start_time).getTime();
+				    times = Math.floor(times/1000);
+				    var years = Math.floor( times/(3600*24*365) );
+				    times %= 3600*24*365;
+				    var days = Math.floor( times/(3600*24) );
+				    times %= 3600*24;
+				    var hours = Math.floor( times/3600 );
+				    times %= 3600;
+				    var minutes = Math.floor( times/60 );
+				    times %= 60;
+				    var seconds = Math.floor( times/1 );
+				    $(".uptime").html("本站已运行" + years +"年" + days + "天" + hours + "小时" + minutes + "分" + seconds + "秒");
+				    setTimeout(startUptimeUpdate, 1000);
+				}
+				startUptimeUpdate();
+			</script>
+		</div>
+	</body>
+</html>

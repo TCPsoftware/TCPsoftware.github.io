@@ -1,0 +1,71 @@
+<!doctype>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="../cdn/jquery.js"></script>
+    <!--script>
+      function loadf(){
+        $("#njlzframe").attr('src', $("#njlzframe").attr('src'));
+      }
+      $(document).ready(function(){
+        var t1;
+        
+        $("#start").click(function(){
+          t1 = window.setInterval("loadf()",parseInt($("#num".value)));
+          //$("#njlzframe").attr('src', $("#njlzframe").attr('src'));
+        });
+        $("#end").click(function(){
+          t1 = window.clearInterval(t1);
+          //$("#njlzframe").attr('src', $("#njlzframe").attr('src'));
+        });
+        
+      });
+    </script-->
+  </head>
+  <body>
+    <select id="link_select" style="width:60%;">
+	    <option>http://www.njlz.net/X_USER/X_GetLzm.asp?t=2333333333333</option>
+    </select>选择列表<br />
+    <input type="text" id="link_input" style="width:60%;" 
+	   value="http://www.njlz.net/X_Views_Article.asp?articleid=3786&sortid=36">向此链接请求</input><br />
+    <input type="text" id="numinput" style="width:60%;" value="100">毫秒刷新</input><br />
+    <input type="button" id="start" value="开始"></input>
+    <input type="button" id="end" value="停止"></input><br />
+    <iframe id="njlzframe"
+            src ="http://www.njlz.net/X_Views_Article.asp?articleid=3786&sortid=36" 
+            align="middle"
+            frameborder="1"
+            scrolling="auto"
+            width="90%" height="80%"
+            style="position:absolute;margin-left:5%;margin-top:0%;"
+    ></iframe>
+  </body>
+    <script>
+      function loadf(){
+        //$("#njlzframe").attr('src', $("#njlzframe").attr('src'));
+	$("#njlzframe").attr('src', $("#link_input").val());
+      }
+      $(document).ready(function(){
+        var t1;
+        
+        $("#start").click(function(){
+		//alert($("#numinput").val());
+		//alert(parseInt($("#numinput").val()));
+		t1 = window.setInterval("loadf()",parseInt($("#numinput").val()));//parseInt($("#num").value,10)
+          //$("#njlzframe").attr('src', $("#njlzframe").attr('src'));
+        });
+        $("#end").click(function(){
+          t1 = window.clearInterval(t1);
+          //$("#njlzframe").attr('src', $("#njlzframe").attr('src'));
+        });
+         $("#link_select").change(function()
+	 {
+		 //$("#link_input").val($("#link_select option:selected").text());
+		 $("#link_input").val($("#link_select").val());
+	 });
+      });
+    </script>
+</html>
+<!--备选链接
+http://www.njlz.net/X_USER/X_GetLzm.asp?t=1509959970204//六中登入验证码图片
+-->
