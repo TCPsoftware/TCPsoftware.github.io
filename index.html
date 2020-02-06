@@ -133,9 +133,29 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
 
   </li>
   </ul>
@@ -160,6 +180,197 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.tcpsoft.app/2020/02/06/gdb-edit-memory/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="tcpsoft">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, I'm Cortana.">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/06/gdb-edit-memory/" class="post-title-link" itemprop="url">gdb-edit-memory</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-06 17:11:36 / 修改时间：17:15:21" itemprop="dateCreated datePublished" datetime="2020-02-06T17:11:36+08:00">2020-02-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.tcpsoft.app/2020/02/06/gdb-check-memory/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="tcpsoft">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, I'm Cortana.">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/06/gdb-check-memory/" class="post-title-link" itemprop="url">gdb的使用</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-06 16:15:34 / 修改时间：17:30:23" itemprop="dateCreated datePublished" datetime="2020-02-06T16:15:34+08:00">2020-02-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>最近用gdb比较多，翻阅各种使用方法，还是记不住某些用法，就整个备忘录罢。</p>
+<h1 id="gdb-查看一些有用的东西"><a href="#gdb-查看一些有用的东西" class="headerlink" title="gdb 查看一些有用的东西"></a>gdb 查看一些有用的东西</h1><p>一、用gdb查看内存</p>
+<p>格式: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">x &#x2F;nfu location</span></pre></td></tr></table></figure>
+
+<p>说明<br>x 是 examine 的缩写</p>
+<p>n表示要显示的内存单元的个数</p>
+<p>f表示显示方式, 可取如下值<br>x 按十六进制格式显示变量。<br>d 按十进制格式显示变量。<br>u 按十进制格式显示无符号整型。<br>o 按八进制格式显示变量。<br>t 按二进制格式显示变量。<br>a 按十六进制格式显示变量。<br>i 指令地址格式<br>c 按字符格式显示变量。<br>f 按浮点数格式显示变量。</p>
+<p>u表示一个地址单元的长度<br>b表示单字节，<br>h表示双字节，<br>w表示四字节，<br>g表示八字节</p>
+<p>Format letters are o(octal), x(hex), d(decimal), u(unsigneddecimal),<br>t(binary), f(float), a(address), i(instruction), c(char) ands(string).<br>Size letters are b(byte), h(halfword), w(word), g(giant, 8bytes)</p>
+<p>举例<br>x/3uh buf<br>表示从内存地址buf读取内容，<br>h表示以双字节为一个单位，<br>3表示三个单位，<br>u表示按十六进制显示</p>
+<p>例子：</p>
+<p>n是个局部变量</p>
+<p>Breakpoint 1, main (argc=1,argv=0xbffff3a4) at calc.c:7<br>7       int n = atoi(argv[1]);<br>(gdb) print &amp;n<br>$1 = (int *) 0xbffff2ec<br>(gdb) x 0xbffff2ec<br>0xbffff2ec:   0x00282ff4<br>(gdb) print * (int *) 0xbffff2ec<br>$2 = 2633716<br>(gdb) x /4xw 0xbffff2ec<br>0xbffff2ec:   0x00282ff4   0x080484e0   0x00000000   0xbffff378<br>(gdb) x /4dw 0xbffff2ec<br>0xbffff2ec:   2633716   134513888   0   -1073745032<br>(gdb)</p>
+<p>二、gdb设置条件断点：</p>
+<p>常用方法：先在想要设置条件断点的文件中随便设置一个断点，运行到该断点后，设置条件断点： break line if a ==value</p>
+<p>参考链接：<a href="https://blog.csdn.net/chun_1959/article/details/45841113" target="_blank" rel="noopener">https://blog.csdn.net/chun_1959/article/details/45841113</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.tcpsoft.app/2020/02/06/gdb-intro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="tcpsoft">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, I'm Cortana.">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/06/gdb-intro/" class="post-title-link" itemprop="url">gdb-intro</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-06 16:12:18 / 修改时间：17:12:51" itemprop="dateCreated datePublished" datetime="2020-02-06T16:12:18+08:00">2020-02-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -345,12 +556,21 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
   </nav>
 </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
 
 
 
