@@ -1,4 +1,4 @@
-window.onload=loading();
+﻿window.onload=loading();
 function $$(id)
 {
 	return document.getElementById(id);

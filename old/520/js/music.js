@@ -1,4 +1,4 @@
-function set_music_valume(val)
+﻿function set_music_valume(val)
 {
 	//var userName="xiaoming";
 	//alert("已加载完页面。"); 
