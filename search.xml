@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>hexo大换血</title>
+    <url>/2020/02/06/hexo-changes/</url>
+    <content><![CDATA[<p>今天闲来无事，折腾博客（其实是写 gdb 结果得更新一下 hexo ），然后这个博客就大换血了。</p>
+<p>我干了啥呢：</p>
+<hr>
+<h2 id="Typora-的图片存放路径"><a href="#Typora-的图片存放路径" class="headerlink" title="Typora 的图片存放路径"></a>Typora 的图片存放路径</h2><p>Typora 的图片存放路径和文章图片 URL 的问题</p>
+<ul>
+<li>参考链接1： <a href="https://blog.csdn.net/qq_43096199/article/details/90642252" target="_blank" rel="noopener">Typora设置图片存储路径_momorn博客-CSDN博客</a></li>
+<li>参考链接2：<a href="https://cn.bing.com/search?q=typora+设置图片目录&qs=n&form=QBRE&sp=-1&pq=typora+设置tu' target="_blank" rel="noopener"pian'mu'lu&sc=0-22&sk=&cvid=A0959CE1255444B0B3F7E20041DC5A24">typora 设置图片目录 - 国内版 Bing</a></li>
+</ul>
+<h2 id="hexo-添加主页页面，tags等"><a href="#hexo-添加主页页面，tags等" class="headerlink" title="hexo 添加主页页面，tags等"></a>hexo 添加主页页面，tags等</h2><p>hexo 主页上的 tags、categories、archive、about 等页面，手动添加。</p>
+<ul>
+<li>参考链接1： <a href="https://cn.bing.com/search?q=hexo+next+tag" target="_blank" rel="noopener">hexo next tag - 国内版 Bing</a></li>
+<li>参考链接2： <a href="https://www.jianshu.com/p/3d2e7b3ec182" target="_blank" rel="noopener">hexo+next+GitHub搭建静态博客(三)-添加tags和categories - 简书</a></li>
+<li>参考链接3： <a href="https://blog.csdn.net/lijiajun95/article/details/53862528" target="_blank" rel="noopener">最详细的Hexo Next主题配置教程_Web全栈笔记-CSDN博客</a></li>
+</ul>
+<h2 id="hexo-打赏"><a href="#hexo-打赏" class="headerlink" title="hexo 打赏"></a>hexo 打赏</h2><p>设置 next 主题配置下的 reward_settings，但和文章中说的有些小不同</p>
+<ul>
+<li>参考链接1： <a href="https://cn.bing.com/search?q=next+打赏" target="_blank" rel="noopener">next 打赏 - 国内版 Bing</a></li>
+<li>参考链接2： <a href="https://blog.csdn.net/lcyaiym/article/details/76796545" target="_blank" rel="noopener">hexo的next主题打赏_linux,hexo,next_lcyaiym的专栏-CSDN博客</a></li>
+<li>如何生成二维码，略</li>
+</ul>
+<h2 id="hexo-添加版权"><a href="#hexo-添加版权" class="headerlink" title="hexo 添加版权"></a>hexo 添加版权</h2><p>这里我遵循<a href="https://creativecommons.org/licenses/by/4.0/legalcode.zh-Hans" target="_blank" rel="noopener">知识共享(Creative Commons) 署名 4.0 协议国际版</a>，可以在next主题的 config.yml 里面的 creative_commons 配置</p>
+<ul>
+<li>参考链接1： <a href="https://creativecommons.org/licenses/by/4.0/legalcode.zh-Hans" target="_blank" rel="noopener">知识共享(Creative Commons) 署名 4.0 协议国际版</a></li>
+</ul>
+<h2 id="解决了显示混乱问题"><a href="#解决了显示混乱问题" class="headerlink" title="解决了显示混乱问题"></a>解决了显示混乱问题</h2><p>我之前的博客迁移，导致了显示混乱问题（即我已有 css 而 hexo 又给我加上一套主题的显示方案），此处用 hexo 的 skip_render 设置即可，不过要匹配文件文件夹还是有点小坑的 [坑爹预警]</p>
+<ul>
+<li>参考链接1： <a href="https://cn.bing.com/search?q=skip_render" target="_blank" rel="noopener">skip_render - 国内版 Bing</a></li>
+<li>参考链接2（有坑）：<a href="https://www.maoxuner.cn/2017/03/10/hexo-skip-render.html" target="_blank" rel="noopener">Hexo渲染时排除部分文件或目录 - 二次元の技术宅</a></li>
+<li>参考链接3： <a href="https://github.com/hexojs/hexo/issues/1146" target="_blank" rel="noopener">如何不处理source目录下某个子目录的所有文件，仅仅是将其copy到public目录中对应目录？ · Issue #1146 · hexojs/hexo  Github.com</a></li>
+<li>参考链接4： <a href="https://github.com/hexojs/hexo/issues/1333" target="_blank" rel="noopener">无论skip_render如何设置都无法跳过source目录下的某个js文件目录，生成出错 · Issue #1333 · hexojs/hexo  Github.com</a></li>
+</ul>
+<h2 id="博客-CDN-加速"><a href="#博客-CDN-加速" class="headerlink" title="博客 CDN 加速"></a>博客 CDN 加速</h2><p>看了百度云加速，知道创宇云加速，cloud flare，暂时还是不弄了，现阶段博客是基于 GitHub Pages + Hexo ，图片使用腾讯云存储。后期可能考虑加 CDN 或整站迁移腾讯云存储。</p>
+<h2 id="sitemap-功能"><a href="#sitemap-功能" class="headerlink" title="sitemap 功能"></a>sitemap 功能</h2><p>hexo、next 主题的 sitemap 功能，帮助搜索引擎收录站点（不用修改 hexo 配置文件）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm install hexo-generator-baidu-sitemap --save</span></pre></td></tr></table></figure>
+
+<ul>
+<li>参考链接1： <a href="https://cn.bing.com/search?q=hexo+next+sitemap" target="_blank" rel="noopener">hexo next sitemap - 国内版 Bing</a></li>
+<li>参考链接2： <a href="https://www.jianshu.com/p/ab44b916a8b6" target="_blank" rel="noopener">Hexo 博客添加百度sitemap - 简书</a></li>
+<li>参考链接3： <a href="https://www.jianshu.com/p/9c2d6db2f855" target="_blank" rel="noopener">hexo(3)-生成sitemap站点地图 - 简书</a></li>
+</ul>
+<h2 id="RSS-订阅功能"><a href="#RSS-订阅功能" class="headerlink" title="RSS 订阅功能"></a>RSS 订阅功能</h2><p>（不用修改 hexo 配置文件）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span></pre></td></tr></table></figure>
+
+<ul>
+<li>参考链接1： <a href="https://blog.csdn.net/u010820857/article/details/82086232" target="_blank" rel="noopener">hexo 安装 sitemap 和 <strong>rss</strong>_hexo 安装 sitemap 和 <strong>rss</strong>,hexo,hexo sitemap _hiekay的博客-CSDN博客</a></li>
+</ul>
+<h2 id="站点搜索功能"><a href="#站点搜索功能" class="headerlink" title="站点搜索功能"></a>站点搜索功能</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span></pre></td></tr></table></figure>
+
+<ul>
+<li>参考链接1： <a href="https://www.cnblogs.com/syd192/p/6074323.html" target="_blank" rel="noopener">Hexo的Next主题配置 - syd192 - 博客园</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>gdb-edit-memory</title>
+    <url>/2020/02/06/gdb-edit-memory/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>gdb-2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>gdb的使用</title>
+    <url>/2020/02/06/gdb-check-memory/</url>
+    <content><![CDATA[<p>最近用gdb比较多，翻阅各种使用方法，还是记不住某些用法，就整个备忘录罢。</p>
+<h1 id="gdb-查看一些有用的东西"><a href="#gdb-查看一些有用的东西" class="headerlink" title="gdb 查看一些有用的东西"></a>gdb 查看一些有用的东西</h1><p>一、用gdb查看内存</p>
+<p>格式: </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">x &#x2F;nfu location</span></pre></td></tr></table></figure>
+
+<p>说明<br>x 是 examine 的缩写</p>
+<p>n表示要显示的内存单元的个数</p>
+<p>f表示显示方式, 可取如下值<br>x 按十六进制格式显示变量。<br>d 按十进制格式显示变量。<br>u 按十进制格式显示无符号整型。<br>o 按八进制格式显示变量。<br>t 按二进制格式显示变量。<br>a 按十六进制格式显示变量。<br>i 指令地址格式<br>c 按字符格式显示变量。<br>f 按浮点数格式显示变量。</p>
+<p>u表示一个地址单元的长度<br>b表示单字节，<br>h表示双字节，<br>w表示四字节，<br>g表示八字节</p>
+<p>Format letters are o(octal), x(hex), d(decimal), u(unsigneddecimal),<br>t(binary), f(float), a(address), i(instruction), c(char) ands(string).<br>Size letters are b(byte), h(halfword), w(word), g(giant, 8bytes)</p>
+<p>举例<br>x/3uh buf<br>表示从内存地址buf读取内容，<br>h表示以双字节为一个单位，<br>3表示三个单位，<br>u表示按十六进制显示</p>
+<p>例子：</p>
+<p>n是个局部变量</p>
+<p>Breakpoint 1, main (argc=1,argv=0xbffff3a4) at calc.c:7<br>7       int n = atoi(argv[1]);<br>(gdb) print &amp;n<br>$1 = (int *) 0xbffff2ec<br>(gdb) x 0xbffff2ec<br>0xbffff2ec:   0x00282ff4<br>(gdb) print * (int *) 0xbffff2ec<br>$2 = 2633716<br>(gdb) x /4xw 0xbffff2ec<br>0xbffff2ec:   0x00282ff4   0x080484e0   0x00000000   0xbffff378<br>(gdb) x /4dw 0xbffff2ec<br>0xbffff2ec:   2633716   134513888   0   -1073745032<br>(gdb)</p>
+<p>二、gdb设置条件断点：</p>
+<p>常用方法：先在想要设置条件断点的文件中随便设置一个断点，运行到该断点后，设置条件断点： break line if a ==value</p>
+<p>参考链接：<a href="https://blog.csdn.net/chun_1959/article/details/45841113" target="_blank" rel="noopener">https://blog.csdn.net/chun_1959/article/details/45841113</a></p>
+]]></content>
+      <tags>
+        <tag>gdb</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>gdb-intro</title>
+    <url>/2020/02/06/gdb-intro/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>gdb-0</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>20200119</title>
+    <url>/2020/01/19/20200119/</url>
+    <content><![CDATA[<p>我的hexo新提交</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hi, I&#39;m Cortana.</title>
+    <url>/2019/12/29/Hi,%20I&#39;m%20Cortana/</url>
+    <content><![CDATA[<p>2020即将来临了，作为群贫困人口，在2019年再来看各位群友最后一面</p>
+]]></content>
+  </entry>
+</search>
