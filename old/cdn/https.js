@@ -1,4 +1,4 @@
-if(location.protocol == "http:")
+/*if(location.protocol == "http:")
 {
     var s = location.href;
     s = s.substring(4);
@@ -6,3 +6,4 @@ if(location.protocol == "http:")
 //    s = s.replace("http:","https:");
     window.location = s;
 }
+*/

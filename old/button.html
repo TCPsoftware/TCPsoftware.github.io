@@ -1,0 +1,31 @@
+<style>
+input{
+width:100px;
+height:100px;
+background-color:skyblue;
+}
+</style>
+<body>
+	<div id=body><input id="bt1" type="button"><input id="bt3" type="button"></div>
+	<script>
+		input=document.getElementsByTagName("input");
+		for(i=0;i<input.length;i++){
+			ele=input[i];
+			ele.onmouseover=over;
+		}
+		function over(){
+			bt2=document.createElement("input");
+			bt2.setAttribute("id","bt2");
+			bt2.setAttribute("type","button");
+
+			body=document.getElementById("body");
+			body.appendChild(bt2);
+			
+			input=document.getElementsByTagName("input");
+			for(i=0;i<input.length;i++){
+				ele=input[i];
+				ele.onmouseover=over;
+			}
+		}
+	</script>
+</body>

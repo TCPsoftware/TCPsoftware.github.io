@@ -1,0 +1,24 @@
+$(document).ready(function() {
+	$(".attachNew").each(function(index, element) {
+        var element = $(this).children("span:first");
+        var objectId = $(element).attr("data");
+		var url = "/ueditorupload/read?objectId=" + objectId;
+		$(element).parent().click(function() {
+			window.open(url, '_blank').location;
+		});
+	});
+    $(".attachNew img").unbind("click")
+	$(".attachUrl span").each(function(index, element) {
+		var url = $(this).attr("data");
+		$(this).parent().click(function() {
+			window.open(url, '_blank').location;
+		});
+	});
+
+	$(".attachZT span").each(function(index, element) {
+		var url = $(this).attr("data");
+		$(this).parent().click(function() {
+			window.open(url, '_blank').location;
+		});
+	});
+});
