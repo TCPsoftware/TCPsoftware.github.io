@@ -156,11 +156,6 @@
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
-        <li class="menu-item menu-item-rss-订阅">
-
-    <a href="/atom.xml" rel="section"><i class="fa fa-fw fa-rss"></i>rss 订阅</a>
-
-  </li>
         <li class="menu-item menu-item-旧站点">
 
     <a href="/old/" rel="section"><i class="fa fa-fw fa-calendar"></i>旧站点</a>
@@ -265,6 +260,7 @@
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -454,6 +450,26 @@
   
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '27b801a2310aad05c413',
+      clientSecret: '4fa6679d732aa2dbdb6c1c11ae1e8eb5bddfd7eb',
+      repo: 'tcpsoftware.github.io',
+      owner: 'tcpsoftware',
+      admin: ['tcpsoftware'],
+      id: 'a676607444a8bc8b150c9a3aff884e61',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>
