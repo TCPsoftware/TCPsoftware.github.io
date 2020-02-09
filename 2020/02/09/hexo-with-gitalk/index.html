@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://blog.tcpsoft.app').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="今日看到博客的评论功能，就想整一个，本以为跟前两天添加hexo插件查不多，结果，，爬坑，又掉坑，爬坑又掉坑……">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo + gitalk，满满的都是坑。">
+<meta property="og:url" content="http://blog.tcpsoft.app/2020/02/09/hexo-with-gitalk/index.html">
+<meta property="og:site_name" content="Hi, I&#39;m Cortana.">
+<meta property="og:description" content="今日看到博客的评论功能，就想整一个，本以为跟前两天添加hexo插件查不多，结果，，爬坑，又掉坑，爬坑又掉坑……">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://blog.tcpsoft.app/2020/02/blog-images/2020/hexo-with-gitalk/github-config.png">
+<meta property="og:image" content="http://blog.tcpsoft.app/2020/02/blog-images/2020/hexo-with-gitalk/image-20200209140447713.png">
+<meta property="og:image" content="http://blog.tcpsoft.app/2020/02/blog-images/2020/hexo-with-gitalk/issue.png">
+<meta property="article:published_time" content="2020-02-09T03:20:29.000Z">
+<meta property="article:modified_time" content="2020-02-09T06:27:43.123Z">
+<meta property="article:author" content="tcpsoft">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.tcpsoft.app/2020/02/blog-images/2020/hexo-with-gitalk/github-config.png">
+
+<link rel="canonical" href="http://blog.tcpsoft.app/2020/02/09/hexo-with-gitalk/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>hexo + gitalk，满满的都是坑。 | Hi, I'm Cortana.</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Hi, I'm Cortana." type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hi, I'm Cortana.</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-旧站点">
+
+    <a href="/old/" rel="section"><i class="fa fa-fw fa-calendar"></i>旧站点</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.tcpsoft.app/2020/02/09/hexo-with-gitalk/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="tcpsoft">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, I'm Cortana.">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          hexo + gitalk，满满的都是坑。
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-09 11:20:29 / 修改时间：14:27:43" itemprop="dateCreated datePublished" datetime="2020-02-09T11:20:29+08:00">2020-02-09</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>今日看到博客的评论功能，就想整一个，本以为跟前两天添加hexo插件查不多，结果，，爬坑，又掉坑，爬坑又掉坑……<a id="more"></a></p>
+<hr>
+<h3 id="安装gitalk"><a href="#安装gitalk" class="headerlink" title="安装gitalk"></a>安装gitalk</h3><p>安装gitalk没什么，有很多博文有介绍，这里贴一篇就好，修改主题配置的部分很精简，我喜欢。</p>
+<ul>
+<li>参考链接1： <a href="https://yunhao.space/2018/07/04/hexo-next-gitalk-comments-tutor/">Hexo NexT 添加 Gitalk评论功能 | Andylmns</a></li>
+</ul>
+<p>注意域名是自己的 github pages 或者自定义域名就好。</p>
+<p>注意每一次发布新文章之后都需要去博客登陆刷新一下评论，插件会在你的 repo 里面新建 issue。</p>
+<p>我之前有篇文章叫《<a href="https://blog.tcpsoft.app/2019/12/29/Hi-Im-Cortana/">Hi, I’m Cortana.</a>》，我点开这个做实验看能不能使用评论功能，原地址是</p>
+<pre>https://blog.tcpsoft.app/2019/12/29/Hi,%20I'm%20Cortana/</pre>
+<hr>
+<h3 id="艰难爬坑"><a href="#艰难爬坑" class="headerlink" title="艰难爬坑"></a>艰难爬坑</h3><p><strong>[ 以下多链接警告，请选择性阅读 ]</strong></p>
+<h4 id="报错：redirect-uri-mismatch"><a href="#报错：redirect-uri-mismatch" class="headerlink" title="报错：redirect_uri_mismatch"></a>报错：redirect_uri_mismatch</h4><ul>
+<li>链接1： <a href="https://blog.csdn.net/liu1340308350/article/details/86304026#commentsedit">gitalk报错问题_liuurick的博客-CSDN博客</a></li>
+</ul>
+<p>看了感觉也没啥用，根据指示转到下面这篇，写的比较详细，但是是没有解决问题</p>
+<ul>
+<li>链接2： <a href="https://blog.csdn.net/w47_csdn/article/details/88858343">[gitalk] 解决配置gitalk插件后初始化登录时跳转回首页_Bo的博客-CSDN博客</a></li>
+</ul>
+<p>我看了看我的配置，根据前面的指导写的最初的配置是这样子的：</p>
+<p><img src="../../blog-images/2020/hexo-with-gitalk/github-config.png" alt="github-config"></p>
+<h4 id="http-https-的问题？"><a href="#http-https-的问题？" class="headerlink" title="http https 的问题？"></a>http https 的问题？</h4><p>又看了看我的请求 url，确实是都是 https，没有问题啊</p>
+<p>后来又找到这个 gitalk issue 115 和 162，貌似是个很“权威”的解答</p>
+<ul>
+<li>链接3： <a href="https://github.com/gitalk/gitalk/issues/115#event-1539518527">hexo next 主题配置 gitalk 评论后无法初始化创建 issue · Issue #115 · gitalk/gitalk</a></li>
+<li>链接4： <a href="https://github.com/gitalk/gitalk/issues/162">登录报错/?error=redirect_uri_mismatch&amp; · Issue #162 · gitalk/gitalk</a></li>
+</ul>
+<h4 id="加-？"><a href="#加-？" class="headerlink" title="加 / ？"></a>加 / ？</h4><p>好像回调地址里面要加个 <code>/</code> ？加就加吧，然后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Authorization callback URL:</span><br><span class="line">https:&#x2F;&#x2F;blog.tcpsoft.app&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>也不行。仍然跳回主页，并提示 redirect_uri_mismatch </p>
+<p>后来我又尝试了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;tcpsoftware.github.io</span><br><span class="line">https:&#x2F;&#x2F;tcpsoftware.github.io</span><br><span class="line">http:&#x2F;&#x2F;tcpsoftware.github.io&#x2F;</span><br><span class="line">https:&#x2F;&#x2F;tcpsoftware.github.io&#x2F;</span><br><span class="line">http:&#x2F;&#x2F;blog.tcpsoft.app</span><br><span class="line">https:&#x2F;&#x2F;blog.tcpsoft.app</span><br><span class="line">http:&#x2F;&#x2F;blog.tcpsoft.app&#x2F;</span><br><span class="line">https:&#x2F;&#x2F;blog.tcpsoft.app&#x2F;</span><br><span class="line">tcpsoftware.github.io</span><br><span class="line">tcpsoftware.github.io</span><br><span class="line">blog.tcpsoft.app</span><br><span class="line">blog.tcpsoft.app</span><br></pre></td></tr></table></figure>
+
+<p>心累</p>
+<p>然后忽然在 issue 162 翻到这个？</p>
+<p><img src="../../blog-images/2020/hexo-with-gitalk/image-20200209140447713.png" alt="image-20200209140447713"></p>
+<h4 id="中文？？！"><a href="#中文？？！" class="headerlink" title="中文？？！"></a>中文？？！</h4><p>🤨</p>
+<p>🤔</p>
+<p> 回头看了看我的 url，貌似并没有中文。</p>
+<pre>https://blog.tcpsoft.app/2019/12/29/Hi,%20I'm%20Cortana/</pre>
+<p>url 编码导致的问题？</p>
+<p>我尝试换一个文章，在上一篇 hexo 里，可了！！它的链接是，</p>
+<pre>https://blog.tcpsoft.app/2020/02/06/hexo-changes/</pre>
+<p>呐，没有 url 编码，没有中文</p>
+<p>🤔</p>
+<p><img src="../../blog-images/2020/hexo-with-gitalk/issue.png" alt="issue"></p>
+<h4 id="编码问题。"><a href="#编码问题。" class="headerlink" title="编码问题。"></a>编码问题。</h4><p>url 里面不要有特殊符号，刚才链接里面完美命中（而且链接看起来很丑可读性很差）</p>
+<p>有特殊符号不能被匹配规则匹配到（像我刚才链接里面的 <code>, &#39;</code>）</p>
+<hr>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p><code>hexo new passage_name</code></p>
+<p>新建文章的时候想好一个优雅的名字，如果遇到符号或者多单词，可以考虑用：</p>
+<h5 id="驼峰式命名法（小驼峰命名法）"><a href="#驼峰式命名法（小驼峰命名法）" class="headerlink" title="驼峰式命名法（小驼峰命名法）"></a>驼峰式命名法（小驼峰命名法）</h5><p><code>hexo new helloImCortana</code></p>
+<h5 id="帕斯卡命名法（大驼峰命名法）"><a href="#帕斯卡命名法（大驼峰命名法）" class="headerlink" title="帕斯卡命名法（大驼峰命名法）"></a>帕斯卡命名法（大驼峰命名法）</h5><p><code>hexo new HelloImCortana</code></p>
+<h5 id="匈牙利命名法（本文无关）"><a href="#匈牙利命名法（本文无关）" class="headerlink" title="匈牙利命名法（本文无关）"></a>匈牙利命名法（本文无关）</h5><p><code>hexo new sHelloImCortana</code></p>
+<p>变量类型+变量名（逃）</p>
+<h5 id="下划线命名法"><a href="#下划线命名法" class="headerlink" title="下划线命名法"></a>下划线命名法</h5><p><code>hexo new hello_Im_Cortana</code></p>
+<h5 id="短横线分隔（Github风格-编程必报错）"><a href="#短横线分隔（Github风格-编程必报错）" class="headerlink" title="短横线分隔（Github风格 编程必报错）"></a>短横线分隔（Github风格 编程必报错）</h5><p><code>hexo new hello-Im-Cortana</code></p>
+<hr>
+<h3 id="再说一句"><a href="#再说一句" class="headerlink" title="再说一句"></a>再说一句</h3><p>（其实上面尝试的那一大堆链接，除了最后四个没有 http https 协议的之外，其他的都是可以的）</p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\02\06\hexo-changes\" rel="bookmark">hexo大换血</a></div>
+    </li>
+  </ul>
+
+        <div class="reward-container">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/blog-images/static/alipay.png" alt="tcpsoft 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>tcpsoft
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://blog.tcpsoft.app/2020/02/09/hexo-with-gitalk/" title="hexo + gitalk，满满的都是坑。">http://blog.tcpsoft.app/2020/02/09/hexo-with-gitalk/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/06/hexo-changes/" rel="prev" title="hexo大换血">
+      <i class="fa fa-chevron-left"></i> hexo大换血
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装gitalk"><span class="nav-number">1.</span> <span class="nav-text">安装gitalk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#艰难爬坑"><span class="nav-number">2.</span> <span class="nav-text">艰难爬坑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#报错：redirect-uri-mismatch"><span class="nav-number">2.1.</span> <span class="nav-text">报错：redirect_uri_mismatch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#http-https-的问题？"><span class="nav-number">2.2.</span> <span class="nav-text">http https 的问题？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加-？"><span class="nav-number">2.3.</span> <span class="nav-text">加 &#x2F; ？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中文？？！"><span class="nav-number">2.4.</span> <span class="nav-text">中文？？！</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编码问题。"><span class="nav-number">2.5.</span> <span class="nav-text">编码问题。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">3.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#驼峰式命名法（小驼峰命名法）"><span class="nav-number">3.0.1.</span> <span class="nav-text">驼峰式命名法（小驼峰命名法）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#帕斯卡命名法（大驼峰命名法）"><span class="nav-number">3.0.2.</span> <span class="nav-text">帕斯卡命名法（大驼峰命名法）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#匈牙利命名法（本文无关）"><span class="nav-number">3.0.3.</span> <span class="nav-text">匈牙利命名法（本文无关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#下划线命名法"><span class="nav-number">3.0.4.</span> <span class="nav-text">下划线命名法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#短横线分隔（Github风格-编程必报错）"><span class="nav-number">3.0.5.</span> <span class="nav-text">短横线分隔（Github风格 编程必报错）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#再说一句"><span class="nav-number">4.</span> <span class="nav-text">再说一句</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">tcpsoft</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/tcpsoftware" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;tcpsoftware" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tcpsoft</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">5k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">4 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.6.0
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+<script src="/js/diy.js"></script>
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '27b801a2310aad05c413',
+      clientSecret: '4fa6679d732aa2dbdb6c1c11ae1e8eb5bddfd7eb',
+      repo: 'tcpsoftware.github.io',
+      owner: 'tcpsoftware',
+      admin: ['tcpsoftware'],
+      id: '22165e82edcdc4dbb7692d475a2a31f5',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
