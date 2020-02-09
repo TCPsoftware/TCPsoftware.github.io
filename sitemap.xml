@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.tcpsoft.app/2019/12/29/Hi-Im-Cortana/</loc>
+    
+    <lastmod>2020-02-09T03:17:49.994Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.tcpsoft.app/about/index.html</loc>
     
     <lastmod>2020-02-08T23:53:20.298Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://blog.tcpsoft.app/exam.html</loc>
     
     <lastmod>2020-01-03T14:42:00.594Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.tcpsoft.app/2019/12/29/Hi,%20I'm%20Cortana/</loc>
-    
-    <lastmod>2019-12-29T07:19:26.863Z</lastmod>
     
   </url>
   
