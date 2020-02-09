@@ -13,5 +13,5 @@ Disallow: /vendors/
 Disallow: /fancybox/
 Disallow: /old/
 
-Sitemap: http://yoursite.com/sitemap.xml
-Sitemap: http://yoursite.com/baidusitemap.xml
+Sitemap: http://blog.tcpsoft.app/sitemap.xml
+Sitemap: http://blog.tcpsoft.app/baidusitemap.xml
