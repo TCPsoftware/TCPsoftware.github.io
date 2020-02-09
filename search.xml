@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>hexo + gitalk，满满的都是坑。</title>
-    <url>/2020/02/09/hexo-with-gitalk/</url>
+    <url>/2020/02/hexo-with-gitalk/</url>
     <content><![CDATA[<p>今日看到博客的评论功能，就想整一个，本以为跟前两天添加hexo插件查不多，结果，，爬坑，又掉坑，爬坑又掉坑……<a id="more"></a></p>
 <hr>
 <h3 id="安装gitalk"><a href="#安装gitalk" class="headerlink" title="安装gitalk"></a>安装gitalk</h3><p>安装gitalk没什么，有很多博文有介绍，这里贴一篇就好，修改主题配置的部分很精简，我喜欢。</p>
@@ -70,7 +70,7 @@
   </entry>
   <entry>
     <title>hexo大换血</title>
-    <url>/2020/02/06/hexo-changes/</url>
+    <url>/2020/02/hexo-changes/</url>
     <content><![CDATA[<p>今天闲来无事，折腾博客（其实是写 gdb 结果得更新一下 hexo ），然后这个博客就大换血了。</p>
 <p>我干了啥呢：<a id="more"></a></p>
 <hr>
@@ -98,7 +98,7 @@
 <h2 id="hexo-添加版权后链接错误问题"><a href="#hexo-添加版权后链接错误问题" class="headerlink" title="hexo 添加版权后链接错误问题"></a>hexo 添加版权后链接错误问题</h2><p>本来应该是 http:// blog.tcpsoft.app/2020/02/06/hexo-changes/，</p>
 <p>但是变成了 /http:/blog.tcpsoft.app/2020/02/06/hexo-changes/</p>
 <p>所以就手动写了个 js 脚本，添加到 source/js 文件夹，并修改 next 的一个配置文件。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//添加&lt;script&gt;到 \themes\next\layout\_scripts\index.swig</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//&lt;script src="/js/diy.js"&gt;&lt;/script&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">link = <span class="built_in">document</span>.getElementsByClassName(<span class="string">"post-copyright-link"</span>)[<span class="number">0</span>].children[<span class="number">1</span>];</span></pre></td></tr><tr><td class="code"><pre><span class="line">href = link.getAttribute(<span class="string">"href"</span>).replace(<span class="string">"/http:/"</span>,<span class="string">"http://"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">link.setAttribute(<span class="string">"href"</span>,href);</span></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//添加&lt;script&gt;到 \themes\next\layout\_scripts\index.swig</span></span><br><span class="line"><span class="comment">//&lt;script src="/js/diy.js"&gt;&lt;/script&gt;</span></span><br><span class="line"></span><br><span class="line">link = <span class="built_in">document</span>.getElementsByClassName(<span class="string">"post-copyright-link"</span>)[<span class="number">0</span>].children[<span class="number">1</span>];</span><br><span class="line">href = link.getAttribute(<span class="string">"href"</span>).replace(<span class="string">"/http:/"</span>,<span class="string">"http://"</span>);</span><br><span class="line">link.setAttribute(<span class="string">"href"</span>,href);</span><br></pre></td></tr></table></figure>
 
 <h2 id="解决了显示混乱问题"><a href="#解决了显示混乱问题" class="headerlink" title="解决了显示混乱问题"></a>解决了显示混乱问题</h2><p>我之前的博客迁移，导致了显示混乱问题（即我已有 css 而 hexo 又给我加上一套主题的显示方案），此处用 hexo 的 skip_render 设置即可，不过要匹配文件文件夹还是有点小坑的 [坑爹预警]</p>
 <ul>
@@ -109,7 +109,7 @@
 </ul>
 <h2 id="博客-CDN-加速"><a href="#博客-CDN-加速" class="headerlink" title="博客 CDN 加速"></a>博客 CDN 加速</h2><p>看了百度云加速，知道创宇云加速，cloud flare，暂时还是不弄了，现阶段博客是基于 GitHub Pages + Hexo ，图片使用腾讯云存储。后期可能考虑加 CDN <del>或整站迁移腾讯云存储（因域名无法备案及COS网站的处理问题已放弃此方案）</del>。</p>
 <h2 id="sitemap-功能"><a href="#sitemap-功能" class="headerlink" title="sitemap 功能"></a>sitemap 功能</h2><p>hexo、next 主题的 sitemap 功能，帮助搜索引擎收录站点（不用修改 hexo 配置文件）<br>注：这些 npm 命令都是在本地博客根目录下执行，下同</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm install hexo-generator-baidu-sitemap --save</span></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br><span class="line">npm install hexo-generator-baidu-sitemap --save</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>参考链接1： <a href="https://cn.bing.com/search?q=hexo+next+sitemap">hexo next sitemap - 国内版 Bing</a></li>
@@ -117,31 +117,31 @@
 <li>参考链接3： <a href="https://www.jianshu.com/p/9c2d6db2f855">hexo(3)-生成sitemap站点地图 - 简书</a></li>
 </ul>
 <h2 id="RSS-订阅功能"><a href="#RSS-订阅功能" class="headerlink" title="RSS 订阅功能"></a>RSS 订阅功能</h2><p>（不用修改 hexo 配置文件）（修改next主题配置以显示按钮）</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span></pre></td></tr></table></figure>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">"/themes/next/_config.yml"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="string">......</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">rss:</span> <span class="string">/atom.xml</span></span></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">"/themes/next/_config.yml"</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">......</span></span><br><span class="line">  <span class="attr">rss:</span> <span class="string">/atom.xml</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>参考链接1： <a href="https://blog.csdn.net/u010820857/article/details/82086232">hexo 安装 sitemap 和 <strong>rss</strong>_hexo 安装 sitemap 和 <strong>rss</strong>,hexo,hexo sitemap _hiekay的博客-CSDN博客</a></li>
 </ul>
 <h2 id="站点搜索功能"><a href="#站点搜索功能" class="headerlink" title="站点搜索功能"></a>站点搜索功能</h2><p>安装插件，然后修改 next 配置文件，，，</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>参考链接1： <a href="https://www.cnblogs.com/syd192/p/6074323.html">Hexo的Next主题配置 - syd192 - 博客园</a></li>
 <li>参考链接2： <a href="https://blog.csdn.net/lijing742180/article/details/87970909">Hexo Next 主题中添加本地搜索功能_hexo,next主题,next 搜索_媛测-CSDN博客</a></li>
 </ul>
 <h2 id="相关文章推荐"><a href="#相关文章推荐" class="headerlink" title="相关文章推荐"></a>相关文章推荐</h2><p>同样的，安装插件，修改配置</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-related-popular-posts --save</span></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-related-popular-posts --save</span><br></pre></td></tr></table></figure>
 
 <p>参考链接1： <a href="https://www.chingow.cn/posts/e0970dc8.html">Hexo+NexT(v7.0+) 搭建博客：功能强化 | Chingow’s Blog</a></p>
-<h2 id="文章字数统计和阅读时间估计"><a href="#文章字数统计和阅读时间估计" class="headerlink" title="文章字数统计和阅读时间估计"></a>文章字数统计和阅读时间估计</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span></pre></td></tr></table></figure>
+<h2 id="文章字数统计和阅读时间估计"><a href="#文章字数统计和阅读时间估计" class="headerlink" title="文章字数统计和阅读时间估计"></a>文章字数统计和阅读时间估计</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
 
 <p>参考链接1： <a href="https://victoryofymk.github.io/2018/10/23/Hexo个性化next主题/">o(五)：个性化 next theme | 执行者的博客</a></p>
 <h2 id="社交按钮"><a href="#社交按钮" class="headerlink" title="社交按钮"></a>社交按钮</h2><p>参考链接1： <a href="https://victoryofymk.github.io/2018/10/23/Hexo个性化next主题/">o(五)：个性化 next theme | 执行者的博客</a></p>
 <h2 id="阅读进度"><a href="#阅读进度" class="headerlink" title="阅读进度"></a>阅读进度</h2><p>设置 next 主题配置：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">reading_progress:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">reading_progress:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="hexo-设置阅读全文"><a href="#hexo-设置阅读全文" class="headerlink" title="hexo 设置阅读全文"></a>hexo 设置阅读全文</h2><p>其实也和文章的有点不一样，可能是因为 next 版本不一样，我设置的是 next 配置文件</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Automatically excerpt description in homepage as preamble text.</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">excerpt_description:</span> <span class="literal">true</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># Read more button</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># If true, the read more button will be displayed in excerpt section.</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">read_more_btn:</span> <span class="literal">true</span></span></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Automatically excerpt description in homepage as preamble text.</span></span><br><span class="line"><span class="attr">excerpt_description:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Read more button</span></span><br><span class="line"><span class="comment"># If true, the read more button will be displayed in excerpt section.</span></span><br><span class="line"><span class="attr">read_more_btn:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 <p>参考链接1： <a href="https://www.jianshu.com/p/78c218f9d1e7">Hexo-设置阅读全文 - 简书</a></p>
 <h2 id="修改标签样式"><a href="#修改标签样式" class="headerlink" title="修改标签样式"></a>修改标签样式</h2><p>只需要修改模板<code>/themes/next/layout/_macro/post.swig</code>，搜索 <code>rel=&quot;tag&quot;&gt;#</code>，将 # 换成<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code> 。（好像改了更丑了，后来改回来了）</p>
@@ -157,7 +157,7 @@
   </entry>
   <entry>
     <title>Hi, I&#39;m Cortana.</title>
-    <url>/2019/12/29/Hi-Im-Cortana/</url>
+    <url>/2019/12/Hi-Im-Cortana/</url>
     <content><![CDATA[<p>2020即将来临了，作为群贫困人口，在2019年再来看各位群友最后一面</p>
 ]]></content>
   </entry>
