@@ -2,7 +2,7 @@
 //<script src="/js/diy.js"></script>
 
 link = document.getElementsByClassName("post-copyright-link")[0].children[1];
-href = link.getAttribute("href").replace("/http:/","http://");
+href = link.getAttribute("href").replace("/http:/","https://");
 link.setAttribute("href",href);
 
 window.onload = function(){
