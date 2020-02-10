@@ -1,6 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo + CloudFlare = 速度飞起</title>
+    <url>/2020/02/hexo-with-cloudflare/</url>
+    <content><![CDATA[<p>昨天配置了 Google、Baidu、Bing搜索引擎提交，不过比较悲催的是 Github Pages 服务器拒绝 BaiduSpider ，整个站点根本不能出现在 Baidu 里面好么！！ 另一方面，速度过慢，github pages 在国内速度，不太理想，所以用 CloudFlare 老牌 cdn 加速整站，还可以被 BaiduSpider 收录。<a id="more"></a></p>
+<p>参考了这篇文章： <a href="https://blog.csdn.net/qianghaohao/article/details/83714575" rel="external nofollow noopener noreferrer" target="_blank">基于 Hexo 的 GitHub Pages 配置 CloudFlare CDN_qhh0205-CSDN博客</a></p>
+<h2 id="准备好-GitHub-和-CloudFlare"><a href="#准备好-GitHub-和-CloudFlare" class="headerlink" title="准备好 GitHub 和 CloudFlare"></a>准备好 GitHub 和 CloudFlare</h2><p>有一个 github 账户，添加 username.github.io 库，把 hexo 发布到存储库，不多说了。</p>
+<p>注册 CloudFlare 账号并登录。</p>
+<h2 id="在-CloudFlare-添加站点"><a href="#在-CloudFlare-添加站点" class="headerlink" title="在 CloudFlare 添加站点"></a>在 CloudFlare 添加站点</h2><p>在 CloudFlare 添加站点，并检查 DNS 记录，确认导入 CloudFlare 中。</p>
+<p>在域名购买商处修改 DNS 服务器为 CloudFlare 提供的两个 DNS 服务器，等待生效之后继续操作</p>
+<p><strong>注意</strong> ：修改 DNS 服务器可能会导致某些记录丢失（像 Google 域名验证、letsencrypt 域名验证）（因为不是全部同步过去），所以在更改之前可以在旧 DNS 控制台，记录下各个 DNS 记录（截屏或手抄），后期可再写入新纪录</p>
+<p><img src="../../blog-images/2020/hexo-with-cloudflare/image-20200210112341702.png" alt="image-20200210112341702"></p>
+<p>修改 DNS 服务器：</p>
+<p><img src="../../blog-images/2020/hexo-with-cloudflare/image-20200210112513410.png" alt="image-20200210112513410"></p>
+<p>等待生效，可用 <code>nslookup -q=ns tcpsoft.app</code> 查询 DNS 解析服务器情况（本地的好像更新有点慢），其实 CloudFlare 在检测到 DNS 服务器修改成功之后会发邮件通知的。</p>
+<p>然后在 CloudFlare 检查域名服务器，进行下一步操作，设置一些网站的自定义选项，包括是否开启浏览器到CF</p>
+<p>的安全连接，是否开启CF到源服务器的安全连接，是否启用 Brotli 压缩来传输数据等。</p>
+<p>然后就可以查看 DNS 设置，有黄色云图标的就是 CloudFlare 开启代理的</p>
+<p><img src="../../blog-images/2020/hexo-with-cloudflare/image-20200210120918605.png" alt="image-20200210120918605"></p>
+<p>我们可以用 dig （linux）或 nslookup （linux、Windows）查看域名解析情况。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">root@Mi-CP /m/c/U/CP# dig blog.tcpsoft.app</span><br><span class="line"></span><br><span class="line">; &lt;&lt;&gt;&gt; DiG 9.10.3-P4-Ubuntu &lt;&lt;&gt;&gt; blog.tcpsoft.app</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 45170</span><br><span class="line">;; flags: qr rd ra; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 0</span><br><span class="line"></span><br><span class="line">;; QUESTION SECTION:</span><br><span class="line">;blog.tcpsoft.app.              IN      A</span><br><span class="line"></span><br><span class="line">;; ANSWER SECTION:</span><br><span class="line">blog.tcpsoft.app.       900     IN      CNAME   tcpsoftware.github.io.</span><br><span class="line">tcpsoftware.github.io.  900     IN      A       185.199.110.153</span><br><span class="line">tcpsoftware.github.io.  900     IN      A       185.199.108.153</span><br><span class="line">tcpsoftware.github.io.  900     IN      A       185.199.111.153</span><br><span class="line">tcpsoftware.github.io.  900     IN      A       185.199.109.153</span><br><span class="line"></span><br><span class="line">;; Query time: 1990 msec</span><br><span class="line">;; SERVER: 223.5.5.5#53(223.5.5.5)</span><br><span class="line">;; WHEN: Mon Feb 10 12:12:47 CST 2020</span><br><span class="line">;; MSG SIZE  rcvd: 133</span><br><span class="line"></span><br><span class="line">root@Mi-CP /m/c/U/CP# nslookup blog.tcpsoft.app</span><br><span class="line">Server:         223.5.5.5</span><br><span class="line">Address:        223.5.5.5#53</span><br><span class="line"></span><br><span class="line">Non-authoritative answer:</span><br><span class="line">blog.tcpsoft.app        canonical name = tcpsoftware.github.io.</span><br><span class="line">Name:   tcpsoftware.github.io</span><br><span class="line">Address: 185.199.110.153</span><br><span class="line">Name:   tcpsoftware.github.io</span><br><span class="line">Address: 185.199.108.153</span><br><span class="line">Name:   tcpsoftware.github.io</span><br><span class="line">Address: 185.199.109.153</span><br><span class="line">Name:   tcpsoftware.github.io</span><br><span class="line">Address: 185.199.111.153</span><br><span class="line"></span><br><span class="line">root@Mi-CP /m/c/U/CP#</span><br></pre></td></tr></table></figure>
+
+<p>我们可以看到解析了四个 IP，而我的 DNS 设置只有一个 CNAME，查询这个 IP，发现是 CDN，设置成功。</p>
+<h2 id="开启DNSSEC，防止-DNS-劫持"><a href="#开启DNSSEC，防止-DNS-劫持" class="headerlink" title="开启DNSSEC，防止 DNS 劫持"></a>开启DNSSEC，防止 DNS 劫持</h2><p>在 CloudFlare 的 DNS 管理面板往下翻可以看到 DNSSEC 选项，DNSSEC 是 DNS 安全扩展，采用加密方式，防止 DNS 劫持</p>
+<p><img src="../../blog-images/2020/hexo-with-cloudflare/image-20200210122448916.png" alt="image-20200210122448916"></p>
+<p>CF 提供了十多个参数，转到域名注册商处，填入注册商要求的对应参数即可。</p>
+<p>等待十多分钟至一个小时，CloudFlare 上的 DNSSEC 会检测到设置成功，提示 Success！</p>
+<p><img src="../../blog-images/2020/hexo-with-cloudflare/image-20200210125156256.png" alt="image-20200210125156256"></p>
+<h2 id="又掉坑：“重定向次数过多”"><a href="#又掉坑：“重定向次数过多”" class="headerlink" title="又掉坑：“重定向次数过多”"></a>又掉坑：“重定向次数过多”</h2><p>刚才的配置好之后，满以为可以运行的飞起来了，结果，打 ！不 ！开 ！了 ！</p>
+<img src="../../blog-images/2020/hexo-with-cloudflare/image-20200210143346231.png" alt="image-20200210143346231" style="zoom:50%;">
+
+<p>一番查询发现是：CloudFlare SSL 选项开的是 Flexible。</p>
+<p><img src="../../blog-images/2020/hexo-with-cloudflare/image-20200210143616798.png" alt="image-20200210143616798"></p>
+<p>下面文字摘自 参考链接：<a href="https://www.wpzhiku.com/wordpress-wang-zhan-shi-yong-cloudflare-hou-ti-shi-jiang-nin-chong-ding-xiang-de-ci-shu-guo-duo-de-yuan-yin-ji-jie-jue-ban-fa/" rel="external nofollow noopener noreferrer" target="_blank">WordPress 网站使用 CloudFlare 后提示“将您重定向的次数过多” 的原因及解决办法 _WordPress智库</a></p>
+<p>Cloudflare CDN 配置</p>
+<ul>
+<li><p>Off：不开启https。</p>
+</li>
+<li><p>Flexible：当我们的源网站没有配置 HTTPS 支持时，启用这个选项，Cloudflare 会在回源的时候通过 HTTP 协议访问我们的网站。</p>
+</li>
+<li><p>Full：当我们的源网站支持 HTTPS，但是 HTTPS 证书和域名不匹配或者是自签名证书时，Cloudflare 会通过 HTTPS 协议访问源网站，但不会验证证书，也就是说，即使我们的源网站提供的 HTTPS 证书不受浏览器信任，Cloudflare 也会通过 HTTPS 回源网站。</p>
+</li>
+<li><p>Full(strict)：当我们的源网站支持 HTTP ，并且证书有效时（未过期且受信任）。Cloudflare 会通过 HTTPS 协议访问源网站，并在每个请求过程中验证证书。</p>
+</li>
+</ul>
+<p>了解了上面各个设置的功能，我们来看一下 Cloudflare 的循环重定向问题是怎么出现的，在 Cloudflare 中开启了 SSL 后，访问网站时出现循环重定向需满足下面两个条件：</p>
+<ol>
+<li>SSL 中设置了 Flexible，CDN 以 HTTP 协议回源网站。</li>
+<li>源网站支持 HTTPS，并且设置了通过 HTTP 协议访问时，自动跳转到 HTTPS 协议。</li>
+</ol>
+<p>到这里，可能就有朋友发现问题了，我们访问 Cloudflare 的 CDN 服务器的时候，是通过 HTTPS 访问的，CDN 访问源网站的时候，是通过 HTTP 访问的，源网站上 HTTP 又自动跳转了 HTTPS，完美的一个循环重定向。重定向的次数多了，浏览器就撂挑子报出了 ERR_TOO_MANY_REDIRECTS 的错误。</p>
+<h2 id="CloudFlare-造成重定向的次数过多问题的解决办法"><a href="#CloudFlare-造成重定向的次数过多问题的解决办法" class="headerlink" title="CloudFlare 造成重定向的次数过多问题的解决办法"></a>CloudFlare 造成重定向的次数过多问题的解决办法</h2><p>知道了循环重定向的原因，我们也就知道了怎么解决这个问题，通过测试，下面的两种设置方法都可以解决 Cloudflare 循环重定向的问题。</p>
+<ul>
+<li>SSL 中选择 Full(strict) 或者 Full(strict)，让 CDN 回源的时候使用 HTTPS 的方式回源，没有 HTTP 什么事了，就不会跳来跳去了</li>
+<li>源网站不设置 HTTPS 支持或者 不设置 HTTP 跳转 HTTPS，让 Cloudflare 回源的时候使用 HTTP 方式获取资源。</li>
+</ul>
+<p>修改了 CloudFlare 设置后，可能需要过几分钟或清理浏览器缓存后才能生效。</p>
+<p>除了 Cloudflare，使用其他 CDN 提供商的时候，也可能会出现这个问题，如果设置了 CDN 后，遇到了 Chrome 报重定向次数过多的问题，可以通过上面的思路查找问题。</p>
+]]></content>
+      <categories>
+        <category>建站</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>cdn</tag>
+        <tag>cloudflare</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo seo 优化</title>
     <url>/2020/02/hexo-seo/</url>
     <content><![CDATA[<p>害呀，hexo 都做了这么多了，干脆把google 统计一起加上去得了。Google Analytics、Google添加站点，baidu 添加站点、bing 添加站点，通通加上！</p>

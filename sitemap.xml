@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.tcpsoft.app/2020/02/hexo-with-cloudflare/</loc>
+    
+    <lastmod>2020-02-10T07:22:16.656Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.tcpsoft.app/2020/02/hexo-seo/</loc>
     
     <lastmod>2020-02-10T01:42:59.653Z</lastmod>

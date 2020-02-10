@@ -47,24 +47,30 @@
   };
 </script>
 
-  <meta name="description" content="今日看到博客的评论功能，就想整一个，本以为跟前两天添加hexo插件查不多，结果，，爬坑，又掉坑，爬坑又掉坑……">
+  <meta name="description" content="昨天配置了 Google、Baidu、Bing搜索引擎提交，不过比较悲催的是 Github Pages 服务器拒绝 BaiduSpider ，整个站点根本不能出现在 Baidu 里面好么！！ 另一方面，速度过慢，github pages 在国内速度，不太理想，所以用 CloudFlare 老牌 cdn 加速整站，还可以被 BaiduSpider 收录。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo + gitalk，满满的都是坑。">
-<meta property="og:url" content="https://blog.tcpsoft.app/2020/02/hexo-with-gitalk/index.html">
+<meta property="og:title" content="hexo + CloudFlare &#x3D; 速度飞起">
+<meta property="og:url" content="https://blog.tcpsoft.app/2020/02/hexo-with-cloudflare/index.html">
 <meta property="og:site_name" content="Hi, I&#39;m Cortana.">
-<meta property="og:description" content="今日看到博客的评论功能，就想整一个，本以为跟前两天添加hexo插件查不多，结果，，爬坑，又掉坑，爬坑又掉坑……">
+<meta property="og:description" content="昨天配置了 Google、Baidu、Bing搜索引擎提交，不过比较悲催的是 Github Pages 服务器拒绝 BaiduSpider ，整个站点根本不能出现在 Baidu 里面好么！！ 另一方面，速度过慢，github pages 在国内速度，不太理想，所以用 CloudFlare 老牌 cdn 加速整站，还可以被 BaiduSpider 收录。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/hexo-with-gitalk/github-config.png">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/hexo-with-gitalk/image-20200209140447713.png">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/hexo-with-gitalk/issue.png">
-<meta property="article:published_time" content="2020-02-09T03:20:29.000Z">
-<meta property="article:modified_time" content="2020-02-09T06:27:43.123Z">
+<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/hexo-with-cloudflare/image-20200210112341702.png">
+<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/hexo-with-cloudflare/image-20200210112513410.png">
+<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/hexo-with-cloudflare/image-20200210120918605.png">
+<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/hexo-with-cloudflare/image-20200210122448916.png">
+<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/hexo-with-cloudflare/image-20200210125156256.png">
+<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/hexo-with-cloudflare/image-20200210143346231.png">
+<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/hexo-with-cloudflare/image-20200210143616798.png">
+<meta property="article:published_time" content="2020-02-10T01:57:09.000Z">
+<meta property="article:modified_time" content="2020-02-10T07:22:16.656Z">
 <meta property="article:author" content="tcpsoft">
 <meta property="article:tag" content="hexo">
+<meta property="article:tag" content="cdn">
+<meta property="article:tag" content="cloudflare">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/hexo-with-gitalk/github-config.png">
+<meta name="twitter:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/hexo-with-cloudflare/image-20200210112341702.png">
 
-<link rel="canonical" href="https://blog.tcpsoft.app/2020/02/hexo-with-gitalk/">
+<link rel="canonical" href="https://blog.tcpsoft.app/2020/02/hexo-with-cloudflare/">
 
 
 <script id="page-configurations">
@@ -76,7 +82,7 @@
   };
 </script>
 
-  <title>hexo + gitalk，满满的都是坑。 | Hi, I'm Cortana.</title>
+  <title>hexo + CloudFlare = 速度飞起 | Hi, I'm Cortana.</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158046973-1"></script>
     <script>
@@ -234,7 +240,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.tcpsoft.app/2020/02/hexo-with-gitalk/">
+    <link itemprop="mainEntityOfPage" href="https://blog.tcpsoft.app/2020/02/hexo-with-cloudflare/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -247,7 +253,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          hexo + gitalk，满满的都是坑。
+          hexo + CloudFlare = 速度飞起
         </h1>
 
         <div class="post-meta">
@@ -258,7 +264,18 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-02-09 11:20:29 / 修改时间：14:27:43" itemprop="dateCreated datePublished" datetime="2020-02-09T11:20:29+08:00">2020-02-09</time>
+              <time title="创建时间：2020-02-10 09:57:09 / 修改时间：15:22:16" itemprop="dateCreated datePublished" datetime="2020-02-10T09:57:09+08:00">2020-02-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BB%BA%E7%AB%99/" itemprop="url" rel="index">
+                    <span itemprop="name">建站</span>
+                  </a>
+                </span>
             </span>
 
           
@@ -274,14 +291,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
+              <span>3.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -293,66 +310,60 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>今日看到博客的评论功能，就想整一个，本以为跟前两天添加hexo插件查不多，结果，，爬坑，又掉坑，爬坑又掉坑……<a id="more"></a></p>
-<hr>
-<h3 id="安装gitalk"><a href="#安装gitalk" class="headerlink" title="安装gitalk"></a>安装gitalk</h3><p>安装gitalk没什么，有很多博文有介绍，这里贴一篇就好，修改主题配置的部分很精简，我喜欢。</p>
-<ul>
-<li>参考链接1： <a href="https://yunhao.space/2018/07/04/hexo-next-gitalk-comments-tutor/" rel="external nofollow noopener noreferrer" target="_blank">Hexo NexT 添加 Gitalk评论功能 | Andylmns</a></li>
-</ul>
-<p>注意域名是自己的 github pages 或者自定义域名就好。</p>
-<p>注意每一次发布新文章之后都需要去博客登陆刷新一下评论，插件会在你的 repo 里面新建 issue。</p>
-<p>我之前有篇文章叫《<a href="https://blog.tcpsoft.app/2019/12/29/Hi-Im-Cortana/">Hi, I’m Cortana.</a>》，我点开这个做实验看能不能使用评论功能，原地址是</p>
-<pre>https://blog.tcpsoft.app/2019/12/29/Hi,%20I'm%20Cortana/</pre>
-<hr>
-<h3 id="艰难爬坑"><a href="#艰难爬坑" class="headerlink" title="艰难爬坑"></a>艰难爬坑</h3><p><strong>[ 以下多链接警告，请选择性阅读 ]</strong></p>
-<h4 id="报错：redirect-uri-mismatch"><a href="#报错：redirect-uri-mismatch" class="headerlink" title="报错：redirect_uri_mismatch"></a>报错：redirect_uri_mismatch</h4><ul>
-<li>链接1： <a href="https://blog.csdn.net/liu1340308350/article/details/86304026#commentsedit" rel="external nofollow noopener noreferrer" target="_blank">gitalk报错问题_liuurick的博客-CSDN博客</a></li>
-</ul>
-<p>看了感觉也没啥用，根据指示转到下面这篇，写的比较详细，但是是没有解决问题</p>
-<ul>
-<li>链接2： <a href="https://blog.csdn.net/w47_csdn/article/details/88858343" rel="external nofollow noopener noreferrer" target="_blank">[gitalk] 解决配置gitalk插件后初始化登录时跳转回首页_Bo的博客-CSDN博客</a></li>
-</ul>
-<p>我看了看我的配置，根据前面的指导写的最初的配置是这样子的：</p>
-<p><img src="../../blog-images/2020/hexo-with-gitalk/github-config.png" alt="github-config"></p>
-<h4 id="http-https-的问题？"><a href="#http-https-的问题？" class="headerlink" title="http https 的问题？"></a>http https 的问题？</h4><p>又看了看我的请求 url，确实是都是 https，没有问题啊</p>
-<p>后来又找到这个 gitalk issue 115 和 162，貌似是个很“权威”的解答</p>
-<ul>
-<li>链接3： <a href="https://github.com/gitalk/gitalk/issues/115#event-1539518527">hexo next 主题配置 gitalk 评论后无法初始化创建 issue · Issue #115 · gitalk/gitalk</a></li>
-<li>链接4： <a href="https://github.com/gitalk/gitalk/issues/162">登录报错/?error=redirect_uri_mismatch&amp; · Issue #162 · gitalk/gitalk</a></li>
-</ul>
-<h4 id="加-？"><a href="#加-？" class="headerlink" title="加 / ？"></a>加 / ？</h4><p>好像回调地址里面要加个 <code>/</code> ？加就加吧，然后</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Authorization callback URL:</span><br><span class="line">https:&#x2F;&#x2F;blog.tcpsoft.app&#x2F;</span><br></pre></td></tr></table></figure>
+        <p>昨天配置了 Google、Baidu、Bing搜索引擎提交，不过比较悲催的是 Github Pages 服务器拒绝 BaiduSpider ，整个站点根本不能出现在 Baidu 里面好么！！ 另一方面，速度过慢，github pages 在国内速度，不太理想，所以用 CloudFlare 老牌 cdn 加速整站，还可以被 BaiduSpider 收录。<a id="more"></a></p>
+<p>参考了这篇文章： <a href="https://blog.csdn.net/qianghaohao/article/details/83714575" rel="external nofollow noopener noreferrer" target="_blank">基于 Hexo 的 GitHub Pages 配置 CloudFlare CDN_qhh0205-CSDN博客</a></p>
+<h2 id="准备好-GitHub-和-CloudFlare"><a href="#准备好-GitHub-和-CloudFlare" class="headerlink" title="准备好 GitHub 和 CloudFlare"></a>准备好 GitHub 和 CloudFlare</h2><p>有一个 github 账户，添加 username.github.io 库，把 hexo 发布到存储库，不多说了。</p>
+<p>注册 CloudFlare 账号并登录。</p>
+<h2 id="在-CloudFlare-添加站点"><a href="#在-CloudFlare-添加站点" class="headerlink" title="在 CloudFlare 添加站点"></a>在 CloudFlare 添加站点</h2><p>在 CloudFlare 添加站点，并检查 DNS 记录，确认导入 CloudFlare 中。</p>
+<p>在域名购买商处修改 DNS 服务器为 CloudFlare 提供的两个 DNS 服务器，等待生效之后继续操作</p>
+<p><strong>注意</strong> ：修改 DNS 服务器可能会导致某些记录丢失（像 Google 域名验证、letsencrypt 域名验证）（因为不是全部同步过去），所以在更改之前可以在旧 DNS 控制台，记录下各个 DNS 记录（截屏或手抄），后期可再写入新纪录</p>
+<p><img src="../../blog-images/2020/hexo-with-cloudflare/image-20200210112341702.png" alt="image-20200210112341702"></p>
+<p>修改 DNS 服务器：</p>
+<p><img src="../../blog-images/2020/hexo-with-cloudflare/image-20200210112513410.png" alt="image-20200210112513410"></p>
+<p>等待生效，可用 <code>nslookup -q=ns tcpsoft.app</code> 查询 DNS 解析服务器情况（本地的好像更新有点慢），其实 CloudFlare 在检测到 DNS 服务器修改成功之后会发邮件通知的。</p>
+<p>然后在 CloudFlare 检查域名服务器，进行下一步操作，设置一些网站的自定义选项，包括是否开启浏览器到CF</p>
+<p>的安全连接，是否开启CF到源服务器的安全连接，是否启用 Brotli 压缩来传输数据等。</p>
+<p>然后就可以查看 DNS 设置，有黄色云图标的就是 CloudFlare 开启代理的</p>
+<p><img src="../../blog-images/2020/hexo-with-cloudflare/image-20200210120918605.png" alt="image-20200210120918605"></p>
+<p>我们可以用 dig （linux）或 nslookup （linux、Windows）查看域名解析情况。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">root@Mi-CP /m/c/U/CP# dig blog.tcpsoft.app</span><br><span class="line"></span><br><span class="line">; &lt;&lt;&gt;&gt; DiG 9.10.3-P4-Ubuntu &lt;&lt;&gt;&gt; blog.tcpsoft.app</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 45170</span><br><span class="line">;; flags: qr rd ra; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 0</span><br><span class="line"></span><br><span class="line">;; QUESTION SECTION:</span><br><span class="line">;blog.tcpsoft.app.              IN      A</span><br><span class="line"></span><br><span class="line">;; ANSWER SECTION:</span><br><span class="line">blog.tcpsoft.app.       900     IN      CNAME   tcpsoftware.github.io.</span><br><span class="line">tcpsoftware.github.io.  900     IN      A       185.199.110.153</span><br><span class="line">tcpsoftware.github.io.  900     IN      A       185.199.108.153</span><br><span class="line">tcpsoftware.github.io.  900     IN      A       185.199.111.153</span><br><span class="line">tcpsoftware.github.io.  900     IN      A       185.199.109.153</span><br><span class="line"></span><br><span class="line">;; Query time: 1990 msec</span><br><span class="line">;; SERVER: 223.5.5.5#53(223.5.5.5)</span><br><span class="line">;; WHEN: Mon Feb 10 12:12:47 CST 2020</span><br><span class="line">;; MSG SIZE  rcvd: 133</span><br><span class="line"></span><br><span class="line">root@Mi-CP /m/c/U/CP# nslookup blog.tcpsoft.app</span><br><span class="line">Server:         223.5.5.5</span><br><span class="line">Address:        223.5.5.5#53</span><br><span class="line"></span><br><span class="line">Non-authoritative answer:</span><br><span class="line">blog.tcpsoft.app        canonical name = tcpsoftware.github.io.</span><br><span class="line">Name:   tcpsoftware.github.io</span><br><span class="line">Address: 185.199.110.153</span><br><span class="line">Name:   tcpsoftware.github.io</span><br><span class="line">Address: 185.199.108.153</span><br><span class="line">Name:   tcpsoftware.github.io</span><br><span class="line">Address: 185.199.109.153</span><br><span class="line">Name:   tcpsoftware.github.io</span><br><span class="line">Address: 185.199.111.153</span><br><span class="line"></span><br><span class="line">root@Mi-CP /m/c/U/CP#</span><br></pre></td></tr></table></figure>
 
-<p>也不行。仍然跳回主页，并提示 redirect_uri_mismatch </p>
-<p>后来我又尝试了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;tcpsoftware.github.io</span><br><span class="line">https:&#x2F;&#x2F;tcpsoftware.github.io</span><br><span class="line">http:&#x2F;&#x2F;tcpsoftware.github.io&#x2F;</span><br><span class="line">https:&#x2F;&#x2F;tcpsoftware.github.io&#x2F;</span><br><span class="line">http:&#x2F;&#x2F;blog.tcpsoft.app</span><br><span class="line">https:&#x2F;&#x2F;blog.tcpsoft.app</span><br><span class="line">http:&#x2F;&#x2F;blog.tcpsoft.app&#x2F;</span><br><span class="line">https:&#x2F;&#x2F;blog.tcpsoft.app&#x2F;</span><br><span class="line">tcpsoftware.github.io</span><br><span class="line">tcpsoftware.github.io</span><br><span class="line">blog.tcpsoft.app</span><br><span class="line">blog.tcpsoft.app</span><br></pre></td></tr></table></figure>
+<p>我们可以看到解析了四个 IP，而我的 DNS 设置只有一个 CNAME，查询这个 IP，发现是 CDN，设置成功。</p>
+<h2 id="开启DNSSEC，防止-DNS-劫持"><a href="#开启DNSSEC，防止-DNS-劫持" class="headerlink" title="开启DNSSEC，防止 DNS 劫持"></a>开启DNSSEC，防止 DNS 劫持</h2><p>在 CloudFlare 的 DNS 管理面板往下翻可以看到 DNSSEC 选项，DNSSEC 是 DNS 安全扩展，采用加密方式，防止 DNS 劫持</p>
+<p><img src="../../blog-images/2020/hexo-with-cloudflare/image-20200210122448916.png" alt="image-20200210122448916"></p>
+<p>CF 提供了十多个参数，转到域名注册商处，填入注册商要求的对应参数即可。</p>
+<p>等待十多分钟至一个小时，CloudFlare 上的 DNSSEC 会检测到设置成功，提示 Success！</p>
+<p><img src="../../blog-images/2020/hexo-with-cloudflare/image-20200210125156256.png" alt="image-20200210125156256"></p>
+<h2 id="又掉坑：“重定向次数过多”"><a href="#又掉坑：“重定向次数过多”" class="headerlink" title="又掉坑：“重定向次数过多”"></a>又掉坑：“重定向次数过多”</h2><p>刚才的配置好之后，满以为可以运行的飞起来了，结果，打 ！不 ！开 ！了 ！</p>
+<img src="../../blog-images/2020/hexo-with-cloudflare/image-20200210143346231.png" alt="image-20200210143346231" style="zoom:50%;">
 
-<p>心累</p>
-<p>然后忽然在 issue 162 翻到这个？</p>
-<p><img src="../../blog-images/2020/hexo-with-gitalk/image-20200209140447713.png" alt="image-20200209140447713"></p>
-<h4 id="中文？？！"><a href="#中文？？！" class="headerlink" title="中文？？！"></a>中文？？！</h4><p>🤨</p>
-<p>🤔</p>
-<p> 回头看了看我的 url，貌似并没有中文。</p>
-<pre>https://blog.tcpsoft.app/2019/12/29/Hi,%20I'm%20Cortana/</pre>
-<p>url 编码导致的问题？</p>
-<p>我尝试换一个文章，在上一篇 hexo 里，可了！！它的链接是，</p>
-<pre>https://blog.tcpsoft.app/2020/02/06/hexo-changes/</pre>
-<p>呐，没有 url 编码，没有中文</p>
-<p>🤔</p>
-<p><img src="../../blog-images/2020/hexo-with-gitalk/issue.png" alt="issue"></p>
-<h4 id="编码问题。"><a href="#编码问题。" class="headerlink" title="编码问题。"></a>编码问题。</h4><p>url 里面不要有特殊符号，刚才链接里面完美命中（而且链接看起来很丑可读性很差）</p>
-<p>有特殊符号不能被匹配规则匹配到（像我刚才链接里面的 <code>, &#39;</code>）</p>
-<hr>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p><code>hexo new passage_name</code></p>
-<p>新建文章的时候想好一个优雅的名字，如果遇到符号或者多单词，可以考虑用：</p>
-<h5 id="驼峰式命名法（小驼峰命名法）"><a href="#驼峰式命名法（小驼峰命名法）" class="headerlink" title="驼峰式命名法（小驼峰命名法）"></a>驼峰式命名法（小驼峰命名法）</h5><p><code>hexo new helloImCortana</code></p>
-<h5 id="帕斯卡命名法（大驼峰命名法）"><a href="#帕斯卡命名法（大驼峰命名法）" class="headerlink" title="帕斯卡命名法（大驼峰命名法）"></a>帕斯卡命名法（大驼峰命名法）</h5><p><code>hexo new HelloImCortana</code></p>
-<h5 id="匈牙利命名法（本文无关）"><a href="#匈牙利命名法（本文无关）" class="headerlink" title="匈牙利命名法（本文无关）"></a>匈牙利命名法（本文无关）</h5><p><code>hexo new sHelloImCortana</code></p>
-<p>变量类型+变量名（逃）</p>
-<h5 id="下划线命名法"><a href="#下划线命名法" class="headerlink" title="下划线命名法"></a>下划线命名法</h5><p><code>hexo new hello_Im_Cortana</code></p>
-<h5 id="短横线分隔（Github风格-编程必报错）"><a href="#短横线分隔（Github风格-编程必报错）" class="headerlink" title="短横线分隔（Github风格 编程必报错）"></a>短横线分隔（Github风格 编程必报错）</h5><p><code>hexo new hello-Im-Cortana</code></p>
-<hr>
-<h3 id="再说一句"><a href="#再说一句" class="headerlink" title="再说一句"></a>再说一句</h3><p>（其实上面尝试的那一大堆链接，除了最后四个没有 http https 协议的之外，其他的都是可以的）</p>
+<p>一番查询发现是：CloudFlare SSL 选项开的是 Flexible。</p>
+<p><img src="../../blog-images/2020/hexo-with-cloudflare/image-20200210143616798.png" alt="image-20200210143616798"></p>
+<p>下面文字摘自 参考链接：<a href="https://www.wpzhiku.com/wordpress-wang-zhan-shi-yong-cloudflare-hou-ti-shi-jiang-nin-chong-ding-xiang-de-ci-shu-guo-duo-de-yuan-yin-ji-jie-jue-ban-fa/" rel="external nofollow noopener noreferrer" target="_blank">WordPress 网站使用 CloudFlare 后提示“将您重定向的次数过多” 的原因及解决办法 _WordPress智库</a></p>
+<p>Cloudflare CDN 配置</p>
+<ul>
+<li><p>Off：不开启https。</p>
+</li>
+<li><p>Flexible：当我们的源网站没有配置 HTTPS 支持时，启用这个选项，Cloudflare 会在回源的时候通过 HTTP 协议访问我们的网站。</p>
+</li>
+<li><p>Full：当我们的源网站支持 HTTPS，但是 HTTPS 证书和域名不匹配或者是自签名证书时，Cloudflare 会通过 HTTPS 协议访问源网站，但不会验证证书，也就是说，即使我们的源网站提供的 HTTPS 证书不受浏览器信任，Cloudflare 也会通过 HTTPS 回源网站。</p>
+</li>
+<li><p>Full(strict)：当我们的源网站支持 HTTP ，并且证书有效时（未过期且受信任）。Cloudflare 会通过 HTTPS 协议访问源网站，并在每个请求过程中验证证书。</p>
+</li>
+</ul>
+<p>了解了上面各个设置的功能，我们来看一下 Cloudflare 的循环重定向问题是怎么出现的，在 Cloudflare 中开启了 SSL 后，访问网站时出现循环重定向需满足下面两个条件：</p>
+<ol>
+<li>SSL 中设置了 Flexible，CDN 以 HTTP 协议回源网站。</li>
+<li>源网站支持 HTTPS，并且设置了通过 HTTP 协议访问时，自动跳转到 HTTPS 协议。</li>
+</ol>
+<p>到这里，可能就有朋友发现问题了，我们访问 Cloudflare 的 CDN 服务器的时候，是通过 HTTPS 访问的，CDN 访问源网站的时候，是通过 HTTP 访问的，源网站上 HTTP 又自动跳转了 HTTPS，完美的一个循环重定向。重定向的次数多了，浏览器就撂挑子报出了 ERR_TOO_MANY_REDIRECTS 的错误。</p>
+<h2 id="CloudFlare-造成重定向的次数过多问题的解决办法"><a href="#CloudFlare-造成重定向的次数过多问题的解决办法" class="headerlink" title="CloudFlare 造成重定向的次数过多问题的解决办法"></a>CloudFlare 造成重定向的次数过多问题的解决办法</h2><p>知道了循环重定向的原因，我们也就知道了怎么解决这个问题，通过测试，下面的两种设置方法都可以解决 Cloudflare 循环重定向的问题。</p>
+<ul>
+<li>SSL 中选择 Full(strict) 或者 Full(strict)，让 CDN 回源的时候使用 HTTPS 的方式回源，没有 HTTP 什么事了，就不会跳来跳去了</li>
+<li>源网站不设置 HTTPS 支持或者 不设置 HTTP 跳转 HTTPS，让 Cloudflare 回源的时候使用 HTTP 方式获取资源。</li>
+</ul>
+<p>修改了 CloudFlare 设置后，可能需要过几分钟或清理浏览器缓存后才能生效。</p>
+<p>除了 Cloudflare，使用其他 CDN 提供商的时候，也可能会出现这个问题，如果设置了 CDN 后，遇到了 Chrome 报重定向次数过多的问题，可以通过上面的思路查找问题。</p>
 
     </div>
 
@@ -366,10 +377,10 @@
       <div class="popular-posts-title"><a href="\2020\02\hexo-changes\" rel="bookmark">hexo大换血</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\02\hexo-seo\" rel="bookmark">hexo seo 优化</a></div>
+      <div class="popular-posts-title"><a href="\2020\02\hexo-with-gitalk\" rel="bookmark">hexo + gitalk，满满的都是坑。</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\02\hexo-with-cloudflare\" rel="bookmark">hexo + CloudFlare = 速度飞起</a></div>
+      <div class="popular-posts-title"><a href="\2020\02\hexo-seo\" rel="bookmark">hexo seo 优化</a></div>
     </li>
   </ul>
 
@@ -397,7 +408,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.tcpsoft.app/2020/02/hexo-with-gitalk/" title="hexo + gitalk，满满的都是坑。">https://blog.tcpsoft.app/2020/02/hexo-with-gitalk/</a>
+    <a href="https://blog.tcpsoft.app/2020/02/hexo-with-cloudflare/" title="hexo + CloudFlare &#x3D; 速度飞起">https://blog.tcpsoft.app/2020/02/hexo-with-cloudflare/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -409,6 +420,8 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/cdn/" rel="tag"># cdn</a>
+              <a href="/tags/cloudflare/" rel="tag"># cloudflare</a>
           </div>
 
         
@@ -417,13 +430,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/02/hexo-changes/" rel="prev" title="hexo大换血">
-      <i class="fa fa-chevron-left"></i> hexo大换血
+    <a href="/2020/02/hexo-seo/" rel="prev" title="hexo seo 优化">
+      <i class="fa fa-chevron-left"></i> hexo seo 优化
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/02/hexo-seo/" rel="next" title="hexo seo 优化">
-      hexo seo 优化 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -484,7 +494,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装gitalk"><span class="nav-number">1.</span> <span class="nav-text">安装gitalk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#艰难爬坑"><span class="nav-number">2.</span> <span class="nav-text">艰难爬坑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#报错：redirect-uri-mismatch"><span class="nav-number">2.1.</span> <span class="nav-text">报错：redirect_uri_mismatch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#http-https-的问题？"><span class="nav-number">2.2.</span> <span class="nav-text">http https 的问题？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加-？"><span class="nav-number">2.3.</span> <span class="nav-text">加 &#x2F; ？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中文？？！"><span class="nav-number">2.4.</span> <span class="nav-text">中文？？！</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编码问题。"><span class="nav-number">2.5.</span> <span class="nav-text">编码问题。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">3.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#驼峰式命名法（小驼峰命名法）"><span class="nav-number">3.0.1.</span> <span class="nav-text">驼峰式命名法（小驼峰命名法）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#帕斯卡命名法（大驼峰命名法）"><span class="nav-number">3.0.2.</span> <span class="nav-text">帕斯卡命名法（大驼峰命名法）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#匈牙利命名法（本文无关）"><span class="nav-number">3.0.3.</span> <span class="nav-text">匈牙利命名法（本文无关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#下划线命名法"><span class="nav-number">3.0.4.</span> <span class="nav-text">下划线命名法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#短横线分隔（Github风格-编程必报错）"><span class="nav-number">3.0.5.</span> <span class="nav-text">短横线分隔（Github风格 编程必报错）</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#再说一句"><span class="nav-number">4.</span> <span class="nav-text">再说一句</span></a></li></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备好-GitHub-和-CloudFlare"><span class="nav-number">1.</span> <span class="nav-text">准备好 GitHub 和 CloudFlare</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-CloudFlare-添加站点"><span class="nav-number">2.</span> <span class="nav-text">在 CloudFlare 添加站点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启DNSSEC，防止-DNS-劫持"><span class="nav-number">3.</span> <span class="nav-text">开启DNSSEC，防止 DNS 劫持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#又掉坑：“重定向次数过多”"><span class="nav-number">4.</span> <span class="nav-text">又掉坑：“重定向次数过多”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CloudFlare-造成重定向的次数过多问题的解决办法"><span class="nav-number">5.</span> <span class="nav-text">CloudFlare 造成重定向的次数过多问题的解决办法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -665,7 +675,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo: 'tcpsoftware.github.io',
       owner: 'tcpsoftware',
       admin: ['tcpsoftware'],
-      id: '8e7cee31f00cdbadb7806bb0a53b09a7',
+      id: '059ab89ef201ecdb353c97dc68cb74a1',
         language: 'zh-CN',
       distractionFreeMode: true
     });
