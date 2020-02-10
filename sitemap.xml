@@ -2,23 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.tcpsoft.app/2020/02/hexo-with-cloudflare/</loc>
+    <loc>https://blog.tcpsoft.app/2020/02/hexo-changes/</loc>
     
-    <lastmod>2020-02-10T07:27:52.170Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.tcpsoft.app/2020/02/hexo-seo/</loc>
-    
-    <lastmod>2020-02-10T01:42:59.653Z</lastmod>
+    <lastmod>2020-02-10T07:36:04.853Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blog.tcpsoft.app/2020/02/hexo-with-gitalk/</loc>
     
-    <lastmod>2020-02-09T06:27:43.123Z</lastmod>
+    <lastmod>2020-02-10T07:35:15.793Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.tcpsoft.app/2020/02/hexo-seo/</loc>
+    
+    <lastmod>2020-02-10T07:34:49.311Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.tcpsoft.app/2020/02/hexo-with-cloudflare/</loc>
+    
+    <lastmod>2020-02-10T07:27:52.170Z</lastmod>
     
   </url>
   
@@ -33,13 +40,6 @@
     <loc>https://blog.tcpsoft.app/about/index.html</loc>
     
     <lastmod>2020-02-08T23:53:20.298Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.tcpsoft.app/2020/02/hexo-changes/</loc>
-    
-    <lastmod>2020-02-07T20:15:13.862Z</lastmod>
     
   </url>
   
