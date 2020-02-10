@@ -10,6 +10,8 @@
 <h2 id="在-CloudFlare-添加站点"><a href="#在-CloudFlare-添加站点" class="headerlink" title="在 CloudFlare 添加站点"></a>在 CloudFlare 添加站点</h2><p>在 CloudFlare 添加站点，并检查 DNS 记录，确认导入 CloudFlare 中。</p>
 <p>在域名购买商处修改 DNS 服务器为 CloudFlare 提供的两个 DNS 服务器，等待生效之后继续操作</p>
 <p><strong>注意</strong> ：修改 DNS 服务器可能会导致某些记录丢失（像 Google 域名验证、letsencrypt 域名验证）（因为不是全部同步过去），所以在更改之前可以在旧 DNS 控制台，记录下各个 DNS 记录（截屏或手抄），后期可再写入新纪录</p>
+<p><strong>Ps</strong>：实验表明： CloudFlare 会同步大部分DNS记录，但是还是有部分子域名会漏掉，看个人情况是否手动记录原 DNS </p>
+<p><img src="../../blog-images/2020/hexo-with-cloudflare/image-20200210152724656.png" alt="image-20200210152724656"></p>
 <p><img src="../../blog-images/2020/hexo-with-cloudflare/image-20200210112341702.png" alt="image-20200210112341702"></p>
 <p>修改 DNS 服务器：</p>
 <p><img src="../../blog-images/2020/hexo-with-cloudflare/image-20200210112513410.png" alt="image-20200210112513410"></p>
