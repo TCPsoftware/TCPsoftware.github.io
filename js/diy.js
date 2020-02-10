@@ -1,9 +1,10 @@
 //添加<script>到 \themes\next\layout\_scripts\index.swig
 //<script src="/js/diy.js"></script>
 
-link = document.getElementsByClassName("post-copyright-link")[0].children[1];
-href = link.getAttribute("href").replace("/http:/","https://");
-link.setAttribute("href",href);
+//link = document.getElementsByClassName("post-copyright-link")[0].children[1];
+//href = link.getAttribute("href").replace("/http:/","https://");
+//link.setAttribute("href",href);
+//link.innerHTML=link.innerHTML.replace("http://","https://")
 
 window.onload = function(){
 	img=document.getElementsByTagName("img")
