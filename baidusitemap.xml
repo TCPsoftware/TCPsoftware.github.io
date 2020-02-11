@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://blog.tcpsoft.app/2020/02/hexo-changes/</loc>
-    <lastmod>2020-02-10</lastmod>
-  </url>  <url>
-    <loc>https://blog.tcpsoft.app/2020/02/hexo-with-gitalk/</loc>
-    <lastmod>2020-02-10</lastmod>
-  </url>  <url>
-    <loc>https://blog.tcpsoft.app/2020/02/hexo-seo/</loc>
-    <lastmod>2020-02-10</lastmod>
-  </url>  <url>
-    <loc>https://blog.tcpsoft.app/2020/02/hexo-with-cloudflare/</loc>
-    <lastmod>2020-02-10</lastmod>
+    <loc>https://blog.tcpsoft.app/2020/02/wooyun-on-github/</loc>
+    <lastmod>2020-02-11</lastmod>
   </url>  <url>
     <loc>https://blog.tcpsoft.app/2019/12/Hi-Im-Cortana/</loc>
-    <lastmod>2020-02-09</lastmod>
+    <lastmod>2020-02-11</lastmod>
+  </url>  <url>
+    <loc>https://blog.tcpsoft.app/2020/02/hexo-with-gitalk/</loc>
+    <lastmod>2020-02-11</lastmod>
+  </url>  <url>
+    <loc>https://blog.tcpsoft.app/2020/02/hexo-with-cloudflare/</loc>
+    <lastmod>2020-02-11</lastmod>
+  </url>  <url>
+    <loc>https://blog.tcpsoft.app/2020/02/hexo-seo/</loc>
+    <lastmod>2020-02-11</lastmod>
+  </url>  <url>
+    <loc>https://blog.tcpsoft.app/2020/02/hexo-changes/</loc>
+    <lastmod>2020-02-11</lastmod>
   </url>
 </urlset>
