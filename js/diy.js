@@ -15,4 +15,15 @@ window.onload = function(){
 		src=src.replace("../../","https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/")
 		img[i].setAttribute("src",src)
 	}
+	a_tag=document.getElementsByTagName("a")
+	for(i=0;i<a_tag.length;i++ ){
+		console.log(a_tag[i] )
+		//console.log(i )
+		href=a_tag[i].getAttribute("href")
+		console.log(href)
+		if(href!=null){
+			href=href.replace("../../","https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/")
+			a_tag[i].setAttribute("href",href)
+		}
+	}
 }
