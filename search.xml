@@ -9,7 +9,7 @@
 <script src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/blog-images/static/jquery/jquery.min.js"></script>
 <link rel="stylesheet" href="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/blog-images/2020/2020gaokaojiayou/2020gaokaojiayou.css">
 
-<div id="opener">点击开启</div>
+<p><button id="opener">点击开启</button></p>
 <script src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/blog-images/2020/2020gaokaojiayou/2020gaokaojiayou.js"></script>
 
 ]]></content>
