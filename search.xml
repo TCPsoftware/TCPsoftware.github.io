@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>how-to-ask-in-group-chat</title>
+    <title>群里提问的艺术</title>
     <url>/2020/03/how-to-ask-in-group-chat/</url>
-    <content><![CDATA[<h1 id="群里提问的艺术"><a href="#群里提问的艺术" class="headerlink" title="群里提问的艺术"></a>群里提问的艺术</h1><blockquote>
-<p><a href="http://taoweng.site/index.php/archives/215/" rel="external nofollow noopener noreferrer" target="_blank">原文链接</a>    时间: 2019-01-03    作者: <a href="http://taoweng.site/index.php/author/1/" rel="external nofollow noopener noreferrer" target="_blank">桃翁</a></p>
-</blockquote>
-<p>现在互联网发达的时代，大家都会有很多的群，xxx 交流群、xxx 技术交流、xxx开发群、xxx技术学习群等，大家的初心可能都是想交流的，遇到点问题然后就可以在群里问。</p>
+    <content><![CDATA[<p>现在互联网发达的时代，大家都会有很多的群，xxx 交流群、xxx 技术交流、xxx开发群、xxx技术学习群等，大家的初心可能都是想交流的，遇到点问题然后就可以在群里问。</p>
 <p>然而很多时候你问的问题没人回答；也有时候问了半天还是没找到答案；也有时候当你把问题发出来了，别人正准备回答你的时候，你说知道了；然后刚开始群里很活跃，慢慢的就死了。</p>
 <p>其实以上问题，都是大家不想看到的，然而<strong>在群里提问</strong>是我们加入群的初心，但是很多人做不好，最终导致你的问题无人解答，群慢慢的失去意义。</p>
 <p>今天我所谈的就是<strong>群里提问的艺术</strong>，让你的问题快速得到解决。<a id="more"></a></p>
@@ -75,7 +72,7 @@
 <p><img src="../../blog-images/2020/how-to-ask-in-group-chat/2019-06-10-113803.jpg" alt="img"></p>
 <h3 id="建议的问法："><a href="#建议的问法：" class="headerlink" title="建议的问法："></a>建议的问法：</h3><ol>
 <li>有问题直接问。比如：ES6什么时候雄霸天下，前端什么时候一统江湖？</li>
-<li>直接说场景：我在做xx端东西的时候，在 window 7 平台的 IE7 版本下遇到了左右不对齐问题，具体如图所示img，代码地址：<pre><a href="http://www.jsbin.com/xxxx" rel="external nofollow noopener noreferrer" target="_blank">http://www.jsbin.com/xxxx</a></pre>，在百度中找到的答案，试了之后还是有同样的问题。请有空的同学帮我看看是什么问题？</li>
+<li>直接说场景：我在做xx端东西的时候，在 window 7 平台的 IE7 版本下遇到了左右不对齐问题，具体如图所示img，代码地址：<code>http://www.jsbin.com/xxxx</code>，在百度中找到的答案，试了之后还是有同样的问题。请有空的同学帮我看看是什么问题？</li>
 </ol>
 <h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
 <li>提前做好冷场的准备：也许别人在忙，也许这个问题太简单了，也许没人做过这块，如果冷场了，没人回答，赶紧换下一个群。</li>
@@ -95,6 +92,12 @@
 </blockquote>
 <p>.</p>
 <p>（这真就原封不动的照搬呗）</p>
+<hr>
+<h2 id="《提问的智慧》"><a href="#《提问的智慧》" class="headerlink" title="《提问的智慧》"></a>《提问的智慧》</h2><p>另外还想再贴一个，最经典的，最最经典的（也最长最复杂的）：</p>
+<p>《提问的智慧》，来自 Github 。其实最初是 Eric S. Raymond, Rick Moen 创作的，然后 <a href="https://github.com/ryanhanwu">ryanhanwu</a> 翻译了并放在 Github 上作为一个开源项目，截止本文写作时，该项目已有 10.2k Star，2.8k Fork。</p>
+<p>另外，由于这个是国外作者创作的，所以其中出现的案例论坛等一般是国外常见论坛，也可以了解一下。</p>
+<p>【警告】：本文十分冗长，建议在有闲暇时间时仔细浏览。</p>
+<p><a href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md">https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md</a></p>
 ]]></content>
       <categories>
         <category>none</category>
