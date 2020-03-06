@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.tcpsoft.app/"/>
-  <updated>2020-03-05T15:49:33.352Z</updated>
+  <updated>2020-03-06T06:28:21.695Z</updated>
   <id>https://blog.tcpsoft.app/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用 Visual Studio 2019 写 C++ 基础代码</title>
+    <link href="https://blog.tcpsoft.app/2020/03/cpp-with-Visual-Studio-2019/"/>
+    <id>https://blog.tcpsoft.app/2020/03/cpp-with-Visual-Studio-2019/</id>
+    <published>2020-03-06T06:30:00.000Z</published>
+    <updated>2020-03-06T06:28:21.695Z</updated>
+    
+    <content type="html"><![CDATA[<p>什么？你不会用VS？<a id="more"></a></p><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>安装 <a href="https://visualstudio.microsoft.com/zh-hans/vs/community/" rel="external nofollow noopener noreferrer" target="_blank">Visual Studio2019 Community</a>，不多说了，虽然可能出现很多问题。这里假定你已经有安装好的 VS2019。</p><h3 id="打开VS，创建项目"><a href="#打开VS，创建项目" class="headerlink" title="打开VS，创建项目"></a>打开VS，创建项目</h3><p>打开VS2019，看到如下界面。</p><p><img src="../../blog-images/2020/cpp-with-Visual-Studio-2019/image-20200306134632068.png" alt="image-20200306134632068"></p><p>选择C++，Windows，选择控制台应用。</p><p><img src="../../blog-images/2020/cpp-with-Visual-Studio-2019/image-20200306134730096.png" alt="image-20200306134730096"></p><p>填写项目名称和存储位置，点击创建。</p><p><img src="../../blog-images/2020/cpp-with-Visual-Studio-2019/image-20200306134821590.png" alt="image-20200306134821590"></p><p>然后就会打开工程界面，在右边的解决方案资源管理器，源文件，可以找到刚才填写的名字的cpp文件，双击打开（默认会打开的），在左边正常编写代码，按 <code>F5</code> 运行，或点击上面绿色三角形，“本地Windows调试器”，（可以直接点也可以菜单栏选择调试，开始执行不调试（快捷键<code>Ctrl+F5</code>））</p><p><img src="../../blog-images/2020/cpp-with-Visual-Studio-2019/image-20200306134954770.png" alt="image-20200306134954770"></p><h3 id="没有“控制台应用”选项？"><a href="#没有“控制台应用”选项？" class="headerlink" title="没有“控制台应用”选项？"></a>没有“控制台应用”选项？</h3><p>创建项目窗口，拉到最下面，找到安装</p><p><img src="../../blog-images/2020/cpp-with-Visual-Studio-2019/image-20200306135632223.png" alt="image-20200306135632223"></p><p>在打开的窗口，勾选安装这三个。（其他的可以根据需要添加）</p><p><img src="../../blog-images/2020/cpp-with-Visual-Studio-2019/image-20200306135706897.png" alt="image-20200306135706897"></p><p>另外需要注意的是，如果想要图形化设计程序界面，（即MFC），需要在勾选“使用C++的桌面开发”之后，勾选右边的 C++ MFC v142</p><p><img src="../../blog-images/2020/cpp-with-Visual-Studio-2019/image-20200306135751221.png" alt="image-20200306135751221"></p><p>，然后开始安装即可。可以选择下载时安装（下载一个安装一个），下载完成安装（全部下载完再一起装），我个人偏好后一种</p><p>（等待巨长时间，安装完成后再同理创建项目。）</p><h3 id="用VS进行简单调试"><a href="#用VS进行简单调试" class="headerlink" title="用VS进行简单调试"></a>用VS进行简单调试</h3><h4 id="断点"><a href="#断点" class="headerlink" title="断点"></a>断点</h4><p>在需要暂停的代码这一行前面灰色区域鼠标单击，出现一个红色圆点，就是下断点。</p><p><img src="../../blog-images/2020/cpp-with-Visual-Studio-2019/image-20200306141237786.png" alt="image-20200306141237786"></p><p>再<code>F5</code> 开始调试，或点上方“本地Windows调试器”或菜单栏调试，开始调试。</p><p>VS界面会发生变化，且之前下断点位置会变成橙色箭头，表示程序当前正在执行这一行代码。此时程序暂停，可以查看变量值和一行一行运行程序。</p><ul><li><p>鼠标悬停在变量上，可以查看变量值。</p></li><li><p>选中变量，右键，添加监视，可以在下方监视面板自动显示变量值</p></li><li><p>在代码里鼠标右键，快速监视，输入变量名，可以添加多个变量监视，也可以添加表达式监视，比如<code>a+b+c</code></p></li></ul><p><img src="../../blog-images/2020/cpp-with-Visual-Studio-2019/image-20200306142152438.png" alt="image-20200306142152438"></p><h4 id="单步运行"><a href="#单步运行" class="headerlink" title="单步运行"></a>单步运行</h4><p>图示的四个按钮。</p><ul><li>显示下一条语句</li><li>逐语句</li><li>逐过程</li><li>跳出</li></ul><p><img src="../../blog-images/2020/cpp-with-Visual-Studio-2019/image-20200306142607239.png" alt="image-20200306142607239"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;什么？你不会用VS？
+    
+    </summary>
+    
+    
+      <category term="基础" scheme="https://blog.tcpsoft.app/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="C++ VisualStudio" scheme="https://blog.tcpsoft.app/tags/C-VisualStudio/"/>
+    
+  </entry>
   
   <entry>
     <title>群里提问的艺术</title>
