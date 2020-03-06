@@ -6,7 +6,8 @@
 //link.setAttribute("href",href);
 //link.innerHTML=link.innerHTML.replace("http://","https://")
 
-window.onload = function(){
+// window.onload = function(){
+$(document).ready(function(){
 	img=document.getElementsByTagName("img")
 	for(i=0;i<img.length;i++ ){
 		//console.log(img[i] )
@@ -26,4 +27,5 @@ window.onload = function(){
 			a_tag[i].setAttribute("href",href)
 		}
 	}
-}
+});
+// }
