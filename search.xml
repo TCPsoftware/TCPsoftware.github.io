@@ -15,7 +15,7 @@
 <p><img src="../../blog-images/2020/cpp-with-Visual-Studio-2019/image-20200306134954770.png" alt="image-20200306134954770"></p>
 <h3 id="没有“控制台应用”选项？"><a href="#没有“控制台应用”选项？" class="headerlink" title="没有“控制台应用”选项？"></a>没有“控制台应用”选项？</h3><p>创建项目窗口，拉到最下面，找到安装</p>
 <p><img src="../../blog-images/2020/cpp-with-Visual-Studio-2019/image-20200306135632223.png" alt="image-20200306135632223"></p>
-<p>在打开的窗口，勾选安装这三个。（其他的可以根据需要添加）</p>
+<p>在打开的窗口，勾选安装这三个。（其他的可以根据需要添加）（如果你确实不用VS开发高级应用，只勾选“使用C++的桌面开发”也就可以了）</p>
 <p><img src="../../blog-images/2020/cpp-with-Visual-Studio-2019/image-20200306135706897.png" alt="image-20200306135706897"></p>
 <p>另外需要注意的是，如果想要图形化设计程序界面，（即MFC），需要在勾选“使用C++的桌面开发”之后，勾选右边的 C++ MFC v142</p>
 <p><img src="../../blog-images/2020/cpp-with-Visual-Studio-2019/image-20200306135751221.png" alt="image-20200306135751221"></p>
