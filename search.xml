@@ -47,7 +47,7 @@
         <category>基础</category>
       </categories>
       <tags>
-        <tag>C++</tag>
+        <tag>CPP</tag>
         <tag>VisualStudio</tag>
       </tags>
   </entry>
@@ -520,9 +520,9 @@
         <category>搜索引擎</category>
       </categories>
       <tags>
+        <tag>chrome</tag>
         <tag>Google</tag>
         <tag>搜索引擎</tag>
-        <tag>chrome</tag>
         <tag>代理</tag>
       </tags>
   </entry>
