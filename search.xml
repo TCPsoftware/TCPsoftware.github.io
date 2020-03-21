@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>科学地让 OneDrive 飞，下载速度 5Mb/s</title>
+    <url>/2020/03/let-onedrive-fly-scientifically/</url>
+    <content><![CDATA[<p>OneDrive 是 Microsoft 的一个云存储服务，安装后集成在 Windows 资源管理器，所以比其他任何网盘都更有其与生俱来的优势。但由于众所周知的原因，OneDrive 的访问速度也极低。<br>访问速度慢还不算了，还经常会死在某个进度，一直下不动，这是最**的</p>
+<img src="../../blog-images/2020/let-onedrive-fly-scientifically/image-20200321165324494.png" alt="image-20200321165324494" style="zoom:67%;">
+<div style="text-align:center">你看这 243KB/秒 长得多标致啊</div>
+<a id="more"></a>
+
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol>
+<li>ShadowsocksR</li>
+<li>Proxifier</li>
+<li>设置 OneDrive 多线程</li>
+</ol>
+<h2 id="1-ShadowsocksR"><a href="#1-ShadowsocksR" class="headerlink" title="1. ShadowsocksR"></a>1. ShadowsocksR</h2><p>略。</p>
+<p>配置好之后应该是会开启 <code>127.0.0.1:1080</code> ，HTTP、Socks5 均有（没出问题的话默认就是这个配置）</p>
+<h2 id="2-Proxifier"><a href="#2-Proxifier" class="headerlink" title="2. Proxifier"></a>2. Proxifier</h2><p>搜索<code>Proxifier</code>找到官网：<a href="https://www.proxifier.com/download/" rel="external nofollow noopener noreferrer" target="_blank">https://www.proxifier.com/download/</a></p>
+<img src="../../blog-images/2020/let-onedrive-fly-scientifically/image-20200321172127587.png" alt="image-20200321172127587" style="zoom:67%;">
+
+<p>下载 <strong>Proxifier Standard Edition</strong> ，这个是安装版，Portable是绿色版，这里不用绿色版。</p>
+<p>下载下来exe双击安装，安装过程中勾选Create a desktop shortcut，完了之后会默认打开软件，关掉它（你也可以在最后一步取消勾选Launch Proxifier）</p>
+<p>在桌面快捷方式右键，用管理员权限运行。打开之后是长这个样子的：</p>
+<img src="../../blog-images/2020/let-onedrive-fly-scientifically/image-20200321175935712.png" alt="image-20200321175935712" style="zoom:67%;">
+
+<p>选择31天试用，<a href="https://www.52pojie.cn/forum.php?mod=viewthread&tid=747987&page=3#pid20397576" rel="external nofollow noopener noreferrer" target="_blank">或者输入注册码</a>，如果输入注册码，最好是勾选<code>All userss on this computer(require administrator)</code>，然后机会打开程序主界面</p>
+<p><img src="../../blog-images/2020/let-onedrive-fly-scientifically/image-20200321180424905.png" alt="image-20200321180424905"></p>
+<p>我们当然是希望开机启动，所以开启<code>Autostart</code></p>
+<img src="../../blog-images/2020/let-onedrive-fly-scientifically/image-20200321191843270.png" alt="image-20200321191843270" style="zoom:67%;">
+
+<p>通过Profile-&gt;Proxy Servers，添加 HTTPS 和 Socks5 代理配置</p>
+<img src="../../blog-images/2020/let-onedrive-fly-scientifically/image-20200321181035454.png" alt="image-20200321181035454" style="zoom:67%;">
+
+<p>通过Profile-&gt;Proxification Rules，配置软件代理规则</p>
+<p><img src="../../blog-images/2020/let-onedrive-fly-scientifically/image-20200321182841860.png" alt="image-20200321182841860"></p>
+<p>我们在这里添加OneDrive。</p>
+<p>先找到OneDrive的可执行文件的位置。一般应该是在<code>%localappdata%\Microsoft\OneDrive\</code></p>
+<p>如果没有，运行OneDrive，打开任务管理器，在详细信息标签页，找到<code>onedrive.exe</code>，右键打开文件所在位置</p>
+<p>点击上面窗口的Add，添加配置。点击Browse输入OneDrive目录，选择<code>onedrive.exe</code>，action选择通过socks5代理</p>
+<img src="../../blog-images/2020/let-onedrive-fly-scientifically/image-20200321183611160.png" alt="image-20200321183611160" style="zoom:67%;">
+
+<p>保存，并把 default 的 action 设置为 direct（你也不希望所有程序都通过代理对吧）</p>
+<img src="../../blog-images/2020/let-onedrive-fly-scientifically/image-20200321183553240.png" alt="image-20200321183553240" style="zoom:67%;">
+
+<p>任务栏里面右键 OneDrive，更多，关闭 OneDrive，再找到刚才的OneDrive程序位置，开启OneDrive。</p>
+<p>我们随便下载一个文件看看：</p>
+<p><img src="../../blog-images/2020/let-onedrive-fly-scientifically/image-20200321191651660.png" alt="image-20200321191651660"></p>
+<h2 id="3-设置-OneDrive-多线程"><a href="#3-设置-OneDrive-多线程" class="headerlink" title="3. 设置 OneDrive 多线程"></a>3. 设置 OneDrive 多线程</h2><p>你好像速度没我快？那肯定是你氪金不够（bushi），那就试试开启 OneDrive 多线程</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">修改这个文件：</span><br><span class="line">&quot;%localappdata%\Microsoft\OneDrive\settings\Personal\global.ini&quot;</span><br><span class="line">可通过win r运行，或cmd里运行下面直接打开修改：</span><br><span class="line">notepad &quot;%localappdata%\Microsoft\OneDrive\settings\Personal\global.ini&quot;</span><br></pre></td></tr></table></figure>
+
+<p>第一行加入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">numberOfConcurrentUploads&#x3D;3</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>PS：数值项即为线程数，最小值为1，最大值为3，根据实际需要选择即可</p>
+</blockquote>
+<img src="../../blog-images/2020/let-onedrive-fly-scientifically/image-20200321193422745.png" alt="image-20200321193422745" style="zoom:67%;">
+
+<p>效果：（奇怪的网速增加了）</p>
+<p><img src="../../blog-images/2020/let-onedrive-fly-scientifically/image-20200321213449574.png" alt="image-20200321213449574"></p>
+]]></content>
+      <categories>
+        <category>科学上网</category>
+      </categories>
+      <tags>
+        <tag>代理 OneDrive</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>用 Visual Studio 2019 写 C++ 基础代码</title>
     <url>/2020/03/cpp-with-Visual-Studio-2019/</url>
     <content><![CDATA[<p>什么？你不会用VS？<a id="more"></a></p>
@@ -412,7 +478,7 @@
 <p><img src="../../blog-images/2020/let-git-fly-scientifically/image-20200214133923497.png" alt="image-20200214133923497"></p>
 ]]></content>
       <categories>
-        <category>none</category>
+        <category>科学上网</category>
       </categories>
       <tags>
         <tag>代理</tag>
