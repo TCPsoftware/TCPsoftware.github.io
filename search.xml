@@ -69,7 +69,30 @@
 <p>完美~<br>但是会每次date的时候显示“已授予shell超级用户权限”，看着很难受<br>先su再执行脚本就不会了</p>
 <p>可以在电脑上adb shell进去执行脚本，也可以用手机啦</p>
 <p>【视频演示】</p>
-<p><video controls src="../../blog-images/2020/adb-auto-make-money/Screenrecorder-2020-01-01-01-18-54-228.webm" height="650px"></video></p>
+<script src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/blog-images/static/jquery/jquery.min.js"></script>
+
+<style>
+#opener{
+    width: 250px;
+    height: 50px;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: #69F0AE;
+    cursor: pointer;
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+#opener:hover{
+    transform: scale(1.04);
+    transition-duration: 0.5s;
+}    
+</style>
+
+<p><button id="opener">点击开启</button></p>
+<script src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/blog-images/2020/adb-auto-make-money/open_video.js"></script>
+
+<div id="video_here"></div>
+
 ]]></content>
       <categories>
         <category>none</category>
