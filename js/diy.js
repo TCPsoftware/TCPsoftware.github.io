@@ -8,12 +8,13 @@
 
 // window.onload = function(){
 $(document).ready(function(){
+	cos_root="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/"
 	img=document.getElementsByTagName("img")
 	for(i=0;i<img.length;i++ ){
 		//console.log(img[i] )
 		//console.log(i )
 		src=img[i].getAttribute("src")
-		src=src.replace("../../","https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/")
+		src=src.replace("../../",cos_root)
 		img[i].setAttribute("src",src)
 	}
 	a_tag=document.getElementsByTagName("a")
@@ -23,9 +24,17 @@ $(document).ready(function(){
 		href=a_tag[i].getAttribute("href")
 		//console.log(href)
 		if(href!=null){
-			href=href.replace("../../","https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/")
+			href=href.replace("../../",cos_root)
 			a_tag[i].setAttribute("href",href)
 		}
+	}
+	video_tag=document.getElementsByTagName("video");
+	for(i=0;i<video_tag.length;i++ ){
+		//console.log(video_tag[i] )
+		//console.log(i )
+		src=video_tag[i].getAttribute("src")
+		src=src.replace("../../",cos_root)
+		video_tag[i].setAttribute("src",src)
 	}
 });
 // }

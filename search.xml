@@ -1,6 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>adb自动刷钱</title>
+    <url>/2020/05/adb-auto-make-money/</url>
+    <content><![CDATA[<p>这是一款名字叫“Zen Idle”的游戏。来尝试下自动刷钱</p>
+<img src="../../blog-images/2020/adb-auto-make-money/image-20200505094215251.png" alt="image-20200505094215251" style="zoom: 33%;">
+
+<a id="more"></a>
+
+<p>【adb命令行启动应用程序】<br>adb shell am start -n 包名/类名<br>如：<code>adb shell am start -n com.android.music/com.android.music.MusicBrowserActivity</code></p>
+<p>【adb shell 修改系统时间】<br>下面命令亲测可用，假如当前时间   01月05号08点23分改成    01月05号12点23分<br><code>adb shell date &quot;01051223&quot;</code></p>
+<p>【按钮的位置】<br>找到开发者选项，开启“指针位置”，在游戏里找到按钮的范围<br>Claim按钮<br>X: 390-690        300        540<br>Y: 1212-1362    150        1287<br>关闭广告按钮<br>x 915<br>y 835</p>
+<p>【Android adb 模拟滑动 按键 点击事件】</p>
+<p>关于tap的话，他模拟的是touch屏幕的事件，只需给出x、y坐标即可。<br>此x、y坐标对应的是真实的屏幕分辨率，所以要根据具体手机具体看，比如你想点击屏幕(x, y) = (250, 250)位置：<br><code>adb shell input tap 250 250</code><br>此处我：<br><code>input tap 540 1287</code><br><code>input tap 915 835</code></p>
+<p>【总命令】</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">adb shell date <span class="string">"01010601"</span> ; am start -n com.TechTreeGames.ZenIdle/com.unity3d.player.UnityPlayerActivity ; sleep 1 ; input tap 540 1287 ; sleep 1 ; date <span class="string">"01010101"</span> ; input keyevent 3</span><br></pre></td></tr></table></figure>
+
+<p>加点循环</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> I <span class="keyword">in</span> $(seq 1 20);<span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$I</span>/20 ; date <span class="string">"01010601"</span> ; am start -n com.TechTreeGames.ZenIdle/com.unity3d.player.UnityPlayerActivity ; sleep 1 ; input tap 915 835 ; input tap 915 835 ; input tap 540 1287 ; sleep 1 ; date <span class="string">"01010101"</span> ; input keyevent 3</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<p>写入sh脚本，懒得每次输入了</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'for I in $(seq 1 20);do\n    echo $I/20 ; date "01010601" ; am start -n com.TechTreeGames.ZenIdle/com.unity3d.player.UnityPlayerActivity ; sleep 1 ; input tap 915 835 ; input tap 915 835 ; input tap 540 1287 ; sleep 1 ; date "01010101" ; input keyevent 3\ndone'</span> &gt;zen.sh</span><br></pre></td></tr></table></figure>
+
+<p>【adb 安装卸载程序】<br>adb root 失败，提示adbd cannot run as root in production builds<br>网上说安装adbd-Insecure-v2.00.apk，亲测无效。还是每次adb shell然后su吧。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">adb install ./adbd-Insecure-v2.00.apk</span><br><span class="line"></span><br><span class="line">adb shell pm list packages|grep adb</span><br><span class="line">输出：	package:eu.chainfire.adbd</span><br><span class="line"></span><br><span class="line">adb uninstall eu.chainfire.adbd</span><br></pre></td></tr></table></figure>
+
+<p>【尝试只改时间】<br>date “01010101” ; date “01010601”<br>并不能让程序显示奖励窗口（必须先退出这个页面再进入）</p>
+<p>【进一步的集成】<br>通过命令行参数决定要循环几次</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'CNT=10</span></span><br><span class="line"><span class="string">if [ $# != 0 ] ; then </span></span><br><span class="line"><span class="string">CNT=$1</span></span><br><span class="line"><span class="string">fi</span></span><br><span class="line"><span class="string">for I in $(seq 1 $CNT);do</span></span><br><span class="line"><span class="string">    echo $I/$CNT ; date "01010601" ; am start -n com.TechTreeGames.ZenIdle/com.unity3d.player.UnityPlayerActivity ; sleep 1 ; input tap 915 835 ; input tap 915 835 ; input tap 540 1287 ; sleep 1 ; date "01010101" ; input keyevent 3</span></span><br><span class="line"><span class="string">done'</span> &gt;zen.sh</span><br></pre></td></tr></table></figure>
+
+<p>然后：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">adb shell</span><br><span class="line"><span class="built_in">cd</span> /sdcard/_sh</span><br><span class="line">su</span><br><span class="line">. ./zen.sh 20</span><br></pre></td></tr></table></figure>
+
+<p>【手机闹钟BUG级响起】<br>无解<br>可以关闭闹钟</p>
+<p>【尝试只在date的时候用su执行】</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir /sdcard/_sh</span><br><span class="line"><span class="built_in">echo</span> <span class="string">'CNT=10</span></span><br><span class="line"><span class="string">if [ $# != 0 ] ; then </span></span><br><span class="line"><span class="string">CNT=$1</span></span><br><span class="line"><span class="string">fi</span></span><br><span class="line"><span class="string">for I in $(seq 1 $CNT);do</span></span><br><span class="line"><span class="string">    echo $I/$CNT ; su -c date "01010601" ; am start -n com.TechTreeGames.ZenIdle/com.unity3d.player.UnityPlayerActivity ; sleep 1 ; input tap 915 835 ; input tap 915 835 ; input tap 540 1287 ; sleep 1 ; su -c date "01010101" ; input keyevent 3</span></span><br><span class="line"><span class="string">done'</span> &gt;/sdcard/_sh/zen.sh</span><br></pre></td></tr></table></figure>
+
+<p>完美~<br>但是会每次date的时候显示“已授予shell超级用户权限”，看着很难受<br>先su再执行脚本就不会了</p>
+<p>可以在电脑上adb shell进去执行脚本，也可以用手机啦</p>
+<p>【视频演示】</p>
+<p><video controls src="../../blog-images/2020/adb-auto-make-money/Screenrecorder-2020-01-01-01-18-54-228.webm"></video></p>
+]]></content>
+      <categories>
+        <category>none</category>
+      </categories>
+      <tags>
+        <tag>adb</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Why linux</title>
+    <url>/2020/03/why-linux/</url>
+    <content><![CDATA[<p>学习Linux之前，了解Linux哲学和Linux设计思想是必要的。</p>
+<p>然后就是开始敲命令了啦<a id="more"></a></p>
+<h2 id="Linux哲学"><a href="#Linux哲学" class="headerlink" title="Linux哲学"></a>Linux哲学</h2><h4 id="知乎：《unix-linux-设计哲学》"><a href="#知乎：《unix-linux-设计哲学》" class="headerlink" title="知乎：《unix/linux 设计哲学》"></a>知乎：《unix/linux 设计哲学》</h4><p><a href="https://zhuanlan.zhihu.com/p/57521605" rel="external nofollow noopener noreferrer" target="_blank">https://zhuanlan.zhihu.com/p/57521605</a></p>
+<p>内容太多，不要求完全记住。可以以后回来再翻阅</p>
+<h4 id="博客园：Linux的哲学思想"><a href="#博客园：Linux的哲学思想" class="headerlink" title="博客园：Linux的哲学思想"></a>博客园：<a href="https://www.cnblogs.com/ZhengLiming/p/5875049.html" rel="external nofollow noopener noreferrer" target="_blank">Linux的哲学思想</a></h4><p>Linux哲学思想：</p>
+<ol>
+<li>一切皆文件；</li>
+<li>小型，单一用途的程序；</li>
+<li>连接程序，共同完成复杂功能；</li>
+<li>避免令人困惑的用户界面；</li>
+<li>配置数据存储在文本中；</li>
+</ol>
+<p>解释：<br>一切皆文件：是 Unix/Linux 的基本哲学之一。不仅普通的文件，目录、字符设备、块设备、 套接字等在 Unix/Linux 中都是以文件被对待；它们虽然类型不同，但是对其提供的却是同一套操作界面。</p>
+<p>小型，单一用途的程序：程序和可执行文件不要太复杂，这样才能保证了linux内核的高效运行</p>
+<p>连接程序，共同完成复杂功能：复杂的任务可以通过连接多个简单的程序实现复杂的功能。对于复杂的功能linux通过许多简单程序的组合等方式实现，在保证简单功能的高效性的同时，复杂的程序也必然是高效性的</p>
+<p>避免令人困惑的用户界面：如windows那样出了问题一般人选择的会是重启，实在是不行的话就是 重新 安装系统了，因为对于windows那样不是开源的，并且用户界面比较 复杂操作系统出了问题，一般的人是根本没有办法解决的。但是linux就不一样了，第一linux是开源的，无论什么问题都可以通过简洁的命令行实现 排错，修改系统的配置，一切都是简洁明了为基础。</p>
+<p>配置数据存储在文本中：linux所有的配置文件都存放在文本配置文件当中，无论什么配置修改都只需修改其配置文件即可，配置文件时文本形式的只需任意一款文本编辑器修改即可而不是类似于windows那样将保存在注册表中，并且windows的注册表需要专门的二进制或十六进制的编辑器才可编辑，修改比较复杂</p>
+<h4 id="bilibili：Linux哲学视频资料1："><a href="#bilibili：Linux哲学视频资料1：" class="headerlink" title="bilibili：Linux哲学视频资料1："></a>bilibili：Linux哲学视频资料1：</h4><p>哲学的魅力 | 非Windows系统家族的魅力之所在：“一切皆文件”</p>
+<p><a href="https://www.bilibili.com/video/BV1Yb411g79x" rel="external nofollow noopener noreferrer" target="_blank">https://www.bilibili.com/video/BV1Yb411g79x</a></p>
+<p>（命令不会没关系，了解一下“哲学”就好）</p>
+<h4 id="bilibili：Linux哲学视频资料2"><a href="#bilibili：Linux哲学视频资料2" class="headerlink" title="bilibili：Linux哲学视频资料2"></a>bilibili：Linux哲学视频资料2</h4><p>TED-Linux背后的精神 _ Linus Torvalds</p>
+<p><a href="https://www.bilibili.com/video/BV1a4411t7Kt?p=1" rel="external nofollow noopener noreferrer" target="_blank">https://www.bilibili.com/video/BV1a4411t7Kt?p=1</a></p>
+<p>（一个有英文字幕的双语版本：）</p>
+<p><a href="https://www.bilibili.com/video/BV1J7411v7BD" rel="external nofollow noopener noreferrer" target="_blank">https://www.bilibili.com/video/BV1J7411v7BD</a></p>
+<hr>
+<h2 id="系统目录结构"><a href="#系统目录结构" class="headerlink" title="系统目录结构"></a>系统目录结构</h2><p>Linux 里面最重要的概念估计就是“一切皆文件”了，我们来看看Linux系统的根目录结构。</p>
+<p>首先是 Linux 不像 Windows 这种，系统里面看起来有多个“盘”，C，D，E，F，什么的，</p>
+<p>在 Linux，只有一个“盘”（可以假想成 C盘），但是里面文件夹却有很多。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2014/06/4_20.png" alt="img"></p>
+<p>我们来看看菜鸟教程 Linux 部分是怎么说的：</p>
+<p><a href="https://www.runoob.com/linux/linux-system-contents.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.runoob.com/linux/linux-system-contents.html</a></p>
+<p>其中用得比较多的文件夹也不是很多啦：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;dev	虚拟的，你的硬件设备会列出在这里</span><br><span class="line">&#x2F;etc	配置文件的集散地</span><br><span class="line">&#x2F;home	用户目录，相当于 Windows 的 %USERPROFILE% （你可以试试把这个输入资源管理器的地址栏回车）</span><br><span class="line">&#x2F;media	一些设备出现在这里</span><br><span class="line">&#x2F;mnt	用于挂载文件系统（插入U盘并挂载后在这里找）（wsl可以在这里访问主系统文件）</span><br><span class="line">&#x2F;bin | &#x2F;usr&#x2F;bin | &#x2F;usr&#x2F;sbin 你看到文件出现在这里，那大概率是可执行程序这样的东西了</span><br><span class="line">&#x2F;var	做 web 你会爱死的</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Linux终端"><a href="#Linux终端" class="headerlink" title="Linux终端"></a>Linux终端</h2><p>终端（Terminal），也叫命令行，顾名思义，输入命令的地方。就是经常见到的黑窗口（当然并不见得都是黑的）</p>
+<p>命令行是 Linux 最常见的状态，GUI (Graphical User Interface，图形用户界面) 反而不是</p>
+<p>在 Linux 终端干得最多的一件事当然是敲命令了，命令一般是如下格式：</p>
+<p><code>command [-option]  parameter1 parameter2...</code></p>
+<p>我们来看几个参考链接：</p>
+<p>图示直观的：<a href="https://blog.csdn.net/pl0020/article/details/82012881" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/pl0020/article/details/82012881</a></p>
+<p>分析有理的：<a href="https://blog.csdn.net/wangjianno2/article/details/16344807" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/wangjianno2/article/details/16344807</a></p>
+<p>详细深入的：<a href="http://c.biancheng.net/view/720.html" rel="external nofollow noopener noreferrer" target="_blank">http://c.biancheng.net/view/720.html</a></p>
+<p>这里还想 bb 几句：</p>
+<ol>
+<li>Windows Linux都有命令行（Windows早期DOS也是命令行系统），但是操作习惯有些小不同</li>
+<li>Windows 参数一般是 <code>/option</code>，Linux 大多是  <code>-option</code>  <code>--option</code></li>
+<li>Windows 获取帮助一般是 <code>/?</code> ，Linux 大多是  <code>-h</code>  <code>-help</code>  <code>--help</code></li>
+<li>Windows 路径以反斜杠 <code>\</code> 分隔，Linux 路径由正斜杠 <code>/</code> 分隔</li>
+<li>Windows 命令行能运行 <code>.bat</code> 批处理脚本，Linux终端能运行 <code>.sh</code> 批处理脚本，语法大部分不同，少数相同</li>
+</ol>
+<hr>
+<h2 id="开始背命令吧"><a href="#开始背命令吧" class="headerlink" title="开始背命令吧"></a>开始背命令吧</h2><h4 id="必学的少数命令"><a href="#必学的少数命令" class="headerlink" title="必学的少数命令"></a>必学的少数命令</h4><table>
+<thead>
+<tr>
+<th align="center">ls</th>
+<th align="center">ll</th>
+<th align="center">cd</th>
+<th align="center">touch</th>
+<th align="center">clear</th>
+<th align="center">pwd</th>
+<th align="center">mkdir</th>
+<th align="center">cat</th>
+<th align="center">more</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">less</td>
+<td align="center">tail</td>
+<td align="center">cp</td>
+<td align="center">mv</td>
+<td align="center">rm(谨慎)</td>
+<td align="center">find</td>
+<td align="center">vi/vim</td>
+<td align="center">|</td>
+<td align="center">grep</td>
+</tr>
+<tr>
+<td align="center">ps</td>
+<td align="center">kill</td>
+<td align="center">ipconfig</td>
+<td align="center">tar</td>
+<td align="center">reboot</td>
+<td align="center">shutdown</td>
+<td align="center">halt</td>
+<td align="center">chmod</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>这里是一些介绍：<a href="https://blog.csdn.net/weixin_44706512/article/details/90604635" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/weixin_44706512/article/details/90604635</a></p>
+<h4 id="菜鸟教程：Linux-命令大全"><a href="#菜鸟教程：Linux-命令大全" class="headerlink" title="菜鸟教程：Linux 命令大全"></a>菜鸟教程：Linux 命令大全</h4><p>其他的，少见的，忘了的，可以在这里速查，也可以学习积累：</p>
+<p> <a href="https://www.runoob.com/linux/linux-command-manual.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.runoob.com/linux/linux-command-manual.html</a></p>
+<h4 id="Linux常用命令大全-和用法"><a href="#Linux常用命令大全-和用法" class="headerlink" title="Linux常用命令大全(和用法)"></a>Linux常用命令大全(和用法)</h4><p><a href="https://www.cnblogs.com/fnlingnzb-learner/p/5831284.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/fnlingnzb-learner/p/5831284.html</a></p>
+<hr>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h4 id="Linux-怎么装？"><a href="#Linux-怎么装？" class="headerlink" title="Linux 怎么装？"></a>Linux 怎么装？</h4><p>必应搜索“WSL安装”：<a href="https://cn.bing.com/search?q=wsl安装" rel="external nofollow noopener noreferrer" target="_blank">https://cn.bing.com/search?q=wsl%E5%AE%89%E8%A3%85</a></p>
+<p>必应搜索“VMware 安装 Linux”：<a href="https://cn.bing.com/search?q=VMware+安装+Linux" rel="external nofollow noopener noreferrer" target="_blank">https://cn.bing.com/search?q=VMware+%E5%AE%89%E8%A3%85+Linux</a></p>
+<p>想知道VMware安装详细某版本，把上面 Linux 换成你的对应详细版本即可，如：Ubuntu18.04</p>
+<h4 id="发行版这么多，用哪个版本好？"><a href="#发行版这么多，用哪个版本好？" class="headerlink" title="发行版这么多，用哪个版本好？"></a>发行版这么多，用哪个版本好？</h4><p>初学者：Ubuntu、deepin。极客：Arch。服务器用户：CentOS。发烧玩家：Steam OS。</p>
+<h4 id="哪儿去获取-Linux-镜像？"><a href="#哪儿去获取-Linux-镜像？" class="headerlink" title="哪儿去获取 Linux 镜像？"></a>哪儿去获取 Linux 镜像？</h4><p>千万别再去XX下载站了。</p>
+<p>必应搜索你想要的系统名字，搜索结果第一条都是官方网站了，一般他们域名都是 <code>系统名.org</code>，这是非营利组织的域名，也有部分是 <code>系统.com</code>，如Ubuntu，因为它包含了商业发行版。</p>
+<p>打开网站，在醒目的位置，都能找到 Download 这种东西，仔细寻找，可以找到 <code>.iso</code> 镜像下载链接。如果下载慢，可以使用 <a href="https://blog.csdn.net/u010250863/article/details/70161188" rel="external nofollow noopener noreferrer" target="_blank">国内镜像站</a> ，他们提供了高速的软件下载和软件源服务，像 <a href="http://mirrors.tuna.tsinghua.edu.cn/" rel="external nofollow noopener noreferrer" target="_blank">清华源</a>、<a href="http://mirrors.aliyun.com/" rel="external nofollow noopener noreferrer" target="_blank">阿里云</a>、<a href="http://mirrors.163.com/" rel="external nofollow noopener noreferrer" target="_blank">网易</a>等等</p>
+<h4 id="我应该使用-root-用户吗？"><a href="#我应该使用-root-用户吗？" class="headerlink" title="我应该使用 root 用户吗？"></a>我应该使用 root 用户吗？</h4><p>不建议。应当在系统安装过程中设置好用户名和密码，以后使用需要高权限的命令应该使用 <code>sudo</code> 或 <code>su</code> 。</p>
+]]></content>
+      <categories>
+        <category>pwn</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>科学地让 OneDrive 飞，下载速度 5Mb/s</title>
     <url>/2020/03/let-onedrive-fly-scientifically/</url>
     <content><![CDATA[<p>OneDrive 是 Microsoft 的一个云存储服务，安装后集成在 Windows 资源管理器，所以比其他任何网盘都更有其与生俱来的优势。但由于众所周知的原因，OneDrive 的访问速度也极低。<br>访问速度慢还不算了，还经常会死在某个进度，一直下不动，这是最**的</p>
