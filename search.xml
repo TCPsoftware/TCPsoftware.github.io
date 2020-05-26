@@ -6,7 +6,7 @@
     <content><![CDATA[<p>今天手机屏幕出问题手机差点变砖</p>
 <a id="more"></a>
 
-<h2 id="莫名其妙的自动点击"><a href="#莫名其妙的自动点击" class="headerlink" title="莫名其妙的自动点击"></a>莫名其妙的自动点击</h2><p>今天（前几天开始），手机使用的时候总是有莫名其妙的自动的点击，造成了一些困扰。</p>
+<h1 id="莫名其妙的自动点击"><a href="#莫名其妙的自动点击" class="headerlink" title="莫名其妙的自动点击"></a>莫名其妙的自动点击</h1><p>今天（前几天开始），手机使用的时候总是有莫名其妙的自动的点击，造成了一些困扰。</p>
 <p>今天下午开始直接十点同时点击，在屏幕最下方！</p>
 <p>脑补一下：打开输入法，啪啦啪啦给我按一堆 <code>,.,.,,,</code> ，</p>
 <p>打开设置，啪啦啪啦给我点进去不知道什么设置选项了</p>
@@ -17,19 +17,22 @@
 
 
 
-<h2 id="考虑是不是系统卡顿"><a href="#考虑是不是系统卡顿" class="headerlink" title="考虑是不是系统卡顿"></a>考虑是不是系统卡顿</h2><p><img src="http://wx4.sinaimg.cn/large/ceeb653ely1g5muukoxz9j20dy07s3yy.jpg" alt="img"></p>
+<h1 id="考虑是不是系统卡顿"><a href="#考虑是不是系统卡顿" class="headerlink" title="考虑是不是系统卡顿"></a>考虑是不是系统卡顿</h1><p><img src="http://wx4.sinaimg.cn/large/ceeb653ely1g5muukoxz9j20dy07s3yy.jpg" alt="img"></p>
 <p>锁屏，解锁。无效</p>
 <p>关机，重启。无效。开机一会儿后又开始了，而且频繁的点击影响锁屏解锁！</p>
 <p>什么？你想叫我重买？</p>
-<p><img src="http://wx3.sinaimg.cn/large/006APoFYly1g56oaeje2gj30ae0acmxi.jpg" alt="不可能想都不要想_不要_可能表情"></p>
-<h2 id="考虑是不是有病毒软件恶意程序"><a href="#考虑是不是有病毒软件恶意程序" class="headerlink" title="考虑是不是有病毒软件恶意程序"></a>考虑是不是有病毒软件恶意程序</h2><p>浩浩荡荡开始卸载（半年了终于清理一次手机）</p>
+<img src="http://wx3.sinaimg.cn/large/006APoFYly1g56oaeje2gj30ae0acmxi.jpg" alt="不可能想都不要想_不要_可能表情" style="zoom:50%;">
+
+
+
+<h1 id="考虑是不是有病毒软件恶意程序"><a href="#考虑是不是有病毒软件恶意程序" class="headerlink" title="考虑是不是有病毒软件恶意程序"></a>考虑是不是有病毒软件恶意程序</h1><p>浩浩荡荡开始卸载（半年了终于清理一次手机）</p>
 <blockquote>
 <p>顺手发现了小米系统的自动启动程序是真的恶心。刚关了几个，又给我打开了几个程序</p>
 </blockquote>
 <p>检查并卸载了：白鲸V₱N、老王V₱N、蚂蚁V₱N、旋风V₱N、Minecraft网易版、adbd insecure（系统使用过程中提示授予了root权限 所以严重怀疑这个）、VMOS（占用空间大，顺手卸了吧）、轻启动（有模拟点击，所以也怀疑这个，而且长得还丑，顺手卸了吧）</p>
 <p><strong>莫  有  卵  用  ！</strong></p>
 <p>还是那么自由的十点暴击</p>
-<h2 id="冻结系统程序"><a href="#冻结系统程序" class="headerlink" title="冻结系统程序"></a>冻结系统程序</h2><p>浏览小米系统管家，看到了下面的程序然后冻结了</p>
+<h1 id="冻结系统程序"><a href="#冻结系统程序" class="headerlink" title="冻结系统程序"></a>冻结系统程序</h1><p>浏览小米系统管家，看到了下面的程序然后冻结了</p>
 <img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200526174312780.png" style="zoom:50%;">
 
 <p>心想重启一下才能停止运行系统服务呢。重启手机。结果：</p>
@@ -38,7 +41,7 @@
 <img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200526173640419.png" style="zoom: 80%;">
 
 <p>咋办？？？？？？？？？？？？？？？？？？</p>
-<h2 id="adb-？试试就逝世。"><a href="#adb-？试试就逝世。" class="headerlink" title="adb ？试试就逝世。"></a>adb ？试试就逝世。</h2><p>连接电脑，adb shell进入命令行。</p>
+<h1 id="adb-？试试就逝世。"><a href="#adb-？试试就逝世。" class="headerlink" title="adb ？试试就逝世。"></a>adb ？试试就逝世。</h1><p>连接电脑，adb shell进入命令行。</p>
 <p>input，模拟触摸。不管用</p>
 <p><img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200526175057121.png" alt></p>
 <p>通过搜索，知道了如何列出已停用的系统程序</p>
@@ -49,20 +52,21 @@
 <p><img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200526173816548.png" alt></p>
 <p><img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200526173752547.png" alt></p>
 <p>重启，还是不行</p>
-<h2 id="突然想到鼠标"><a href="#突然想到鼠标" class="headerlink" title="突然想到鼠标"></a>突然想到鼠标</h2><p>摸出手机 USB-C OTG 转接头，拔掉电脑无线鼠标插上OTG插上TypeC口，</p>
+<h1 id="突然想到鼠标"><a href="#突然想到鼠标" class="headerlink" title="突然想到鼠标"></a>突然想到鼠标</h1><p>摸出手机 USB-C OTG 转接头，拔掉电脑无线鼠标插上OTG插上TypeC口，</p>
 <p><strong>能用！</strong></p>
-<p><img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200526180533257.png" alt></p>
+<img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200526180533257.png" style="zoom: 50%;">
+
 <p>啊这？？   这变成巴掌大的 Android显示器了么</p>
 <p>所幸是能用了</p>
 <img src="http://wx4.sinaimg.cn/large/006m97Kgly1gdl8qdjl1gj30h30hs40u.jpg" alt="希望人没事_没事_希望表情" style="zoom:33%;">
 
 <p>现在又咋办呢？？？？？？？？？？？？</p>
-<h2 id="进入TRWP看看？"><a href="#进入TRWP看看？" class="headerlink" title="进入TRWP看看？"></a>进入TRWP看看？</h2><p>截图就不截图了，脑补一下。</p>
+<h1 id="进入TRWP看看？"><a href="#进入TRWP看看？" class="headerlink" title="进入TRWP看看？"></a>进入TRWP看看？</h1><p>截图就不截图了，脑补一下。</p>
 <p>重启进入TRWP，各种操作都是正常的，甚至还很流畅。</p>
 <p>判定硬件没有问题。</p>
 <p>判定TRWP手机驱动正常可用。</p>
 <p>MIUI系统有问题。</p>
-<h2 id="通过搜索，我们知道…"><a href="#通过搜索，我们知道…" class="headerlink" title="通过搜索，我们知道…"></a>通过搜索，我们知道…</h2><p>搜你妹，上莆田医院啊<br><img src="http://wx4.sinaimg.cn/large/ceeb653ely1g5muukoxz9j20dy07s3yy.jpg" alt="img"></p>
+<h1 id="通过搜索，我们知道…"><a href="#通过搜索，我们知道…" class="headerlink" title="通过搜索，我们知道…"></a>通过搜索，我们知道…</h1><p>搜你妹，上莆田医院啊<br><img src="http://wx4.sinaimg.cn/large/ceeb653ely1g5muukoxz9j20dy07s3yy.jpg" alt="img"></p>
 <p>重装。。。系统？</p>
 <p>然后又搜了一堆新版系统，又搜了刷系统。</p>
 <p>不行，我程序还没备份。</p>
@@ -73,7 +77,7 @@
 <p><img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200526165855658.png" alt="image-20200526165855658"></p>
 <p><img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200526165952401.png" alt="image-20200526165952401"></p>
 <p><img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200526170059829.png" alt="image-20200526170059829"></p>
-<h2 id="我想起高兴的细情"><a href="#我想起高兴的细情" class="headerlink" title="我想起高兴的细情"></a>我想起高兴的细情</h2><p>手机发烫了。</p>
+<h1 id="我想起高兴的细情"><a href="#我想起高兴的细情" class="headerlink" title="我想起高兴的细情"></a>我想起高兴的细情</h1><p>手机发烫了。</p>
 <p>想起前面哪篇文章说过触摸不行可能是屏幕上电荷什么的。。。</p>
 <p>（<a href="http://gd.zhidao.189.cn/ckb/sj/20180629/1103_364939.html?city=gz" rel="external nofollow noopener noreferrer" target="_blank">终于找到这篇文章了</a>）</p>
 <p>解决方案：湿抹布，上下左右前前后后擦一遍，重启。</p>
@@ -90,15 +94,13 @@
   <entry>
     <title>大举报：仿佛那个时代又来临了</title>
     <url>/2020/05/dajubao/</url>
-    <content><![CDATA[<p>转自 <a href="https://www.douban.com/note/719813875/" rel="external nofollow noopener noreferrer" target="_blank">豆瓣</a> ： 2019-05-25 03:37:45</p>
+    <content><![CDATA[<p>转自 <a href="https://www.douban.com/note/719813875/" rel="external nofollow noopener noreferrer" target="_blank">豆瓣</a> ： 2019-05-25 03:37:45<a id="more"></a></p>
 <hr>
 <h2 id="大举报：仿佛那个时代又来临了"><a href="#大举报：仿佛那个时代又来临了" class="headerlink" title="大举报：仿佛那个时代又来临了"></a>大举报：仿佛那个时代又来临了</h2><p>原创：梅骁 </p>
 <p>1</p>
 <p>之前我很想写一篇文章，写举报是时代变坏的开始。</p>
 <p>但最近我的想法变了，我们的时代不是在开始变坏，而是已经变得很坏了。</p>
 <p>最近一个让我有这种感觉的事件是王晨艺的点赞事件。</p>
-<a id="more"></a>
-
 <p>王晨艺是今年《创造营2019》的一个选手，是个没什么背景的舞蹈老师，在《创造营2019》这个整体很糊的节目里人气排名很靠前。</p>
 <p>你不知道他没关系，因为我其实对他也没那么熟悉。</p>
 <p>但这两天他身上发生了一个事情，有人扒出他六年前曾经在微博点赞过荤段子，所以认为他点赞涉及“敏感问题”，认为他是劣迹艺人，要求他立刻退赛。</p>
