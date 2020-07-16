@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.tcpsoft.app/about/index.html</loc>
+    
+    <lastmod>2020-07-16T04:58:41.479Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.tcpsoft.app/2020/07/time-management/</loc>
+    
+    <lastmod>2020-07-16T04:57:23.701Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.tcpsoft.app/2020/07/qzone-faster-like/</loc>
     
     <lastmod>2020-07-11T06:56:38.937Z</lastmod>
@@ -89,13 +103,6 @@
     <loc>https://blog.tcpsoft.app/2020/02/wooyun-on-github/</loc>
     
     <lastmod>2020-02-13T15:52:27.920Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.tcpsoft.app/about/index.html</loc>
-    
-    <lastmod>2020-02-11T18:02:31.409Z</lastmod>
     
   </url>
   
