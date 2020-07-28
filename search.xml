@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>简简单单的记录一下gdb的亿点点常用的操作</title>
+    <url>/2020/07/gdb-operation/</url>
+    <content><![CDATA[<p>.<a id="more"></a></p>
+<h2 id="gdb操作："><a href="#gdb操作：" class="headerlink" title="gdb操作："></a>gdb操作：</h2><hr>
+<h4 id="gdb-xxx"><a href="#gdb-xxx" class="headerlink" title="gdb ./xxx"></a>gdb ./xxx</h4><p>开始调试xxx程序，如果不能运行，需要先 <code>chmod +x ./xxx</code></p>
+<hr>
+<h4 id="gdb-attach-pid"><a href="#gdb-attach-pid" class="headerlink" title="gdb attach [pid]"></a>gdb attach [pid]</h4><p>通过程序id即pid，gdb附加到一个正在运行的程序，并对其进行调试</p>
+<hr>
+<h4 id="start"><a href="#start" class="headerlink" title="start"></a>start</h4><p>运行程序并断点在第一条指令</p>
+<p>输出寄存器，反汇编等信息</p>
+<hr>
+<h4 id="list"><a href="#list" class="headerlink" title="list"></a>list</h4><p>有源码的情况下 输出源码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pwndbg&gt; list</span><br><span class="line">warning: Source file is more recent than executable.</span><br><span class="line">1       #include&lt;stdio.h&gt;</span><br><span class="line">2       #include&lt;stdlib.h&gt;</span><br><span class="line">3       #include&lt;unistd.h&gt;</span><br><span class="line">4       int main()&#123;</span><br><span class="line">5               char num&#x3D;&#39;0&#39;;</span><br><span class="line">6               char str[10];</span><br><span class="line">7               read(0,str,0x10);</span><br><span class="line">8               if(num&#x3D;&#x3D;&#39;1&#39;)&#123;</span><br><span class="line">9                       puts(&quot;great.\n&quot;);</span><br><span class="line">10                      fflush(stdout);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="b-内存地址"><a href="#b-内存地址" class="headerlink" title="b *内存地址"></a>b *内存地址</h4><p>在内存地址处下断点</p>
+<hr>
+<h4 id="b-函数名-函数名"><a href="#b-函数名-函数名" class="headerlink" title="b 函数名/*函数名"></a>b 函数名/*函数名</h4><p>下断点</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pwndbg&gt; b main</span><br><span class="line">Breakpoint 1 at 0x80484dc: file pwn05_char[]_overflow.cpp, line 5.</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="info-b"><a href="#info-b" class="headerlink" title="info b"></a>info b</h4><p>查看断点信息</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pwndbg&gt; info b</span><br><span class="line">Num     Type           Disp Enb Address    What</span><br><span class="line">1       breakpoint     keep y   0x080484dc in main() at pwn05_char[]_overflow.cpp:5</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="step"><a href="#step" class="headerlink" title="step"></a>step</h4><p>step(in)，步入，在有源码调试时，执行下一行源码，有函数调用时进入函数调用</p>
+<hr>
+<h4 id="next"><a href="#next" class="headerlink" title="next"></a>next</h4><p>步过，在有源码调试时，执行下一行源码，有函数调用时执行完函数并执行到函数调用的下一行</p>
+<hr>
+<h4 id="nexti-ni"><a href="#nexti-ni" class="headerlink" title="nexti/ni"></a>nexti/ni</h4><p>next instruction，步过，执行下一行汇编指令</p>
+<hr>
+<h4 id="stepi-si"><a href="#stepi-si" class="headerlink" title="stepi/si"></a>stepi/si</h4><p>step into，步入，执行下一行汇编指令，如果有函数调用时进入函数的第一行汇编指令</p>
+<hr>
+<h4 id="finish"><a href="#finish" class="headerlink" title="finish"></a>finish</h4><p>运行完当前的函数，停在最后一句汇编代码</p>
+<hr>
+<h4 id="info-registers"><a href="#info-registers" class="headerlink" title="info registers"></a>info registers</h4><p>寄存器信息</p>
+<hr>
+<h4 id="x-lt-n-f-u-gt-lt-addr-gt"><a href="#x-lt-n-f-u-gt-lt-addr-gt" class="headerlink" title="x/&lt;n/f/u&gt; &lt;addr&gt;"></a><code>x/&lt;n/f/u&gt; &lt;addr&gt;</code></h4><p>格式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">f格式：</span><br><span class="line">x 按十六进制格式显示变量。</span><br><span class="line">d 按十进制格式显示变量。</span><br><span class="line">u 按十六进制格式显示无符号整型。</span><br><span class="line">o 按八进制格式显示变量。</span><br><span class="line">t 按二进制格式显示变量。</span><br><span class="line">a 按十六进制格式显示变量。</span><br><span class="line">c 按字符格式显示变量。</span><br><span class="line">f 按浮点数格式显示变量。</span><br><span class="line"></span><br><span class="line">u格式：</span><br><span class="line">b表示单字节</span><br><span class="line">h表示双字节</span><br><span class="line">w表示四字节</span><br><span class="line">g表示八字节。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="一些GDB参考链接："><a href="#一些GDB参考链接：" class="headerlink" title="一些GDB参考链接："></a>一些GDB参考链接：</h4><p><a href="https://blog.csdn.net/tzshlyt/article/details/53668885" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/tzshlyt/article/details/53668885</a></p>
+<p><a href="https://www.jianshu.com/p/b7896e9afeb7" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/b7896e9afeb7</a></p>
+<p><a href="https://blog.csdn.net/u013525455/article/details/52813637" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/u013525455/article/details/52813637</a></p>
+<p><a href="https://www.jianshu.com/p/e6af28e2566f" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/e6af28e2566f</a></p>
+<p><a href="https://www.cnblogs.com/xiaoshiwang/p/10755199.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/xiaoshiwang/p/10755199.html</a></p>
+<p><a href="https://www.cnblogs.com/xsln/p/gdb_instructions1.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/xsln/p/gdb_instructions1.html</a></p>
+<p><a href="https://man.linuxde.net/gdb" rel="external nofollow noopener noreferrer" target="_blank">https://man.linuxde.net/gdb</a></p>
+<p><a href="https://www.cnblogs.com/tangtangde12580/p/8045980.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/tangtangde12580/p/8045980.html</a></p>
+<p><a href="https://www.cnblogs.com/zhoug2020/p/7283169.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/zhoug2020/p/7283169.html</a></p>
+<p><a href="https://www.jianshu.com/p/adcf474f5561" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/adcf474f5561</a></p>
+<p><a href="https://blog.csdn.net/songchuwang1868/article/details/86132281" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/songchuwang1868/article/details/86132281</a></p>
+]]></content>
+      <categories>
+        <category>pwn</category>
+      </categories>
+      <tags>
+        <tag>gdb</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>batch-shortcuts</title>
     <url>/2020/07/batch-shortcuts/</url>
     <content><![CDATA[<p>教你设置 batch-shortcuts</p>

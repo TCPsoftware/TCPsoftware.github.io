@@ -47,26 +47,20 @@
   };
 </script>
 
-  <meta name="description" content="转自 豆瓣 ： 2019-05-25 03:37:45">
+  <meta name="description" content=".">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大举报：仿佛那个时代又来临了">
-<meta property="og:url" content="https://blog.tcpsoft.app/2020/05/dajubao/index.html">
+<meta property="og:title" content="简简单单的记录一下gdb的亿点点常用的操作">
+<meta property="og:url" content="https://blog.tcpsoft.app/2020/07/gdb-operation/index.html">
 <meta property="og:site_name" content="Hi, I&#39;m Cortana.">
-<meta property="og:description" content="转自 豆瓣 ： 2019-05-25 03:37:45">
+<meta property="og:description" content=".">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/dajubao/p61346149.webp">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/dajubao/p61346150.webp">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/dajubao/p61346148.webp">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/dajubao/p61346151.webp">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/dajubao/p61346152.webp">
-<meta property="article:published_time" content="2020-05-11T06:35:55.000Z">
-<meta property="article:modified_time" content="2020-05-26T11:57:51.419Z">
+<meta property="article:published_time" content="2020-07-28T13:35:52.000Z">
+<meta property="article:modified_time" content="2020-07-28T14:21:11.448Z">
 <meta property="article:author" content="tcpsoft">
-<meta property="article:tag" content="none">
+<meta property="article:tag" content="gdb">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/dajubao/p61346149.webp">
 
-<link rel="canonical" href="https://blog.tcpsoft.app/2020/05/dajubao/">
+<link rel="canonical" href="https://blog.tcpsoft.app/2020/07/gdb-operation/">
 
 
 <script id="page-configurations">
@@ -78,7 +72,7 @@
   };
 </script>
 
-  <title>大举报：仿佛那个时代又来临了 | Hi, I'm Cortana.</title>
+  <title>简简单单的记录一下gdb的亿点点常用的操作 | Hi, I'm Cortana.</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158046973-1"></script>
     <script>
@@ -236,7 +230,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.tcpsoft.app/2020/05/dajubao/">
+    <link itemprop="mainEntityOfPage" href="https://blog.tcpsoft.app/2020/07/gdb-operation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -249,7 +243,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          大举报：仿佛那个时代又来临了
+          简简单单的记录一下gdb的亿点点常用的操作
         </h1>
 
         <div class="post-meta">
@@ -258,24 +252,18 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-05-11 14:35:55" itemprop="dateCreated datePublished" datetime="2020-05-11T14:35:55+08:00">2020-05-11</time>
+              <time title="创建时间：2020-07-28 21:35:52 / 修改时间：22:21:11" itemprop="dateCreated datePublished" datetime="2020-07-28T21:35:52+08:00">2020-07-28</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-26 19:57:51" itemprop="dateModified" datetime="2020-05-26T19:57:51+08:00">2020-05-26</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/none/" itemprop="url" rel="index">
-                    <span itemprop="name">none</span>
+                  <a href="/categories/pwn/" itemprop="url" rel="index">
+                    <span itemprop="name">pwn</span>
                   </a>
                 </span>
             </span>
@@ -293,14 +281,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -312,85 +300,56 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>转自 <a href="https://www.douban.com/note/719813875/" rel="external nofollow noopener noreferrer" target="_blank">豆瓣</a> ： 2019-05-25 03:37:45<a id="more"></a></p>
+        <p>.<a id="more"></a></p>
+<h2 id="gdb操作："><a href="#gdb操作：" class="headerlink" title="gdb操作："></a>gdb操作：</h2><hr>
+<h4 id="gdb-xxx"><a href="#gdb-xxx" class="headerlink" title="gdb ./xxx"></a>gdb ./xxx</h4><p>开始调试xxx程序，如果不能运行，需要先 <code>chmod +x ./xxx</code></p>
 <hr>
-<h2 id="大举报：仿佛那个时代又来临了"><a href="#大举报：仿佛那个时代又来临了" class="headerlink" title="大举报：仿佛那个时代又来临了"></a>大举报：仿佛那个时代又来临了</h2><p>原创：梅骁 </p>
-<p>1</p>
-<p>之前我很想写一篇文章，写举报是时代变坏的开始。</p>
-<p>但最近我的想法变了，我们的时代不是在开始变坏，而是已经变得很坏了。</p>
-<p>最近一个让我有这种感觉的事件是王晨艺的点赞事件。</p>
-<p>王晨艺是今年《创造营2019》的一个选手，是个没什么背景的舞蹈老师，在《创造营2019》这个整体很糊的节目里人气排名很靠前。</p>
-<p>你不知道他没关系，因为我其实对他也没那么熟悉。</p>
-<p>但这两天他身上发生了一个事情，有人扒出他六年前曾经在微博点赞过荤段子，所以认为他点赞涉及“敏感问题”，认为他是劣迹艺人，要求他立刻退赛。</p>
-<p><img src="../../blog-images/2020/dajubao/p61346149.webp" alt="img"></p>
-<p>看到这条新闻的时候，我觉得这一切都荒谬透顶。</p>
-<p>最可怕的还不是有人认为一个人点赞荤段子所以他就是劣迹艺人，最可怕的是居然有人为了寻找一个人的“劣迹”而去疯狂翻查这个人过去多年的人生经历，试图寻找出一个黑料、一个过失，并对此大加举报攻击，以达到封杀、退赛的目的。</p>
-<p>这个画面实在太可怕了。</p>
-<p>一个人，他面无表情地盯着手机、盯着电脑，去从另一个人过往的茫茫人生经历里寻找一个错漏之处，就为了攻击他、打垮他。</p>
-<p>你十年前说过脏话、你五年前垃圾没扔进垃圾桶、你三年前打过人一拳……这些全部都有可能成为你被攻击的素材。</p>
-<p>这太可怕了，这画面的恐怖程度不亚于任何一部恐怖片。</p>
-<p>因为我们谁都不能保证自己过往人生里从没有过任何错漏不当之处，所以我们任何人都有可能成为被这种手段打倒的那个。</p>
-<p>2</p>
-<p>时间稍微往前推一下。</p>
-<p>今年三月份时，曾经发生过一件事，重庆一所高校里，有个老师因为课堂上发表损害国家声誉的过激言论而被学生举报。</p>
-<p>学校很快发布公告，认为他违反教师职业道德，撤销了他的教师资格。</p>
-<p><img src="../../blog-images/2020/dajubao/p61346150.webp" alt="img"></p>
-<p>这是举报者的又一次胜利，可我看得特别害怕。</p>
-<p>试想一下，当一个大学老师在课堂上讲话都可能会被举报的时候，他会怎么办？</p>
-<p>他会只敢讲那些最安全、最无聊也最没有价值的东西，因为只有那些东西才是不会被举报的，与传道授业解惑相比，当然是个人的安全最重要。</p>
-<p>这次是撤销教师资格，下次可能就是被判刑入狱，不，据我所知，已经有大学老师因为这个而入狱三年了。</p>
-<p><img src="../../blog-images/2020/dajubao/p61346148.webp" alt="img"></p>
-<p>所以，会越来越少人敢冒这个风险。</p>
-<p>可是，你知道吗，现代大学教育跟中世纪大学教育的区别就在于，中世纪大学是传授已有知识的场所，而现代大学则担负着不断开拓新的知识和学科的职能。</p>
-<p>所以，从1809年现代大学由柏林大学创立开始，“自由”都是大学最核心的关键词。</p>
-<p>曾经在清华大学里，闻一多是言论最激进的教授，动不动就要在课堂上发表演说，后来更是在西南联大的广场集会上高声呼喊，对学校大肆批评。</p>
-<p><img src="../../blog-images/2020/dajubao/p61346151.webp" alt="img"></p>
-<p>闻一多</p>
-<p>当时政府要求学校解聘闻一多，时任校长梅贻琦根本不理会，即便他自己也对闻一多的言行很不满，但他知道“自由”才是让大学教育保持活力的唯一动力。</p>
-<p>而当“举报”出现在大学课堂上，当大学老师的每一句话都可能成为被举报的理由和材料时，还谈什么自由，谈什么进步。</p>
-<p>我们的年轻一代在面对自己不认可的言论时第一反应已经不是“与他辩论”“将他驳倒”，而是熟练的使用举报手段“我要举报他，堵上他说话的嘴巴”。</p>
-<p>并且他们一次又一次的成功做到了。</p>
-<p>他们毁掉的不只是一个又一个老师，他们毁掉的更是教育本身。</p>
-<p>这真的很可悲。</p>
-<p>3</p>
-<p>前两天，在豆瓣鹅组有这么一个帖子，内容是一个投票。</p>
-<p>帖子的作者问大家，如果你发现你的父母、爱人、师长、朋友发表了不当言论，你要不要举报ta？</p>
-<p>那个帖子里甚至详细地把这些人分成了“关系亲近的父母”“有过过节的朋友”“分手分得不愉快的前任”等等，把这些人分门别类地做了投票，问当这些发表了不当言论，你要不要举报。</p>
-<p>这还不是最可怕的，最可怕的是下面的跟帖是真的认真在讨论。</p>
-<p>有人说，父母是绝对不会举报的。</p>
-<p>有人说，就算是爸妈，说了不当言论，也不能姑息。</p>
-<p>有人说，分得不愉快的前任、有过节的朋友当然要举报啊。</p>
-<p>诸如此类，林林总总，这些讨论才是我觉得最可怕的地方，因为大家都默认了“举报”的合法性，默认了当一个人发表了不当言论，他就应该被举报。</p>
-<p>这实在太荒谬了。</p>
-<p>没有任何一个人应该因为他的言论而被举报</p>
-<p>当你遇到一个人说了你不认可的、甚至你极端厌恶的言论，你要做的事情应该是去反驳他、去驳倒他，去用你的思想、你的知识、你的言论去和他正面对决。</p>
-<p>“我看不惯你的言论，所以我要反驳你”，这才是一个文明社会的人应该做的事情。</p>
-<p>而“举报”是“我看不惯你的言论，所以我要堵上你的嘴，不让你说话，我堵不上，我就让更高的权力去堵你的嘴”。</p>
-<p>这是个太可怕的思路。</p>
-<p>一旦你把对言论正确与否的决定权交给了更高的权力，那今天被打倒的是你看不惯的人，明天被打倒的就可能是你自己。</p>
-<p>不要觉得自己一辈子都不可能有任何错漏，任何人都会有错漏，任何人都会在某些情况下发表不当言论。</p>
-<p>甚至，很可能今天还是很合情合理合法的言论，明天就会变成不当言论。</p>
-<p>枪口不会因为你曾经是举报者，就对你网开一面。</p>
-<p>4</p>
-<p>其实，最近这两年来，举报已经越来越常见</p>
-<p>有粉丝为了打击别家偶像，就去举报对方主演的作品有思想问题，有的就去挖对方多年前的微博、文章，试图找出蛛丝马迹、错漏之处。</p>
-<p>我们其实是眼看着这股风气越兴越胜的。</p>
-<p>有人因言获罪入狱，有人靠举报他人以达到打击报复的目的。</p>
-<p>有人讨论当父母发表不当言论时，要不要与父母划清界线。</p>
-<p>有人认真觉得堵上越来越多的嘴，这世界才会变得更好。</p>
-<p>我们已经可以看到那个可预见的未来了。</p>
-<p>在那个未来里，大家会因为不知道自己哪天因为哪句话被举报，所以大学老师会越来越不敢说话，亲人、爱人、朋友之间会越来越无法相信彼此。</p>
-<p>甚至，就连你用滴滴打个车，都可能被司机举报你有不当言论，只因为你在车上和朋友讨论了一下性少数群体的话题。</p>
-<p><img src="../../blog-images/2020/dajubao/p61346152.webp" alt="img"></p>
-<p>我们已经能看到那个人人自危的未来就在不远处了。</p>
-<p>你我都知道那会是个糟糕、邪恶的时代，我们早就见识过了。</p>
-<p>但你我也都知道，我们是很难阻挡举报时代的来临的。</p>
-<p>不，其实风行举报的时代早就已经在我们没注意时来临了，它早就已经深入到了我们生活的方方面面。</p>
-<p>可这是不对的，无论多少人这么做，它都依然是不对的。</p>
-<p>它会毁掉教育，毁掉创造和文化，毁掉人与人之间的信任，毁掉所有自由进步的可能性。</p>
-<p>它不是将要到来，它是已经到来了。</p>
-<p>你我都拦不住这个糟糕时代的来临。</p>
-<p>但至少，我们可以选择不使用它，我们可以选择不做这个糟糕时代的共犯。</p>
+<h4 id="gdb-attach-pid"><a href="#gdb-attach-pid" class="headerlink" title="gdb attach [pid]"></a>gdb attach [pid]</h4><p>通过程序id即pid，gdb附加到一个正在运行的程序，并对其进行调试</p>
+<hr>
+<h4 id="start"><a href="#start" class="headerlink" title="start"></a>start</h4><p>运行程序并断点在第一条指令</p>
+<p>输出寄存器，反汇编等信息</p>
+<hr>
+<h4 id="list"><a href="#list" class="headerlink" title="list"></a>list</h4><p>有源码的情况下 输出源码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">pwndbg&gt; list</span><br><span class="line">warning: Source file is more recent than executable.</span><br><span class="line">1       #include&lt;stdio.h&gt;</span><br><span class="line">2       #include&lt;stdlib.h&gt;</span><br><span class="line">3       #include&lt;unistd.h&gt;</span><br><span class="line">4       int main()&#123;</span><br><span class="line">5               char num&#x3D;&#39;0&#39;;</span><br><span class="line">6               char str[10];</span><br><span class="line">7               read(0,str,0x10);</span><br><span class="line">8               if(num&#x3D;&#x3D;&#39;1&#39;)&#123;</span><br><span class="line">9                       puts(&quot;great.\n&quot;);</span><br><span class="line">10                      fflush(stdout);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="b-内存地址"><a href="#b-内存地址" class="headerlink" title="b *内存地址"></a>b *内存地址</h4><p>在内存地址处下断点</p>
+<hr>
+<h4 id="b-函数名-函数名"><a href="#b-函数名-函数名" class="headerlink" title="b 函数名/*函数名"></a>b 函数名/*函数名</h4><p>下断点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pwndbg&gt; b main</span><br><span class="line">Breakpoint 1 at 0x80484dc: file pwn05_char[]_overflow.cpp, line 5.</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="info-b"><a href="#info-b" class="headerlink" title="info b"></a>info b</h4><p>查看断点信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pwndbg&gt; info b</span><br><span class="line">Num     Type           Disp Enb Address    What</span><br><span class="line">1       breakpoint     keep y   0x080484dc in main() at pwn05_char[]_overflow.cpp:5</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="step"><a href="#step" class="headerlink" title="step"></a>step</h4><p>step(in)，步入，在有源码调试时，执行下一行源码，有函数调用时进入函数调用</p>
+<hr>
+<h4 id="next"><a href="#next" class="headerlink" title="next"></a>next</h4><p>步过，在有源码调试时，执行下一行源码，有函数调用时执行完函数并执行到函数调用的下一行</p>
+<hr>
+<h4 id="nexti-ni"><a href="#nexti-ni" class="headerlink" title="nexti/ni"></a>nexti/ni</h4><p>next instruction，步过，执行下一行汇编指令</p>
+<hr>
+<h4 id="stepi-si"><a href="#stepi-si" class="headerlink" title="stepi/si"></a>stepi/si</h4><p>step into，步入，执行下一行汇编指令，如果有函数调用时进入函数的第一行汇编指令</p>
+<hr>
+<h4 id="finish"><a href="#finish" class="headerlink" title="finish"></a>finish</h4><p>运行完当前的函数，停在最后一句汇编代码</p>
+<hr>
+<h4 id="info-registers"><a href="#info-registers" class="headerlink" title="info registers"></a>info registers</h4><p>寄存器信息</p>
+<hr>
+<h4 id="x-lt-n-f-u-gt-lt-addr-gt"><a href="#x-lt-n-f-u-gt-lt-addr-gt" class="headerlink" title="x/&lt;n/f/u&gt; &lt;addr&gt;"></a><code>x/&lt;n/f/u&gt; &lt;addr&gt;</code></h4><p>格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">f格式：</span><br><span class="line">x 按十六进制格式显示变量。</span><br><span class="line">d 按十进制格式显示变量。</span><br><span class="line">u 按十六进制格式显示无符号整型。</span><br><span class="line">o 按八进制格式显示变量。</span><br><span class="line">t 按二进制格式显示变量。</span><br><span class="line">a 按十六进制格式显示变量。</span><br><span class="line">c 按字符格式显示变量。</span><br><span class="line">f 按浮点数格式显示变量。</span><br><span class="line"></span><br><span class="line">u格式：</span><br><span class="line">b表示单字节</span><br><span class="line">h表示双字节</span><br><span class="line">w表示四字节</span><br><span class="line">g表示八字节。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="一些GDB参考链接："><a href="#一些GDB参考链接：" class="headerlink" title="一些GDB参考链接："></a>一些GDB参考链接：</h4><p><a href="https://blog.csdn.net/tzshlyt/article/details/53668885" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/tzshlyt/article/details/53668885</a></p>
+<p><a href="https://www.jianshu.com/p/b7896e9afeb7" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/b7896e9afeb7</a></p>
+<p><a href="https://blog.csdn.net/u013525455/article/details/52813637" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/u013525455/article/details/52813637</a></p>
+<p><a href="https://www.jianshu.com/p/e6af28e2566f" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/e6af28e2566f</a></p>
+<p><a href="https://www.cnblogs.com/xiaoshiwang/p/10755199.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/xiaoshiwang/p/10755199.html</a></p>
+<p><a href="https://www.cnblogs.com/xsln/p/gdb_instructions1.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/xsln/p/gdb_instructions1.html</a></p>
+<p><a href="https://man.linuxde.net/gdb" rel="external nofollow noopener noreferrer" target="_blank">https://man.linuxde.net/gdb</a></p>
+<p><a href="https://www.cnblogs.com/tangtangde12580/p/8045980.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/tangtangde12580/p/8045980.html</a></p>
+<p><a href="https://www.cnblogs.com/zhoug2020/p/7283169.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/zhoug2020/p/7283169.html</a></p>
+<p><a href="https://www.jianshu.com/p/adcf474f5561" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/adcf474f5561</a></p>
+<p><a href="https://blog.csdn.net/songchuwang1868/article/details/86132281" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/songchuwang1868/article/details/86132281</a></p>
 
     </div>
 
@@ -398,18 +357,6 @@
     
     
       
-  <div class="popular-posts-header">相关文章</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\02\2020gaokaojiayou\" rel="bookmark">2020 高考加油</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2019\12\Hi-Im-Cortana\" rel="bookmark">Hi, I'm Cortana.</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\03\how-to-ask-in-group-chat\" rel="bookmark">群里提问的艺术</a></div>
-    </li>
-  </ul>
 
         <div class="reward-container">
   <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
@@ -435,7 +382,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.tcpsoft.app/2020/05/dajubao/" title="大举报：仿佛那个时代又来临了">https://blog.tcpsoft.app/2020/05/dajubao/</a>
+    <a href="https://blog.tcpsoft.app/2020/07/gdb-operation/" title="简简单单的记录一下gdb的亿点点常用的操作">https://blog.tcpsoft.app/2020/07/gdb-operation/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -446,7 +393,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/none/" rel="tag"># none</a>
+              <a href="/tags/gdb/" rel="tag"># gdb</a>
           </div>
 
         
@@ -455,13 +402,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/adb-auto-make-money/" rel="prev" title="adb自动刷钱">
-      <i class="fa fa-chevron-left"></i> adb自动刷钱
+    <a href="/2020/07/batch-shortcuts/" rel="prev" title="batch-shortcuts">
+      <i class="fa fa-chevron-left"></i> batch-shortcuts
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/05/Mi9-SE-screen-problem-self-rescue/" rel="next" title="手机差点报废后的自救">
-      手机差点报废后的自救 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -522,7 +466,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#大举报：仿佛那个时代又来临了"><span class="nav-number">1.</span> <span class="nav-text">大举报：仿佛那个时代又来临了</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#gdb操作："><span class="nav-number">1.</span> <span class="nav-text">gdb操作：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gdb-xxx"><span class="nav-number">1.0.1.</span> <span class="nav-text">gdb .&#x2F;xxx</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gdb-attach-pid"><span class="nav-number">1.0.2.</span> <span class="nav-text">gdb attach [pid]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#start"><span class="nav-number">1.0.3.</span> <span class="nav-text">start</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#list"><span class="nav-number">1.0.4.</span> <span class="nav-text">list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-内存地址"><span class="nav-number">1.0.5.</span> <span class="nav-text">b *内存地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-函数名-函数名"><span class="nav-number">1.0.6.</span> <span class="nav-text">b 函数名&#x2F;*函数名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#info-b"><span class="nav-number">1.0.7.</span> <span class="nav-text">info b</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step"><span class="nav-number">1.0.8.</span> <span class="nav-text">step</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#next"><span class="nav-number">1.0.9.</span> <span class="nav-text">next</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nexti-ni"><span class="nav-number">1.0.10.</span> <span class="nav-text">nexti&#x2F;ni</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#stepi-si"><span class="nav-number">1.0.11.</span> <span class="nav-text">stepi&#x2F;si</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#finish"><span class="nav-number">1.0.12.</span> <span class="nav-text">finish</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#info-registers"><span class="nav-number">1.0.13.</span> <span class="nav-text">info registers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#x-lt-n-f-u-gt-lt-addr-gt"><span class="nav-number">1.0.14.</span> <span class="nav-text">x&#x2F;&lt;n&#x2F;f&#x2F;u&gt; &lt;addr&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些GDB参考链接："><span class="nav-number">1.0.15.</span> <span class="nav-text">一些GDB参考链接：</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -707,7 +651,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo: 'tcpsoftware.github.io',
       owner: 'tcpsoftware',
       admin: ['tcpsoftware'],
-      id: 'ebdb8b78e50cd1b2fb8b41fd6446dac5',
+      id: '6251ced78aad5bffaa916d9376ef0b3b',
         language: 'zh-CN',
       distractionFreeMode: true
     });
