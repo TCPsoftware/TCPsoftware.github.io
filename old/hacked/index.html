@@ -33,52 +33,5 @@
 		<br>
 		<p align="center"><FONT style="FONT-SIZE: 20pt; COLOR: white; LINE-HEIGHT: 150%; FONT-FAMILY: 华文彩云">您的站点就是我们实践的地点！</FONT></p>
 		<br>
-		<p align="center"><input type="button" id="fullscreen" style="opacity: 0.2;" value="切换全屏"/></p>
-		<script>
-			//控制全屏
-			function enterfullscreen() { //进入全屏
-				$("#fullscreen").html("退出全屏");
-				var docElm = document.documentElement;
-				//W3C
-				if(docElm.requestFullscreen != undefined) {
-					console.log("w3c full");
-					docElm.requestFullscreen();
-				}
-				//FireFox
-				else
-				if(docElm.mozRequestFullScreen != undefined) {
-					console.log("firefox full");
-					docElm.mozRequestFullScreen();
-				}
-				//Chrome等
-				else if(docElm.webkitRequestFullScreen != undefined) {
-					console.log("chrome full");
-					docElm.webkitRequestFullScreen();
-				}
-				//IE11
-				else if(elem.msRequestFullscreen != undefined) {
-					console.log("ie11 full");
-					elem.msRequestFullscreen();
-				}
-			}
-
-			function exitfullscreen() { //退出全屏
-				$("#fullscreen").html("切换全屏");
-				if(document.exitFullscreen) {
-					document.exitFullscreen();
-				} else if(document.mozCancelFullScreen) {
-					document.mozCancelFullScreen();
-				} else if(document.webkitCancelFullScreen) {
-					document.webkitCancelFullScreen();
-				} else if(document.msExitFullscreen) {
-					document.msExitFullscreen();
-				}
-			}
-			var a = 0;
-			$('#fullscreen').on('click', function() {
-				a++;
-				a % 2 == 1 ? enterfullscreen() : exitfullscreen();
-			})
-		</script>
 	</body>
 </html>
