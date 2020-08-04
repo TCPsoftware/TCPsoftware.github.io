@@ -1,5 +1,5 @@
+https://blog.tcpsoft.app/2020/08/welcome-pwn-partition/
 https://blog.tcpsoft.app/2020/07/gdb-operation/
 https://blog.tcpsoft.app/2020/07/batch-shortcuts/
 https://blog.tcpsoft.app/2020/07/time-management/
 https://blog.tcpsoft.app/2020/07/qzone-faster-like/
-https://blog.tcpsoft.app/2020/05/Mi9-SE-screen-problem-self-rescue/
