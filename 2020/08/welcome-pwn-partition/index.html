@@ -54,28 +54,28 @@
 <meta property="og:site_name" content="Hi, I&#39;m Cortana.">
 <meta property="og:description" content="今天再次尝试 wsl+gdb 调试，照舅失败 于是我搞了一个 “P分区”">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/welcome-pwn-partition/image-20200804185229605.png">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/welcome-pwn-partition/image-20200804184759075.png">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/welcome-pwn-partition/image-20200804221417612.png">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/welcome-pwn-partition/image-20200804222350672.png">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/welcome-pwn-partition/image-20200804222407950.png">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/welcome-pwn-partition/image-20200804164302218.png">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/welcome-pwn-partition/image-20200804234159560.png">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/welcome-pwn-partition/image-20200804234628952.png">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/welcome-pwn-partition/image-20200804234748499.png">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/welcome-pwn-partition/image-20200804234951886.png">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/welcome-pwn-partition/image-20200805000450165.png">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/welcome-pwn-partition/image-20200805002113063.png">
-<meta property="og:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/welcome-pwn-partition/image-20200805002130947.png">
+<meta property="og:image" content="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804185229605.png">
+<meta property="og:image" content="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804184759075.png">
+<meta property="og:image" content="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804221417612.png">
+<meta property="og:image" content="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804222350672.png">
+<meta property="og:image" content="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804222407950.png">
+<meta property="og:image" content="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804164302218.png">
+<meta property="og:image" content="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804234159560.png">
+<meta property="og:image" content="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804234628952.png">
+<meta property="og:image" content="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804234748499.png">
+<meta property="og:image" content="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804234951886.png">
+<meta property="og:image" content="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200805000450165.png">
+<meta property="og:image" content="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200805002113063.png">
+<meta property="og:image" content="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200805002130947.png">
 <meta property="article:published_time" content="2020-08-04T08:24:29.000Z">
-<meta property="article:modified_time" content="2020-08-04T16:23:49.975Z">
+<meta property="article:modified_time" content="2020-08-04T16:40:02.242Z">
 <meta property="article:author" content="tcpsoft">
 <meta property="article:tag" content="wsl">
 <meta property="article:tag" content="gdb">
 <meta property="article:tag" content="32位">
 <meta property="article:tag" content="binfmt-support">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog.tcpsoft.app/2020/blog-images/2020/welcome-pwn-partition/image-20200804185229605.png">
+<meta name="twitter:image" content="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804185229605.png">
 
 <link rel="canonical" href="https://blog.tcpsoft.app/2020/08/welcome-pwn-partition/">
 
@@ -277,7 +277,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-05 00:23:49" itemprop="dateModified" datetime="2020-08-05T00:23:49+08:00">2020-08-05</time>
+                <time title="修改时间：2020-08-05 00:40:02" itemprop="dateModified" datetime="2020-08-05T00:40:02+08:00">2020-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -326,16 +326,16 @@
         <p>今天再次尝试 wsl+gdb 调试，照舅失败</p>
 <p>于是我搞了一个 “P分区”<a id="more"></a></p>
 <hr>
-<h2 id="wsl-gdb，不行-❌"><a href="#wsl-gdb，不行-❌" class="headerlink" title="wsl+gdb，不行  ❌"></a>wsl+gdb，不行  ❌</h2><p>咕了很久还是想继续尝试gdb，wsl+gdb当然是最方便的一种方式了，打开命令行就可以用，都不需要开启 vmware。</p>
+<h2 id="wsl-gdb，不行-❌"><a href="#wsl-gdb，不行-❌" class="headerlink" title="wsl+gdb，不行. ❌"></a>wsl+gdb，不行. ❌</h2><p>咕了很久还是想继续尝试gdb，wsl+gdb当然是最方便的一种方式了，打开命令行就可以用，都不需要开启 vmware。</p>
 <p>但是很快的就遇到了问题。首先就是 wsl (我用的是Ubuntu16.04) 装好时是不支持32位程序的，通过搜索知道了安装启动 binfmt-support 就可以，让 wsl 能运行32位程序。</p>
 <p><a href="https://www.jianshu.com/p/3df082840b40" rel="external nofollow noopener noreferrer" target="_blank">让64位的WSL（windows 子 linux系统）支持运行32位程序 - 简书</a> </p>
 <p>正准备开心的打开gdb调试，布星了。</p>
 <p>在 gdb 里 start 可以，但是 ni 就不行了：</p>
-<p><img src="../../blog-images/2020/welcome-pwn-partition/image-20200804185229605.png" alt="image-20200804185229605"></p>
+<p><img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804185229605.png" alt="image-20200804185229605"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pwndbg&gt; ni</span><br><span class="line">Warning:</span><br><span class="line">Cannot insert breakpoint 1.</span><br><span class="line">Cannot access memory at address 0x80484a0</span><br><span class="line"></span><br><span class="line">Command aborted.</span><br></pre></td></tr></table></figure>
 
 <p>查询了一波，感觉大概可能应该或许是 wsl 他就不能调试32位程序？</p>
-<img src="../../blog-images/2020/welcome-pwn-partition/image-20200804184759075.png" alt="image-20200804184759075" style="zoom: 50%;">
+<img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804184759075.png" alt="image-20200804184759075" style="zoom: 50%;">
 
 <p>你品你细品，wsl 装好的时候是只有64位程序支持的，32位直接给砍掉了，如果要运行32位还需要安装 binfmt-support ，32位程序仿佛不是 wsl 本来所支持的功能？</p>
 <p>阅读 binfmt-support 的介绍，可以看到</p>
@@ -347,18 +347,18 @@
 
 <p>这两个网页说，binfmt-support 是32位程序的解释器，安装后将32位程序绑定使用它打开。这是不是有点像虚拟机风格？ gdb和Linux内核应该还是不能支持32位（我猜的）</p>
 <hr>
-<h2 id="vmware，好用！-✔"><a href="#vmware，好用！-✔" class="headerlink" title="vmware，好用！  ✔"></a>vmware，好用！  ✔</h2><p>不多说了吧，VMware装一个Ubuntu来进行调试，肯定没问题 </p>
+<h2 id="vmware，好用！✅"><a href="#vmware，好用！✅" class="headerlink" title="vmware，好用！✅"></a>vmware，好用！✅</h2><p>不多说了吧，VMware装一个Ubuntu来进行调试，肯定没问题 </p>
 <p>但是我还是想快速的访问Windows上那些文件夹。</p>
 <p><a href="https://cn.bing.com/search?q=vmware%E6%B7%BB%E5%8A%A0%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9" rel="external nofollow noopener noreferrer" target="_blank">https://cn.bing.com/search?q=vmware添加共享文件夹</a></p>
 <p>由于我会常用到下载文件夹，所以把下载文件夹映射到share目录。</p>
-<img src="../../blog-images/2020/welcome-pwn-partition/image-20200804221417612.png" alt="image-20200804221417612" style="zoom:67%;">
+<img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804221417612.png" alt="image-20200804221417612" style="zoom:67%;">
 
 <p>Linux里面，文件夹在哪儿呢？</p>
 <p><code>/mnt/hgfs/share</code> </p>
 <p>但是文件管理器进入这个目录，还是不能右键新建文件夹。 </p>
 <p><code>ls -al</code> 查看权限，<code>chmod 777 share</code>来<a href="https://www.runoob.com/linux/linux-comm-chmod.html" rel="external nofollow noopener noreferrer" target="_blank">授予最宽的权限</a>，再次 <code>ls -al</code>查看权限</p>
-<p><img src="../../blog-images/2020/welcome-pwn-partition/image-20200804222350672.png" alt="image-20200804222350672"></p>
-<p><img src="../../blog-images/2020/welcome-pwn-partition/image-20200804222407950.png" alt="image-20200804222407950"></p>
+<p><img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804222350672.png" alt="image-20200804222350672"></p>
+<p><img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804222407950.png" alt="image-20200804222407950"></p>
 <p>设置完后就可以像正常使用一样读写这个文件夹了，所做的更改，在Windows上全部同步。</p>
 <p>可是，这个目录不太好打啊</p>
 <p>我在 <code>~/.bash_aliases</code> 里设置了share，来方便地命令行打开文件夹  <code>alias share=&quot;cd /mnt/hgfs/share&quot;</code></p>
@@ -374,36 +374,36 @@
 <li>稳定不容易坏，他就是个单独分区，不存在移动文件夹导致找不到的问题，只要这个盘还在，就能用（盘不在就创建一个分区呗）</li>
 </ol>
 <p>在此电脑，右键，管理，磁盘管理，搞个新分区，我选的4G大小差不多了。大概像酱紫：</p>
-<p><img src="../../blog-images/2020/welcome-pwn-partition/image-20200804164302218.png" alt="image-20200804164302218"></p>
+<p><img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804164302218.png" alt="image-20200804164302218"></p>
 <p>操作完之后就多出来一个P分区。</p>
 <blockquote>
 <p>这里有一点经验教训就是新建分区后进去然后打开wsl是不行的，wsl还不能识别到分区，如果要识别，需要重启wsl，在管理员权限的cmd里运行：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net stop LxssManager</span><br><span class="line">net start LxssManager</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>虚拟机设置挂载文件夹，同上文。然后运行 ls -al 就可以看到 p 文件夹：</p>
-<p><img src="../../blog-images/2020/welcome-pwn-partition/image-20200804234159560.png" alt="image-20200804234159560"></p>
+<p><img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804234159560.png" alt="image-20200804234159560"></p>
 <p>这次就，不设置 alias 命令了吧，直接，把这个文件夹，映射到根目录下的 <code>/pwn</code> ？</p>
 <p>创建符号链接</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s &#x2F;mnt&#x2F;hgfs&#x2F;p &#x2F;pwn</span><br></pre></td></tr></table></figure>
 
-<p><img src="../../blog-images/2020/welcome-pwn-partition/image-20200804234628952.png" alt="image-20200804234628952"></p>
+<p><img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804234628952.png" alt="image-20200804234628952"></p>
 <p>运行 <code>ls -al</code></p>
-<p><img src="../../blog-images/2020/welcome-pwn-partition/image-20200804234748499.png" alt="image-20200804234748499"></p>
+<p><img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804234748499.png" alt="image-20200804234748499"></p>
 <p>来试一下好了没，运行 <code>cd /pwn</code></p>
-<p><img src="../../blog-images/2020/welcome-pwn-partition/image-20200804234951886.png" alt="image-20200804234951886"></p>
+<p><img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200804234951886.png" alt="image-20200804234951886"></p>
 <p>（这里新建p分区的时候应该应该选择exFat文件系统的。。）</p>
 <p>（然后用 DiskGenius 格式化成了exFat。亲测可用）</p>
-<p><img src="../../blog-images/2020/welcome-pwn-partition/image-20200805000450165.png" alt="image-20200805000450165"></p>
+<p><img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200805000450165.png" alt="image-20200805000450165"></p>
 <p>听说win10可以直接读取ext4 U盘，硬盘应该也快了。我试试格式化成ext4格式。</p>
 <p>读取不了，资源管理器都不显示</p>
 <p>尝试安装了一个 Ext2Fsd-0.69.exe，在 <a href="https://sourceforge.net/projects/ext2fsd/" rel="external nofollow noopener noreferrer" target="_blank">https://sourceforge.net/projects/ext2fsd/</a> 下载的</p>
 <p>安装完成需要重启电脑，不敢重启，就算了不试了</p>
 <p>格式化回exFat格式，可正常使用</p>
 <p>下一步，放进文件</p>
-<img src="../../blog-images/2020/welcome-pwn-partition/image-20200805002113063.png" alt="image-20200805002113063" style="zoom:67%;">
+<img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200805002113063.png" alt="image-20200805002113063" style="zoom:67%;">
 
 <p>下一步，在Linux中使用</p>
-<p><img src="../../blog-images/2020/welcome-pwn-partition/image-20200805002130947.png" alt="image-20200805002130947"></p>
+<p><img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/image-20200805002130947.png" alt="image-20200805002130947"></p>
 
     </div>
 
@@ -531,7 +531,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#wsl-gdb，不行-❌"><span class="nav-number">1.</span> <span class="nav-text">wsl+gdb，不行  ❌</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vmware，好用！-✔"><span class="nav-number">2.</span> <span class="nav-text">vmware，好用！  ✔</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P盘-与-pwn"><span class="nav-number">3.</span> <span class="nav-text">P盘 与 &#x2F;pwn</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#wsl-gdb，不行-❌"><span class="nav-number">1.</span> <span class="nav-text">wsl+gdb，不行. ❌</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vmware，好用！✅"><span class="nav-number">2.</span> <span class="nav-text">vmware，好用！✅</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P盘-与-pwn"><span class="nav-number">3.</span> <span class="nav-text">P盘 与 &#x2F;pwn</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
