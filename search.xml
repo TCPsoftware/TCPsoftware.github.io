@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>解决 WSL2 和 proxifier 的相互报错问题</title>
+    <url>/2021/07/wsl2-and-proxifier/</url>
+    <content><![CDATA[<p>转载自知乎：<code>https://zhuanlan.zhihu.com/p/151392411</code> </p>
+<h2 id="关于使用WSL2出现“参考的对象类型不支持尝试的操作”的解决方法。"><a href="#关于使用WSL2出现“参考的对象类型不支持尝试的操作”的解决方法。" class="headerlink" title="关于使用WSL2出现“参考的对象类型不支持尝试的操作”的解决方法。"></a>关于使用WSL2出现“参考的对象类型不支持尝试的操作”的解决方法。</h2><p><img src="https://blogsrc-1301043685.cos.ap-chengdu.myqcloud.com/v2-7fc4f91dc113fc84a7115c2f8661b8f6_1440w.jpg" alt="关于使用WSL2出现“参考的对象类型不支持尝试的操作”的解决方法。"></p>
+<a id="more"></a>
+
+<h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><p>参考的对象类型不支持尝试的操作。（The attempted operation is not supported for the type of object referenced.）</p>
+<h3 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a><strong>解决方法：</strong></h3><p><strong>1. 常见临时解决方案（不推荐）：</strong></p>
+<p>以管理员身份运行CMD，输入：</p>
+<blockquote>
+<p>netsh winsock reset</p>
+</blockquote>
+<p>重启计算机即可修复。</p>
+<p><strong>2. 长期解决的方案（推荐）：</strong></p>
+<p>（1）下载此软件：</p>
+<p><a href="http://www.proxifier.com/tmp/Test20200228/NoLsp.exe" rel="external nofollow noopener noreferrer" target="_blank">http://www.proxifier.com/tmp/Test20200228/NoLsp.exe</a></p>
+<p>（需要挂代理访问下载）</p>
+<p>（2）管理员身份运行CMD输入：</p>
+<blockquote>
+<p>NoLsp.exe C:\windows\system32\wsl.exe</p>
+</blockquote>
+<p>请自行注意NoLsp.exe程序的位置，以及你的wsl.exe位置。</p>
+<p><strong>产生原因和解决方法分析：</strong></p>
+<ol>
+<li>代理软件和wsl2的sock端口冲突，使用netsh winsock reset重置修复。</li>
+<li>Proxifer开发人员解释如下：</li>
+</ol>
+<blockquote>
+<p>如果Winsock LSP DLL被加载到其进程中，则wsl.exe将显示此错误。最简单的解决方案是对wsl.exe使用WSCSetApplicationCategory WinAPI调用来防止这种情况。在后台，该调用在HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinSock2\Parameters\AppId_Catalog中为wsl.exe创建一个条目。<br>这将告诉Windows不要将LSP DLL加载到wsl.exe进程中</p>
+</blockquote>
+<p><strong>上述解决方案来自于：</strong></p>
+<p><a href="https://github.com/microsoft/WSL/issues/4177">https://github.com/microsoft/WSL/issues/4177</a></p>
+<p><a href="https://answers.microsoft.com/zh-hans/insider/forum/all/wsl2%E5%AE%89%E8%A3%85kali/b6dd4c62-1130-4a7c-9462-1e9e5f38dab2" rel="external nofollow noopener noreferrer" target="_blank">https://answers.microsoft.com/zh-hans/insider/forum/all/wsl2%E5%AE%89%E8%A3%85kali/b6dd4c62-1130-4a7c-9462-1e9e5f38dab2</a></p>
+]]></content>
+      <categories>
+        <category>none</category>
+      </categories>
+      <tags>
+        <tag>代理</tag>
+        <tag>WSL2</tag>
+        <tag>proxifier</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>欢迎 pwn 分区（P盘）</title>
     <url>/2020/08/welcome-pwn-partition/</url>
     <content><![CDATA[<p>今天再次尝试 wsl+gdb 调试，照舅失败</p>
