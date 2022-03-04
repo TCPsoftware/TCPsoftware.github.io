@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>硬盘损坏(物理)和事件分析</title>
+    <url>/2022/03/my-disk-crushed/</url>
+    <content><![CDATA[<p>寒假期间，本人的电脑硬盘坏掉了。</p>
+<p>总结一点经验吧，希望能帮助到您。</p>
+<a id="more"></a>
+
+<h2 id="事件经过"><a href="#事件经过" class="headerlink" title="事件经过"></a>事件经过</h2><p>​        起初是偶尔的找不到系统分区找不到 winload.efi 从而无法启动。后来启不动，BIOS也识别不到，多重启几次可以开机。最后直接无法识别，换卡槽换机器也完全无法识别。 <del>本人猜测可能是主控坏掉的原因。</del></p>
+<p>​        硬盘是<code>西数SN550</code>，容量是1TB，由于是在淘宝小店买的便宜货，店铺的售后就不可能了，尝试西数官方联保，在线申请一直提示网络问题无法申请。尝试看一下数据恢复服务，在系数官方的数据恢复里找到了ontrack公司，在线填写信息后客服发邮件提供了报价，约合人民币5500多。奈何本人，钱包不足，遂放弃。</p>
+<p>​        邮件如下（也可以参考一下使用<del>昂贵的</del>数据恢复服务的操作流程）：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">您好XXX,</span><br><span class="line"></span><br><span class="line">多謝你使用KLDiscovery Ontrack (HK) Ltd. 數據修復服務.</span><br><span class="line">Ontrack 35年歷史，在美國上市，是全球最大的數據恢復公司，每年恢復超過50,000個成功個案。</span><br><span class="line"></span><br><span class="line">數據恢復服務的程序如下:</span><br><span class="line">1. 請郵寄你的硬盤到我們的辦公室.</span><br><span class="line">2. 數據修復服務開始後, 你會收到我們發出的郵件, 你可登入查核數據修復進度.</span><br><span class="line">3. 當修復服務完成後, 我們會傳送修復報告及報價單到你的電子郵箱.</span><br><span class="line">4. 如你對報告感到滿意, 請簽回報價單. 修復好的數據將會儲存於全新1TB 移動硬盤.</span><br><span class="line">5. 標準服務的檢查費為HKD800恢復數據費用為 HKD6000. 時間約為5-7個工作天 (不包括速遞運輸時間時間).</span><br><span class="line">6. 如因為硬件事故或需配備零件, 需時可能會更長.</span><br><span class="line">7. 如未能恢復成功, 不會收取恢復數據費用</span><br><span class="line">8. 如Ontrack 成功恢復數據, 而客戶拒絕恢復服務, 我們會收取 HKD1000 行政費.</span><br><span class="line">9. 如客戶於一個月內未有取回硬盤, ONTRACK 會將硬盤消磁並销毁.</span><br><span class="line"></span><br><span class="line">以下是我們的辦公室地址,</span><br><span class="line">To: KLDiscovery Ontrack (HK) Limited</span><br><span class="line">香港北角電器道148 號12樓1203A室</span><br><span class="line">ATTN: Andrew Sin</span><br><span class="line">Tel: +852 3704 8688</span><br><span class="line"></span><br><span class="line">請包好你的硬盤及貼上我們的Job編號 (6389167)</span><br><span class="line">請確認以上的報價並回覆以上的電郵, 多謝!</span><br><span class="line">希望收到您的好消息!</span><br><span class="line">如需要任何協助, 請致電聯絡我們+852 3704 8688.</span><br><span class="line"></span><br><span class="line">Thank you!</span><br></pre></td></tr></table></figure>
+
+<h2 id="丢失的数据"><a href="#丢失的数据" class="headerlink" title="丢失的数据"></a>丢失的数据</h2><p>​        这一块硬盘里面包含了：</p>
+<ul>
+<li>200G的Windows系统盘(C)，</li>
+<li>200G的硬件技术资料(O)，</li>
+<li>200G的游戏分区GTA(V)，</li>
+<li>200G的多媒体文件(W)，</li>
+<li>50G的一些备份文件(X)，</li>
+</ul>
+<p>​        这些数据和资料全部丢失了。虽然说恰好这些资料不是最重要的，但是C盘仍然是很多重要文件的集散地，不管是重装还是格盘，都会丢失大量的程序数据，包括但不限于：</p>
+<ul>
+<li>appdata(相当大一部分程序的数据都在appdata)，</li>
+<li>documents(QQ接收文件 微信接收文件，QQ和微信的聊天记录数据库，一部分IDE的项目文件)，</li>
+<li>User目录(相当于Linux的~目录，程序员IDE的配置，一部分项目文件，一部分程序的配置文件都会在这里，尤其是ssh密钥和xshell的服务器记录，如果丢失损失非常大)</li>
+<li>Download目录(相信很多人的下载文件都是放在这里的吧，如果丢失也会损失很多内容)</li>
+<li>chrome的文件夹(书签 历史记录 扩展程序和油猴插件的脚本)(虽然说你登陆了账户并且开启了chrome同步，那书签和一小段时间的历史记录和你的扩展程序可以从远程恢复，但是扩展程序里面的数据 配置 手撕脚本等可能就付之一炬了特别是油猴(当事人：现在就是后悔 非常的后悔))</li>
+</ul>
+<h2 id="总结一些"><a href="#总结一些" class="headerlink" title="总结一些"></a>总结一些</h2><ul>
+<li><p>在此提醒各位，购买贵重电子物品一定在官方店铺购买，确保售后服务等，推荐京东，一键申请售后(当初不该贪几十块钱的便宜)</p>
+</li>
+<li><p>除此之外，如果发现你的硬盘出现异常：异响、偶尔无法识别数据等，可能是出问题了，应该考虑数据备份到新磁盘然后更换磁盘了</p>
+</li>
+<li><p>定期的备份也是重要的，条件允许的情况下可以保存两份及以上的数据(本人条件有限)</p>
+</li>
+<li><p>在任务管理器的性能页面里面查看磁盘的指标，比如平均响应时间、活动时间、读写延迟，如果延迟很高，说明可能不太行了</p>
+<img src="D:\TCP\blog.tcpsoft.app\blog-images\2022\my-disk-crushed\image-20220304205257562.png" alt="image-20220304205257562" style="zoom:50%;">
+</li>
+<li><p>可以使用一些工具检测硬盘的健康度或者异常程度，这里推荐一些扩展阅读资料：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/393343819" rel="external nofollow noopener noreferrer" target="_blank">这几款硬盘检测工具，为您的数据保驾护航 - 知乎</a></p>
+<p><a href="https://www.laobuluo.com/6188.html" rel="external nofollow noopener noreferrer" target="_blank">这10款实用硬盘性能检测软件 适合HDD和SSD硬盘坏点健康检查-老部落</a></p>
+<p><a href="https://www.bilibili.com/video/BV1WE41177yY/" rel="external nofollow noopener noreferrer" target="_blank">硬盘用了四年，还健康吗？｜如何检测硬盘健康状态 _ 哔哩哔哩_bilibili</a></p>
+</li>
+</ul>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>一怒之下在 jd 购买了三星980，1TB硬盘，感觉比西数更靠谱一点。</p>
+<blockquote>
+<p>西数，🐕都不用</p>
+<p>真香~.jpg</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>none</category>
+      </categories>
+      <tags>
+        <tag>none</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>解决 WSL2 和 proxifier 的相互报错问题</title>
     <url>/2021/07/wsl2-and-proxifier/</url>
     <content><![CDATA[<p>转载自知乎：<code>https://zhuanlan.zhihu.com/p/151392411</code> </p>
