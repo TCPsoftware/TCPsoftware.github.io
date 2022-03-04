@@ -36,7 +36,7 @@
 <li><p>定期的备份也是重要的，条件允许的情况下可以保存两份及以上的数据(本人条件有限)</p>
 </li>
 <li><p>在任务管理器的性能页面里面查看磁盘的指标，比如平均响应时间、活动时间、读写延迟，如果延迟很高，说明可能不太行了</p>
-<img src="D:\TCP\blog.tcpsoft.app\blog-images\2022\my-disk-crushed\image-20220304205257562.png" alt="image-20220304205257562" style="zoom:50%;">
+<img src="../../blog-images\2022\my-disk-crushed\image-20220304205257562.png" alt="image-20220304205257562" style="zoom:50%;">
 </li>
 <li><p>可以使用一些工具检测硬盘的健康度或者异常程度，这里推荐一些扩展阅读资料：</p>
 <p><a href="https://zhuanlan.zhihu.com/p/393343819" rel="external nofollow noopener noreferrer" target="_blank">这几款硬盘检测工具，为您的数据保驾护航 - 知乎</a></p>
